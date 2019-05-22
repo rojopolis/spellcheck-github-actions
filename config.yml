@@ -1,5 +1,5 @@
 matrix:
-- name: Python Source
+- name: Python
   sources:
   - '**/*.py'
   aspell:
@@ -12,8 +12,14 @@ matrix:
     decode_escapes: true
     strings: false
     string_types: fu
-- name: markdown
+- name: Markdown
   pipeline:
   - pyspelling.filters.markdown:
   sources:
   - '**/*.md'
+- name: Text
+  sources:
+  - '**/*.txt'
+  pipeline:
+  - pyspelling.filters.text:
+      convert_encoding: utf-8
