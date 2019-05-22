@@ -6,16 +6,14 @@ matrix:
     lang: en
   pipeline:
   - pyspelling.filters.python:
-  - pyspelling.filters.context:
-      context_visible_first: true
-      escapes: \\[\\`~]
-      delimiters:
-      # Ignore multiline content between fences (fences can have 3 or more back ticks)
-      # ```
-      # content
-      # ```
-      - open: '(?s)^(?P<open> *`{3,})$'
-        close: '^(?P=open)$'
-      # Ignore text between inline back ticks
-      - open: '(?P<open>`+)'
-        close: '(?P=open)'
+    comments: true
+    docstrings: true
+    group_comments: false
+    decode_escapes: true
+    strings: false
+    string_types: fu
+- name: markdown
+  pipeline:
+  - pyspelling.filters.markdown:
+  sources:
+  - '**/*.md'
