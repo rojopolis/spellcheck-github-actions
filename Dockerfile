@@ -1,4 +1,4 @@
-FROM debian:9.5-slim
+FROM python:3.7
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
@@ -9,8 +9,7 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 RUN apt-get update && apt-get install -y \
-    python3 \
+    aspell \
  && rm -rf /var/lib/apt/lists/*
-
-ADD entrypoint.py /entrypoint.py
-ENTRYPOINT ["/entrypoint.py"]
+RUN pip3 install pyspelling
+ENTRYPOINT ["pyspelling"]
