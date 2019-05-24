@@ -2,7 +2,8 @@
 A Github Action that spell checks Python, Markdown, and Text files.
 
 This action uses [PySpelling](https://facelessuser.github.io/pyspelling/) to
-check source files in the project.  This release doesn't allow any
-connfiguration.
+check source files in the project.  
 
-TODO: Add support for custom dictionary and other settings.
+## Configuration
+If your repo contains `spellcheck.yaml` it will be used instead of the default config.
+See https://facelessuser.github.io/pyspelling/configuration/ for options.
