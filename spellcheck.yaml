@@ -13,8 +13,11 @@ matrix:
     strings: false
     string_types: fu
 - name: Markdown
+  apsell:
+    mode: none
   pipeline:
   - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
   sources:
   - '**/*.md'
 - name: Text
