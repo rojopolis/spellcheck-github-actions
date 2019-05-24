@@ -12,5 +12,5 @@ RUN apt-get update && apt-get install -y \
     aspell \
  && rm -rf /var/lib/apt/lists/*
 RUN pip3 install pyspelling
-COPY config.yml /config.yml
-ENTRYPOINT ["pyspelling", "-c", "/config.yml"]
+COPY spellcheck.yaml /spellcheck.yaml
+ENTRYPOINT ["entrypoint.sh"]
