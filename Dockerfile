@@ -2,7 +2,7 @@ FROM python:3.7
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
-LABEL "com.github.actions.icon"="thumbs-up"
+LABEL "com.github.actions.icon"="clipboard"
 LABEL "com.github.actions.color"="green"
 LABEL "repository"="http://github.com/rojopolis/spellcheck-github-actions"
 LABEL "homepage"="http://github.com/actions"
