@@ -1,3 +1,6 @@
 github
 todo
-pyspelling
+PySpelling
+config
+repo
+yaml
