@@ -1,0 +1,12 @@
+matrix:
+- name: Text
+  sources:
+  - '**/*.txt'
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    output: wordlist.dic
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.text:
+      convert_encoding: utf-8
