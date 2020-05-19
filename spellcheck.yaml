@@ -18,7 +18,7 @@ matrix:
     strings: false
     string_types: fu
 - name: Markdown
-  apsell:
+  aspell:
     mode: none
   dictionary:
     wordlists:
