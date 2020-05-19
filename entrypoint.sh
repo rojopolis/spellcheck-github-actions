@@ -2,19 +2,42 @@
 
 SPELLCHECK_CONFIG_FILE=''
 
-if [ -f ./.spellcheck.yaml ]; then
-    SPELLCHECK_CONFIG_FILE='spellcheck.yaml'
+echo ""
+echo "Using pyspelling on repository files outlined in $SPELLCHECK_CONFIG_FILE"
+echo "------------------------------------------------------------------------"
+
+pyspelling -c $SPELLCHECK_CONFIG_FILE
+
+#!/bin/bash
+
+SPELLCHECK_CONFIG_FILE=''
+
+if [ ! -f "./spellcheck.yaml" ]; then
+    if [ -f "./.spellcheck.yaml" ]; then
+	    cp ./.spellcheck.yaml spellcheck.yaml
+        SPELLCHECK_CONFIG_FILE='.spellcheck.yaml'
+
+    else
+	    cp /spellcheck.yaml .
+        SPELLCHECK_CONFIG_FILE='spellcheck.yaml'
+    fi
+elif
+
 fi
 
-if [ -f ./.spellcheck.yml ]; then
-    SPELLCHECK_CONFIG_FILE='.spellcheck.yml'
+if [ ! -f ./wordlist.txt ]; then
+    if [ -f "./.worldlist.txt" ]; then
+	    cp ./.wordlist.txt wordlist.txt
+    else
+	    cp /wordlist.txt .
+    fi
 fi
 
 echo ""
 echo "Using pyspelling on repository files outlined in $SPELLCHECK_CONFIG_FILE"
 echo "----------------------------------------------------------------"
 
-pyspelling -c $SPELLCHECK_CONFIG_FILE
+pyspelling -c spellcheck.yaml
 
 EXITCODE=$?
 
