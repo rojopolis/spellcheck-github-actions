@@ -31,3 +31,5 @@ FileNotFoundError
 RuntimeError
 mkdn
 pre
+rojopolis
+sbates

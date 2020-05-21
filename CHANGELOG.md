@@ -2,7 +2,7 @@
 
 ## 0.4.0 candidate, feature release, update recommended
 
-- Introduced support for: `yml` extension in addtiion to `yaml` for YAML configuration files. Please refer to the documentation for details
+- Introduced support for: `yml` extension in addition to `yaml` for YAML configuration files. Please refer to the documentation for details
 
 - Introduced support for hidden configuration files, so prefixing the spellcheck configuration file to make it less intrusive in your repository is now supported
   patch from @sbates130272, PR: #7. Please refer to the documentation for details
