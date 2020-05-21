@@ -11,8 +11,13 @@ LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 RUN apt-get update && apt-get install -y \
     aspell \
  && rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install pyspelling
-COPY entrypoint.sh /entrypoint.sh
+
 COPY spellcheck.yaml /spellcheck.yaml
-COPY wordlist.txt /wordlist.txt
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+WORKDIR /tmp
 ENTRYPOINT ["/entrypoint.sh"]
