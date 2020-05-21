@@ -13,7 +13,7 @@
 
 - Improved support to local development using Docker
 
-## 0.3.0 bug fix release, update recommended
+## 0.3.0 2020-02-14 bug fix release, update recommended
 
 - Addressing issue with `wordlist.txt` file handling
 
