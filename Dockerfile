@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install pyspelling
 
+COPY spellcheck.yaml /spellcheck.yaml
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

@@ -1,43 +1,18 @@
 matrix:
-- name: Python
-  sources:
-  - '**/*.py'
+- name: Markdown
   aspell:
     lang: en
   dictionary:
     wordlists:
-    - wordlist.txt
-    output: wordlist.dic
-    encoding: utf-8
-  pipeline:
-  - pyspelling.filters.python:
-    comments: true
-    docstrings: true
-    group_comments: false
-    decode_escapes: true
-    strings: false
-    string_types: fu
-- name: Markdown
-  aspell:
-    mode: none
-  dictionary:
-    wordlists:
-    - wordlist.txt
-    output: wordlist.dic
+    - .wordlist.txt
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
   - pyspelling.filters.html:
+    comments: false
+    ignores:
+    - code
+    - pre
   sources:
   - '**/*.md'
-- name: Text
-  sources:
-  - '**/*.txt'
-  dictionary:
-    wordlists:
-    - wordlist.txt
-    output: wordlist.dic
-    encoding: utf-8
-  pipeline:
-  - pyspelling.filters.text:
-      convert_encoding: utf-8
+  default_encoding: utf-8
