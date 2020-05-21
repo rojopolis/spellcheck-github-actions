@@ -21,6 +21,6 @@
 
 - Introducing support for custom configurations and dictionaries
 
-## 0.1.0 2019-05-23 feature release, update recommended
+## 0.1.0 2019-05-23 feature release
 
 - Initial release by @rojopolis
