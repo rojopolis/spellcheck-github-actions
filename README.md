@@ -17,6 +17,17 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 1. Create a file named: `.spellcheck.yml` or `.spellcheck.yaml`, do note if both files exist the prior will have precedence. Do note the recommendation is _hidden_ files since these configuration files are not first rate citizens of your repository
 1. Paste the contents of the outlined example, which is a configuration for Markdown, useful for your README file:
 
+## Spellcheck Configuration File
+
+The file can be named:
+
+1 `.spellcheck.yml`
+1 `.spellcheck.yaml`
+1 `spellcheck.yml`
+1 `spellcheck.yaml` (the old default)
+
+And is attempted read in that order, meaning first match is used, This means that you can use files prefixed with the `.` to have a less intrusive Spellcheck configuration in your repository.
+
 ```yaml
 matrix:
 - name: Markdown
@@ -25,7 +36,6 @@ matrix:
   dictionary:
     wordlists:
     - .wordlist.txt
-    output: wordlist.dic
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
@@ -42,6 +52,8 @@ matrix:
 The above configuration will check the spelling of your repository's `README.md` and other Markdown files against an English dictionary. If your Markdown is named differently, correct or add additional patterns under `sources`, Markdown is sometimes named `.mkdn`.
 
 Do note the reference to the `.wordlist.txt` under the `dictionary`, which is the custom list of words to supply the default dictionary for the specified language, in this case set to English `en` under `aspell`.
+
+If you are using the default spellcheck configuration file have not specified a `.wordlist.txt` or `wordlist.txt` (please change or adhere to the value outlined in your configuration) and empty file will be created.
 
 Change the configuration to suit your repository and needs, please see the `examples/` directory for more example configurations.
 
@@ -71,7 +83,7 @@ Spelling check passed :)
 
 Now we should be good to go.
 
-Do note you could also use the `entrypoint.sh`
+Do note you could also use the `entrypoint.sh`, which is the script used in the Docker image.
 
 ```bash
 ± sh entrypoint.sh
