@@ -1,0 +1,9 @@
+name: "GitHub Spellcheck Action "
+description: 'A Github Action that spell checks Python, Markdown, and Text files'
+author: rojopolis
+branding:
+  color: green
+  icon: type
+runs:
+  using: docker
+  image: 'Dockerfile'

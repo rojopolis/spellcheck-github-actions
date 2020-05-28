@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## 0.4.0 candidate, feature release, update recommended
+## 0.4.0 2020-05-28, feature release, update recommended
 
 - Introduced support for: `yml` extension in addition to `yaml` for YAML configuration files. Please refer to the documentation for details
 
@@ -13,9 +13,14 @@
 
 - Improved support to local development using Docker
 
+- Release 0.3.0 (below) never made it to the GitHub Marketplace, this might be due to a missing `action.yml` please see:
+  https://github.community/t/who-can-publish-an-action-to-the-marketplace/115602/3
+
 ## 0.3.0 2020-02-14 bug fix release, update recommended
 
 - Addressing issue with `wordlist.txt` file handling
+
+- This release never made it to the GitHub Marketplace, this might be due to changes in GitHub requirements, please see following release 0.4.0
 
 ## 0.2.0 2019-05-24 feature release, update recommended
 
