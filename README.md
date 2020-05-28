@@ -21,10 +21,10 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 The file can be named:
 
-1 `.spellcheck.yml`
-1 `.spellcheck.yaml`
-1 `spellcheck.yml`
-1 `spellcheck.yaml` (the old default)
+1. `.spellcheck.yml`
+1. `.spellcheck.yaml`
+1. `spellcheck.yml`
+1. `spellcheck.yaml` (the old default)
 
 And is attempted read in that order, meaning first match is used, This means that you can use files prefixed with the `.` to have a less intrusive Spellcheck configuration in your repository.
 
