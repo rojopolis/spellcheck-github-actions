@@ -13,8 +13,7 @@
 
 - Improved support to local development using Docker
 
-- Release 0.3.0 (below) never made it to the GitHub Marketplace, this might be due to a missing `action.yml` please see:
-  https://github.community/t/who-can-publish-an-action-to-the-marketplace/115602/3
+- Release 0.3.0 (below) never made it to [the GitHub Marketplace](https://github.community/t/who-can-publish-an-action-to-the-marketplace/115602/3), this might be due to a missing `action.yml` please see:
 
 ## 0.3.0 2020-02-14 bug fix release, update recommended
 
