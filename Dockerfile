@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.7-alpine3.11
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
@@ -8,9 +8,8 @@ LABEL "repository"="http://github.com/rojopolis/spellcheck-github-actions"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
-RUN apt-get update && apt-get install -y \
-    aspell \
- && rm -rf /var/lib/apt/lists/*
+RUN apk update \
+    && apk add aspell libxml2-dev libxslt-dev
 
 RUN pip3 install pyspelling
 
