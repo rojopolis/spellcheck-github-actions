@@ -9,7 +9,7 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends aspell \
+    && apt-get install -y --no-install-recommends aspell aspell-en \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /requirements.txt
