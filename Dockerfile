@@ -9,10 +9,10 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 RUN apt-get update \
-    && apt-get install -y aspell \
+    && apt-get install -y --no-install-recommends aspell \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install pyspelling
+RUN pip3 install -r requirements.txt
 
 COPY spellcheck.yaml /spellcheck.yaml
 
