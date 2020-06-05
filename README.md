@@ -34,8 +34,6 @@ matrix:
   aspell:
     lang: en
   dictionary:
-    wordlists:
-    - .wordlist.txt
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
@@ -51,9 +49,42 @@ matrix:
 
 The above configuration will check the spelling of your repository's `README.md` and other Markdown files against an English dictionary. If your Markdown is named differently, correct or add additional patterns under `sources`, Markdown is sometimes named `.mkdn`.
 
-Do note the reference to the `.wordlist.txt` under the `dictionary`, which is the custom list of words to supply the default dictionary for the specified language, in this case set to English `en` under `aspell`.
+When and if the run locates spelling errors, you have two options:
 
-If you are using the default spellcheck configuration file have not specified a `.wordlist.txt` or `wordlist.txt` (please change or adhere to the value outlined in your configuration) and empty file will be created.
+1. Correct the spelling errors in the relevant files
+1. Add the relevant words to a custom word list, to be ignored
+
+If you do the latter, you have to add the following to the Spellcheck configuration, under `dictionary`:
+
+```yaml
+    wordlists:
+    - .wordlist.txt
+```
+
+This supplies a custom list of words to supply the default dictionary for the specified language, in this case set to English `en` under `aspell`.
+
+The complete configuration should resemble this:
+
+```yaml
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
+    comments: false
+    ignores:
+    - code
+    - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+```
 
 Change the configuration to suit your repository and needs, please see the `examples/` directory for more example configurations.
 
