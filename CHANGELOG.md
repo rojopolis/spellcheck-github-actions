@@ -1,6 +1,14 @@
 # Change Log for spellcheck-github-actions
 
-## 0.4.0 2020-05-28, feature release, update recommended
+## 0.5.0 2020-06-05 feature release, update recommended
+
+- The action now uses a DockerHub served image, which mean that the Docker image does not have to be built at every invocation
+
+- The documentation has been updated and the use of the `wordlist.txt` is no longer default. You have to introduce it yourself into your configuration, meaning that everything still works as expected for existing configurations
+
+- A minor bug introduced in 0.4.0 in the handling of the `wordlist.txt` was addressed
+
+## 0.4.0 2020-05-28 feature release, update recommended
 
 - Introduced support for: `yml` extension in addition to `yaml` for YAML configuration files. Please refer to the documentation for details
 
