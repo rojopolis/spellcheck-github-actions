@@ -13,20 +13,8 @@ else
     SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
 fi
 
-if [ -f "./wordlist.txt" ]; then
-    WORDLIST_FILE="wordlist.txt"
-else
-    WORDLIST_FILE=".wordlist.txt"
-fi
-
-if [ ! -f $WORDLIST_FILE ]; then
-    echo "No $WORDLIST_FILE defined so we define an empty one"
-    touch $WORDLIST_FILE
-fi
-
 echo ""
 echo "Using pyspelling on repository files outlined in >$SPELLCHECK_CONFIG_FILE<"
-echo "Word list read from >$WORDLIST_FILE<"
 echo "----------------------------------------------------------------"
 
 pyspelling --config $SPELLCHECK_CONFIG_FILE
