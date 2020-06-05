@@ -158,6 +158,27 @@ $ touch .wordlist.txt
 
 Please see the section: "Configuration" above.
 
+## DockerHub
+
+This action is based on a Docker image available on DockerHub.
+
+This mean that if you developing your own spell checking action you can use this
+image.
+
+Alternatively you can build your own Docker image based on the `Dockerfile` in this repository.
+
+- [DockerHub: jonasbn/github-action-spellcheck](https://hub.docker.com/r/jonasbn/github-action-spellcheck)
+
+### A note on DockerHub
+
+The images are build from the GitHub repository master branch.
+
+The recommended use is to use the latest release with a version tag. See [the release history](https://github.com/rojopolis/spellcheck-github-actions/releases) for details.
+
+Whereas the tag `latest` just reflect the latest build based on the master branch.
+
+The master branch might contain changes not tagged as released yet and can be regarded as _unstable_ or _experimental_. Changes such as corrections to documentation etc. will not be tagged until separately as a general rule, unless the changes are significant, but the aim is to keep the documentation relevant and up to date.
+
 ## Development
 
 The GitHub Action is based on a Docker implementation.
