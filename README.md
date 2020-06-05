@@ -206,5 +206,24 @@ $ cd <your project/repository directory>
 $ docker run -it  -v $PWD:/tmp github-action-spellcheck
 ```
 
+## Author
+
+The original author of this GitHub Action is Robert Jordan (@rojopolis)
+
+## Acknowledgements
+
+Here follows a list of contributors in alphabetical order:
+
+- Isaac Muse, @facelessuser
+- Jonas Brømsø, @jonasbn
+- José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
+- Stephen Bates, @sbates130272
+
+Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
+
+## Copyright and License
+
+This repository is licensed under the MIT license.
+
 [pyspelling]: https://facelessuser.github.io/pyspelling/
 [wcmatch]: https://facelessuser.github.io/wcmatch/glob/
