@@ -13,7 +13,7 @@ else
     SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
 fi
 
-if [ -f "./worldlist.txt" ]; then
+if [ -f "./wordlist.txt" ]; then
     WORDLIST_FILE="wordlist.txt"
 else
     WORDLIST_FILE=".wordlist.txt"
