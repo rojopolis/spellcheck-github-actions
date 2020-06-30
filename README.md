@@ -15,7 +15,29 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 1. First you have to add a configuration for the spelling checker
 1. Create a file named: `.spellcheck.yml` or `.spellcheck.yaml`, do note if both files exist the prior will have precedence. Do note the recommendation is _hidden_ files since these configuration files are not first rate citizens of your repository
-1. Paste the contents of the outlined example, which is a configuration for Markdown, useful for your README file:
+1. Paste the contents of the outlined example, which is a configuration for Markdown, useful for your README file
+
+Do note that this action requires the contents of the repository, so it is recommended used with [the Checkout action][actioncheckout].
+
+You have to define this part in your workflow, since it not a part of the action itself.
+
+Example:
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.5.0
+      name: Spellcheck
+```
+
+Note the step: `- uses: actions/checkout@master`
 
 ## Spellcheck Configuration File
 
@@ -158,6 +180,38 @@ $ touch .wordlist.txt
 
 Please see the section: "Configuration" above.
 
+### Diagnostic text: `ValueError: Unable to find or load pyspelling configuration from`
+
+This diagnostic indicates that the configuration file pointed to with the `--config` (`-c`) parameter cannot be located.
+
+1. Check that a file with the indicated name exists.
+
+`ValueError: Unable to find or load pyspelling configuration from spellcheck.yaml`
+
+Indicates: `spellcheck.yaml` so this file should exist in the repository.
+
+If the file is available in the repository, please check that your workflow is configured correctly, with the following line, which enables [the action Checkout][actioncheckout].
+
+`uses: actions/checkout@master`
+
+If full context:
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.5.0
+      name: Spellcheck
+```
+
+This step adds an action, which checkout out the repository for inspection by linters and other actions like this one.
+
 ## DockerHub
 
 This action is based on a Docker image available on DockerHub.
@@ -214,6 +268,7 @@ The original author of this GitHub Action is Robert Jordan (@rojopolis)
 
 Here follows a list of contributors in alphabetical order:
 
+- Albert Volkman, @albertvolkman
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
@@ -227,3 +282,4 @@ This repository is licensed under the MIT license.
 
 [pyspelling]: https://facelessuser.github.io/pyspelling/
 [wcmatch]: https://facelessuser.github.io/wcmatch/glob/
+[actioncheckout]: https://github.com/marketplace/actions/checkout
