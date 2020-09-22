@@ -38,6 +38,8 @@ jobs:
 ```
 
 Note the step: `- uses: actions/checkout@master`
+This file must live in a the `.github/workflows/` directory.
+For example, it could be `.github/workflows/action.yml` 
 
 ## Spellcheck Configuration File
 
