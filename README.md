@@ -39,7 +39,7 @@ jobs:
 
 Note the step: `- uses: actions/checkout@master`
 This file must live in a the `.github/workflows/` directory.
-For example, it could be `.github/workflows/action.yml` 
+For example, it could be `.github/workflows/action.yml`
 
 ## Spellcheck Configuration File
 
@@ -274,6 +274,7 @@ Here follows a list of contributors in alphabetical order:
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
+- Michael Flaxman, @mflaxman
 - Stephen Bates, @sbates130272
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
