@@ -48,3 +48,10 @@ linters
 ValueError
 config
 ubuntu
+lxml
+backrefs
+beautifulsoup
+bracex
+wcmatch
+Flaxman
+mflaxman
