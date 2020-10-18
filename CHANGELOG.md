@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+- Docker image updated to Python 3.9.0 slim
+
+- Python requirement 'lxml' updated to version 4.6.0, with wheel supporting Python 3.9.0
+
 ## 0.5.0 2020-06-05 feature release, update recommended
 
 - The action now uses a DockerHub served image, which mean that the Docker image does not have to be built at every invocation
