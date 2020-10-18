@@ -2,7 +2,7 @@ backrefs==4.3
 beautifulsoup4==4.9.1
 bracex==2.0
 html5lib==1.0.1
-lxml==4.5.1
+lxml==4.6.0
 Markdown==3.2.2
 pyspelling==2.6
 PyYAML==5.3.1
