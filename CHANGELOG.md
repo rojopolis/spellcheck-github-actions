@@ -2,7 +2,21 @@
 
 - Docker image updated to Python 3.9.0 slim
 
-- Python requirement 'lxml' updated to version 4.6.0, with wheel supporting Python 3.9.0
+- Python requirement `lxml` updated to version 4.6.0, with wheel supporting Python 3.9.0
+
+- Requirement `pyspelling` updated to version 2.6.1 from 2.6.0
+
+- Python requirement `backrefs` updated to version 4.5
+
+- Python requirement `beautifulsoup4` updated to version 4.9.3
+
+- Python requirement `bracex` updated to version 2.0.1
+
+- Python requirement `html5lib` updated to version 1.1
+
+- Python requirement `Markdown` updated to version 3.3.1
+
+- Python requirement `wcmatch` updated to version 7.1
 
 ## 0.5.0 2020-06-05 feature release, update recommended
 
