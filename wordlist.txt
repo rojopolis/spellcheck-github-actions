@@ -55,3 +55,4 @@ bracex
 wcmatch
 Flaxman
 mflaxman
+dependabot

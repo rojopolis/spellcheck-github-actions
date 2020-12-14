@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.7.0 2020-12-14 maintenance release, update not required
+
+- Docker image updated to Python 3.9.1 slim via PR #27 from dependabot
+
 ## 0.6.0 2020-10-18 feature release, update recommended
 
 - Docker image updated to Python 3.9.0 slim
