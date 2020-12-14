@@ -1,5 +1,8 @@
 matrix:
 - name: Markdown
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
   aspell:
     lang: en
   dictionary:
@@ -9,10 +12,7 @@ matrix:
   pipeline:
   - pyspelling.filters.markdown:
   - pyspelling.filters.html:
-    comments: false
-    ignores:
-    - code
-    - pre
-  sources:
-  - '**/*.md'
-  default_encoding: utf-8
+      comments: false
+      ignores:
+      - code
+      - pre
