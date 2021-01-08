@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.8.0 2021-01-08 feature release, update not required
+
+- Added support for extensions for Python's Markdown, namely the `pymdown-extensions` introducing the `superfences` extension, which can be used to address certain issue, which cannot be handled by handling of codefences by the Python Markdown implementation out of the box
+
 ## 0.7.0 2020-12-14 maintenance release, update not required
 
 - Docker image updated to Python 3.9.1 slim via PR #27 from dependabot
