@@ -214,6 +214,24 @@ jobs:
 
 This step adds an action, which checkout out the repository for inspection by linters and other actions like this one.
 
+### Diagnostic text: `ERROR: *.md -- 'NoneType' object has no attribute 'end'`
+
+This indicates issues with the Markdown and is reported by `Markdown` (See: [PyPi site](https://pypi.org/project/Markdown/)).
+
+[PySpelling][pyspelling]  does however support extension of the standard Markdown parser and you can specify the use of extensions of these are support.
+
+This action support the extensions included in: `pymdown-extensions` (See: [PyPi site](https://pypi.org/project/pymdown-extensions/))
+
+And you can then put these to use in your configuration. The example below outlines the `superfences` extension.
+
+```yaml
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - pymdownx.superfences:
+```
+
+Please see the repositorys `requirements.txt` for a list of all included Python modules and their exact versions.
+
 ## DockerHub
 
 This action is based on a Docker image available on DockerHub.
