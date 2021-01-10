@@ -10,4 +10,4 @@ branding:
   icon: type
 runs:
   using: docker
-  image: 'docker://jonasbn/github-action-spellcheck:latest'
+  image: 'docker://pavelnoen94/github-action-spellcheck:latest'
