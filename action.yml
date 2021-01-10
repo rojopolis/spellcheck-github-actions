@@ -1,6 +1,10 @@
 name: "GitHub Spellcheck Action"
 description: 'A Github Action that spell checks Python, Markdown, and Text files'
 author: rojopolis
+inputs:
+  configPath:
+    description: 'Alternate configuration file to use'
+    required: false
 branding:
   color: green
   icon: type

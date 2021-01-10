@@ -14,7 +14,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 ## Configuration
 
 1. First you have to add a configuration for the spelling checker
-1. Create a file named: `.spellcheck.yml` or `.spellcheck.yaml`, do note if both files exist the prior will have precedence. Do note the recommendation is _hidden_ files since these configuration files are not first rate citizens of your repository
+1. Create a file named: `.spellcheck.yml` or `.spellcheck.yaml`, do note if both files exist the prior will have precedence. Do note the recommendation is _hidden_ files since these configuration files are not first rate citizens of your repository. You can also provide your own configuration file. Check out spellcheck configuration section down below.
 1. Paste the contents of the outlined example, which is a configuration for Markdown, useful for your README file
 
 Do note that this action requires the contents of the repository, so it is recommended used with [the Checkout action][actioncheckout].
@@ -43,7 +43,25 @@ For example, it could be `.github/workflows/action.yml`
 
 ## Spellcheck Configuration File
 
-The file can be named:
+You can either provide a path to the configuration file or save a file in the root of your repository with a predefined name (list below). If `configPath` is provided then it will be used and the other configuration options will be ignored. If `configPath` is not provided then the repository is searched after a first match
+
+Example:
+```yaml
+name: Spellcheck Action
+on: push
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@master
+      name: Spellcheck
+      with:
+        configPath: config/.spellcheck.yml # put path to configuration file here
+```
+
+### Predefined Name
 
 1. `.spellcheck.yml`
 1. `.spellcheck.yaml`

@@ -1,16 +1,19 @@
 #!/bin/sh -l
 
 SPELLCHECK_CONFIG_FILE=''
-WORDLIST_FILE=''
 
-if [ -f "./.spellcheck.yml" ]; then
-    SPELLCHECK_CONFIG_FILE=".spellcheck.yml"
-elif [ -f "./.spellcheck.yaml" ]; then
-    SPELLCHECK_CONFIG_FILE=".spellcheck.yaml"
-elif [ -f "./spellcheck.yml" ]; then
-    SPELLCHECK_CONFIG_FILE="spellcheck.yml"
+if [ -n $INPUT_CONFIGPATH ]; then
+    SPELLCHECK_CONFIG_FILE=$INPUT_CONFIGPATH
 else
-    SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
+    if [ -f "./.spellcheck.yml" ]; then
+        SPELLCHECK_CONFIG_FILE=".spellcheck.yml"
+    elif [ -f "./.spellcheck.yaml" ]; then
+        SPELLCHECK_CONFIG_FILE=".spellcheck.yaml"
+    elif [ -f "./spellcheck.yml" ]; then
+        SPELLCHECK_CONFIG_FILE="spellcheck.yml"
+    else
+        SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
+    fi
 fi
 
 echo ""
