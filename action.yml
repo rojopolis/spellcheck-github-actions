@@ -2,7 +2,7 @@ name: "GitHub Spellcheck Action"
 description: 'A Github Action that spell checks Python, Markdown, and Text files'
 author: rojopolis
 inputs:
-  configPath:
+  config-path:
     description: 'Alternate configuration file to use'
     required: false
 branding:
@@ -10,4 +10,4 @@ branding:
   icon: type
 runs:
   using: docker
-  image: 'docker://pavelnoen94/github-action-spellcheck:latest'
+  image: 'docker://jonasbn/github-action-spellcheck:latest'
