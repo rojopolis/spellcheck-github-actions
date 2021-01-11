@@ -58,7 +58,7 @@ jobs:
     - uses: rojopolis/spellcheck-github-actions@master
       name: Spellcheck
       with:
-        configPath: config/.spellcheck.yml # put path to configuration file here
+        config_path: config/.spellcheck.yml # put path to configuration file here
 ```
 
 ### Predefined Name
