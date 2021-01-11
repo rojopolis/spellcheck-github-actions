@@ -2,8 +2,8 @@
 
 SPELLCHECK_CONFIG_FILE=''
 
-if [ -n $INPUT_CONFIGPATH ]; then
-    SPELLCHECK_CONFIG_FILE=$INPUT_CONFIGPATH
+if [ -n $INPUT_CONFIG_PATH ]; then
+    SPELLCHECK_CONFIG_FILE=$INPUT_CONFIG_PATH
 else
     if [ -f "./.spellcheck.yml" ]; then
         SPELLCHECK_CONFIG_FILE=".spellcheck.yml"

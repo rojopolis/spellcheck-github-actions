@@ -2,7 +2,7 @@ name: "GitHub Spellcheck Action"
 description: 'A Github Action that spell checks Python, Markdown, and Text files'
 author: rojopolis
 inputs:
-  config-path:
+  config_path:
     description: 'Alternate configuration file to use'
     required: false
 branding:
