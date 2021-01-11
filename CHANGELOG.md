@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.9.0 2021-01-11 feature release, update not required
+
+- Added new ability specify an alternative path to a configuration file, PR #31 from Pavel Skipenes
+
 ## 0.8.0 2021-01-08 feature release, update not required
 
 - Added support for extensions for Python's Markdown, namely the `pymdown-extensions` introducing the `superfences` extension, which can be used to address certain issue, which cannot be handled by handling of codefences by the Python Markdown implementation out of the box
