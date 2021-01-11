@@ -43,9 +43,10 @@ For example, it could be `.github/workflows/action.yml`
 
 ## Spellcheck Configuration File
 
-You can either provide a path to the configuration file or save a file in the root of your repository with a predefined name (list below). If `configPath` is provided then it will be used and the other configuration options will be ignored. If `configPath` is not provided then the repository is searched after a first match
+You can either provide a path to the configuration file or save a file in the root of your repository with a predefined name (list below). If `config_path` is provided then it will be used and the other configuration options will be ignored. If `config_path` is not provided then the repository is searched after a first match
 
 Example:
+
 ```yaml
 name: Spellcheck Action
 on: push
