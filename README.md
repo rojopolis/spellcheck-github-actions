@@ -248,7 +248,7 @@ And you can then put these to use in your configuration. The example below outli
       - pymdownx.superfences:
 ```
 
-Please see the repositorys `requirements.txt` for a list of all included Python modules and their exact versions.
+Please see the repository's `requirements.txt` for a list of all included Python modules and their exact versions.
 
 ## DockerHub
 
@@ -306,6 +306,7 @@ The original author of this GitHub Action is Robert Jordan (@rojopolis)
 
 Here follows a list of contributors in alphabetical order:
 
+- Pavel Skipenes, @pavelskipenes
 - Albert Volkman, @albertvolkman
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
