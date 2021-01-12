@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.9.1 2021-01-12 bug fix release, update not required
+
+- Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR #32 from Pavel Skipenes
+
 ## 0.9.0 2021-01-11 feature release, update not required
 
 - Added new ability specify an alternative path to a configuration file, PR #31 from Pavel Skipenes
