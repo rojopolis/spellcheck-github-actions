@@ -70,6 +70,8 @@ jobs:
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
+        source_files: source/scanning.md source/triggers.md
+        task_name: Markdown
 ```
 
 ### Predefined Name
