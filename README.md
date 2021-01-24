@@ -33,13 +33,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.5.0
+    - uses: rojopolis/spellcheck-github-actions@0.9.1
       name: Spellcheck
 ```
 
 Note the step: `- uses: actions/checkout@master`
 This file must live in a the `.github/workflows/` directory.
 For example, it could be `.github/workflows/action.yml`
+
+## Specifying Sources Files To Check
+
+By default, this action will use the `sources:` list under each task in your config file to identify which files to scan. You can override this behaviour by setting `source_files` to the list of files or file patterns you want scanning.
+
+When this option is used, you must also specify the `task_name` to override the `sources:` list for. 
+
+## Specify A Specific Task To Run
+
+By default, all tasks in your config file will be ran. By setting `task_name` you can override this and run only the task you have requested.
 
 ## Spellcheck Configuration File
 
