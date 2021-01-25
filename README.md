@@ -10,6 +10,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - Support for the following formats: Python, Markdown and plain text
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
+- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling] configuration
 
 ## Configuration
 
@@ -40,6 +41,57 @@ jobs:
 Note the step: `- uses: actions/checkout@master`
 This file must live in a the `.github/workflows/` directory.
 For example, it could be `.github/workflows/action.yml`
+
+### Extra Configuration
+
+#### Extra Configuration for PySpelling
+
+Do check the [PySpelling documentation][pyspelling] for elaborate details on configuration of.
+
+#### Extra Configuration for Markdown
+
+[PySpelling][pyspelling] uses the [Python Markdown][markdown] project. [PySpelling][pyspelling] allows for configuration of the Markdown handling using the `[pymdown-extensions]` authored by the author of [PySpelling][pyspelling].
+
+If for example wanted to use the `superfences` extension, you could configure it as follows:
+
+```yaml
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - pymdownx.superfences:
+```
+
+Current Spellcheck Action support the following extensions (_in alphabetical order_):
+
+- Arithmatex
+- B64
+- BetterEm
+- Caret
+- Critic
+- Details
+- Emoji
+- EscapeAll
+- Extra
+- Highlight
+- InlineHilite
+- Keys
+- MagicLink
+- Mark
+- PathConverter
+- ProgressBar
+- SaneHeaders
+- SmartSymbols
+- Snippets
+- StripHTML
+- SuperFences
+- Tabbed
+- Tasklist
+- Tilde
+
+Please consult [the documentation](https://facelessuser.github.io/pymdown-extensions/) for the extensions for more details.
+
+Currently only the case of use of `superfences` has been requested as outlined in the above example.
+
+Do also see the Diagnostics sections below, demonstrating diagnostics emitted from [Python Markdown][markdown], which might require the use of an extension.
 
 ## Spellcheck Configuration File
 
@@ -324,3 +376,5 @@ This repository is licensed under the MIT license.
 [pyspelling]: https://facelessuser.github.io/pyspelling/
 [wcmatch]: https://facelessuser.github.io/wcmatch/glob/
 [actioncheckout]: https://github.com/marketplace/actions/checkout
+[markdown]: https://pypi.org/project/Markdown/
+[pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
