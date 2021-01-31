@@ -10,7 +10,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - Support for the following formats: Python, Markdown and plain text
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
-- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling] configuration
+- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling]
 
 ## Configuration
 
@@ -33,20 +33,21 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
+    # The checkout step
     - uses: actions/checkout@master
     - uses: rojopolis/spellcheck-github-actions@0.9.1
       name: Spellcheck
 ```
 
-Note the step: `- uses: actions/checkout@master`
-This file must live in a the `.github/workflows/` directory.
-For example, it could be `.github/workflows/action.yml`
+This configuration file must be created in a the `.github/workflows/` directory.
+
+For example, it could be named `.github/workflows/spelling_action.yml` for easy identification, if other actions are present.
 
 ## Specifying Sources Files To Check
 
 By default, this action will use the `sources:` list under each task in your config file to identify which files to scan. You can override this behaviour by setting `source_files` to the list of files or file patterns you want scanning.
 
-When this option is used, you must also specify the `task_name` to override the `sources:` list for. 
+When this option is used, you must also specify the `task_name` to override the `sources:` list for.
 
 ## Specify A Specific Task To Run
 
