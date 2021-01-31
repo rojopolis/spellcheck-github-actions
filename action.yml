@@ -1,9 +1,18 @@
 name: "GitHub Spellcheck Action"
-description: 'A Github Action that spell checks Python, Markdown, and Text files'
+description: 'A Github Action that spell checks Python, Markdown, and Text files using PySpelling'
 author: rojopolis
 inputs:
   config_path:
     description: 'Alternate configuration file to use'
+    required: false
+  source_files:
+    description: |
+      A list of source files or patterns to scan.
+      This overrides your config file's `source` section.
+      `task_name` must also be specified to use this option.
+    required: false
+  task_name:
+    description: Name of the PySpelling task to run
     required: false
 branding:
   color: green
