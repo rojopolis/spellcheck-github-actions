@@ -231,6 +231,8 @@ In the section for `aspell` you can specify the main language, for example `en`,
 
 You can further specify dialect, using the `d` parameter.
 
+See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling/configuration/#spell-checker-options) for more details.
+
 ## Checking For Bad Spelling
 
 The GitHub Action helps you make sure _most_ spelling errors do not make it into your repository. You can however check your spelling prior to committing and pushing to your repository.
@@ -271,12 +273,12 @@ Spelling check passed :)
 
 Currently only the following languages are supported via [GNU Aspell][aspell]:
 
-- English via `aspell-en` Debian package, supporting:
+- English via the [`aspell-en` Debian package][aspell-en], supporting:
   - American (`en_US`),
   - British (`en_GB`),
   - Canadian (`en_CA`)
   - and Australian (`en_AU`)
-- German via `aspell-de` Debian package, supporting:
+- German via the [`aspell-de` Debian package][aspell-de], supporting:
   - German (`de_DE`),
   - Swiss (`de_CH`)
   - Austrian (`de_AT`)
@@ -454,3 +456,5 @@ This repository is licensed under the MIT license.
 [pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
 [hunspell]: http://hunspell.github.io/
 [aspell]: http://aspell.net/
+[aspell-de]: https://packages.debian.org/buster/aspell-de
+[aspell-en]: https://packages.debian.org/buster/aspell-en
