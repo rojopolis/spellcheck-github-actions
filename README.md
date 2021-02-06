@@ -15,7 +15,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
-- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling] configuration
+- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling]
 
 ## Configuration
 
@@ -38,14 +38,47 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
+    # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.5.0
+    - uses: rojopolis/spellcheck-github-actions@0.10.0
       name: Spellcheck
 ```
 
-Note the step: `- uses: actions/checkout@master`
-This file must live in a the `.github/workflows/` directory.
-For example, it could be `.github/workflows/action.yml`
+This configuration file must be created in a the `.github/workflows/` directory.
+
+For example, it could be named `.github/workflows/spelling_action.yml` for easy identification, if other actions are present.
+
+## Specifying Sources Files To Check
+
+By default, this action will use the `sources:` list under each task in your config file to identify which files to scan. You can override this behaviour by setting `source_files` to the list of files or file patterns you want scanning.
+
+When this option is used, you must also specify the `task_name` to override the `sources:` list for.
+
+## Specify A Specific Task To Run
+
+By default, all tasks in your config file will be run. By setting `task_name` you can override this and run only the task you require.
+
+A configuration for designated source files could look as follows:
+
+Example:
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    # The checkout step
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.10.0
+      name: Spellcheck
+      with:
+        source_files: README.md CHANGELOG.md notes/Notes.md
+        task_name: Markdown
+```
 
 ### Extra Configuration
 
@@ -117,6 +150,8 @@ jobs:
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
+        source_files: source/scanning.md source/triggers.md
+        task_name: Markdown
 ```
 
 ### Predefined Name
@@ -367,7 +402,7 @@ Do note the project/repository has to contain a configuration, please see the se
 
 ```bash
 $ cd <your project/repository directory>
-$ docker run -it  -v $PWD:/tmp github-action-spellcheck
+$ docker run -it -v $PWD:/tmp github-action-spellcheck
 ```
 
 ## Resources and References

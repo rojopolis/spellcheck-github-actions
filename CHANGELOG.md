@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.10.0 2021-02-06 feature release, update not required
+
+- Added capability to specify a set of files in the action, bypassing the filename pattern specified in the configuration. Implementation from PR [#34](https://github.com/rojopolis/spellcheck-github-actions/pull/34) from Matt Calvert
+
 ## 0.9.1 2021-01-12 bug fix release, update not required
 
 - Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR #32 from Pavel Skipenes
