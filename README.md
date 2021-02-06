@@ -8,6 +8,11 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 - Customizable configuration and spell checking using [PySpelling][pyspelling]
 - Support for the following formats: Python, Markdown and plain text
+- Support for `aspell`, Do see the section on Language Support for details
+- Support for the following languages:
+  - English
+  - German
+  - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
 - Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling] configuration
@@ -219,6 +224,20 @@ Using pyspelling on repository files outlined in .spellcheck.yml
 Spelling check passed :)
 ```
 
+## Language Support
+
+Currently only the following languages are supported
+
+- For [GNU Aspell][aspell]:
+  - English via `aspell-en` Debian package
+  - German via `aspell-de` Debian package
+
+Additional languages can be added by request, please open an issue.
+
+[Hunspell][hunspell] is supported by [PySpelling][pyspelling], but is **not** currently supported by this action
+
+Please open an issue, [Hunspell][hunspell] should be evaluated for inclusion.
+
 ## Diagnostics
 
 This is a list of common diagnostics, which can be emitted by the action and it's tools.
@@ -351,6 +370,12 @@ $ cd <your project/repository directory>
 $ docker run -it  -v $PWD:/tmp github-action-spellcheck
 ```
 
+## Resources and References
+
+- [GNU Aspell][aspell]
+- [Hunspell][hunspell]
+- [PySpelling][pyspelling]
+
 ## Author
 
 The original author of this GitHub Action is Robert Jordan (@rojopolis)
@@ -378,3 +403,5 @@ This repository is licensed under the MIT license.
 [actioncheckout]: https://github.com/marketplace/actions/checkout
 [markdown]: https://pypi.org/project/Markdown/
 [pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
+[hunspell]: http://hunspell.github.io/
+[aspell]: http://aspell.net/
