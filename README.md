@@ -35,7 +35,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.9.1
+    - uses: rojopolis/spellcheck-github-actions@0.10.0
       name: Spellcheck
 ```
 
@@ -68,7 +68,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.9.1
+    - uses: rojopolis/spellcheck-github-actions@0.10.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
