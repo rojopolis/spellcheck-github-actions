@@ -223,6 +223,14 @@ matrix:
 
 Change the configuration to suit your repository and needs, please see the `examples/` directory for more example configurations.
 
+## Specifying Language
+
+This action currently only support `aspell`, please see the section on Language Support below.
+
+In the section for `aspell` you can specify the main language, for example `en`, via the `lang` parameter.
+
+You can further specify dialect, using the `d` parameter.
+
 ## Checking For Bad Spelling
 
 The GitHub Action helps you make sure _most_ spelling errors do not make it into your repository. You can however check your spelling prior to committing and pushing to your repository.
@@ -261,11 +269,17 @@ Spelling check passed :)
 
 ## Language Support
 
-Currently only the following languages are supported
+Currently only the following languages are supported via [GNU Aspell][aspell]:
 
-- For [GNU Aspell][aspell]:
-  - English via `aspell-en` Debian package, supporting American, British, Canadian and Australian spellings
-  - German via `aspell-de` Debian package, supporting German, Swiss, Austrian spellings
+- English via `aspell-en` Debian package, supporting:
+  - American (`en_US`),
+  - British (`en_GB`),
+  - Canadian (`en_CA`)
+  - and Australian (`en_AU`)
+- German via `aspell-de` Debian package, supporting:
+  - German (`de_DE`),
+  - Swiss (`de_CH`)
+  - Austrian (`de_AT`)
 
 Additional languages can be added by request, please open an issue.
 

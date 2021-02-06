@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.11.0 2021-02-06 feature release, update not required
+
+- Added support for German spelling: `lang: de`, including: Swiss and Austrian dictionaries
+
 ## 0.10.0 2021-02-06 feature release, update not required
 
 - Added capability to specify a set of files in the action, bypassing the filename pattern specified in the configuration. Implementation from PR [#34](https://github.com/rojopolis/spellcheck-github-actions/pull/34) from Matt Calvert
