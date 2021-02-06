@@ -264,8 +264,8 @@ Spelling check passed :)
 Currently only the following languages are supported
 
 - For [GNU Aspell][aspell]:
-  - English via `aspell-en` Debian package
-  - German via `aspell-de` Debian package
+  - English via `aspell-en` Debian package, supporting American, British, Canadian and Australian spellings
+  - German via `aspell-de` Debian package, supporting German, Swiss, Austrian spellings
 
 Additional languages can be added by request, please open an issue.
 
