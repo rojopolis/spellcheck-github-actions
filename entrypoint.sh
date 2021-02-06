@@ -16,22 +16,28 @@ else
     fi
 fi
 
+echo ""
+echo "Using pyspelling on configuration outlined in >$SPELLCHECK_CONFIG_FILE<"
+
 if [ -n "$INPUT_SOURCE_FILES" ]; then
     if [ -z "$INPUT_TASK_NAME" ]; then
         echo "task_name must be specified to use source_files option"
         exit 1
+    else
+        echo "Running task >$INPUT_TASK_NAME<"
     fi
     for FILE in $INPUT_SOURCE_FILES; do
         SOURCES_LIST="$SOURCES_LIST --source $FILE"
-    done  
+        echo "Checking file >$FILE<"
+    done
+else
+    echo "Checking files matching specified outlined in >$SPELLCHECK_CONFIG_FILE<"
 fi
 
 if [ -n "$INPUT_TASK_NAME" ]; then
     TASK_NAME="--name $INPUT_TASK_NAME"
 fi
 
-echo ""
-echo "Using pyspelling on repository files outlined in >$SPELLCHECK_CONFIG_FILE<"
 echo "----------------------------------------------------------------"
 
 pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST

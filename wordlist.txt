@@ -90,3 +90,4 @@ SuperFences
 Tabbed
 Tasklist
 Tilde
+CHANGELOG

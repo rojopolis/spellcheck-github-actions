@@ -51,7 +51,29 @@ When this option is used, you must also specify the `task_name` to override the 
 
 ## Specify A Specific Task To Run
 
-By default, all tasks in your config file will be ran. By setting `task_name` you can override this and run only the task you have requested.
+By default, all tasks in your config file will be run. By setting `task_name` you can override this and run only the task you require.
+
+A configuration for designated source files could look as follows:
+
+Example:
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    # The checkout step
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.9.1
+      name: Spellcheck
+      with:
+        source_files: README.md CHANGELOG.md notes/Notes.md
+        task_name: Markdown
+```
 
 ### Extra Configuration
 
@@ -361,7 +383,7 @@ Do note the project/repository has to contain a configuration, please see the se
 
 ```bash
 $ cd <your project/repository directory>
-$ docker run -it  -v $PWD:/tmp github-action-spellcheck
+$ docker run -it -v $PWD:/tmp github-action-spellcheck
 ```
 
 ## Author
