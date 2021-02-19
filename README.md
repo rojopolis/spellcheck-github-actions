@@ -337,7 +337,7 @@ If the file is available in the repository, please check that your workflow is c
 
 `uses: actions/checkout@master`
 
-If full context:
+In full context:
 
 ```yaml
 name: Spellcheck Action
@@ -349,7 +349,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.11.0
+    - uses: rojopolis/0.11.0
       name: Spellcheck
 ```
 
