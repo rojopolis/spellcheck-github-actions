@@ -8,6 +8,11 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 - Customizable configuration and spell checking using [PySpelling][pyspelling]
 - Support for the following formats: Python, Markdown and plain text
+- Support for `aspell`, Do see the section on Language Support for details
+- Support for the following languages:
+  - English
+  - German
+  - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
 - Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling]
@@ -218,6 +223,16 @@ matrix:
 
 Change the configuration to suit your repository and needs, please see the `examples/` directory for more example configurations.
 
+## Specifying Language
+
+This action currently only support `aspell`, please see the section on Language Support below.
+
+In the section for `aspell` you can specify the main language, for example `en`, via the `lang` parameter.
+
+You can further specify dialect, using the `d` parameter.
+
+See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling/configuration/#spell-checker-options) for more details.
+
 ## Checking For Bad Spelling
 
 The GitHub Action helps you make sure _most_ spelling errors do not make it into your repository. You can however check your spelling prior to committing and pushing to your repository.
@@ -253,6 +268,26 @@ Using pyspelling on repository files outlined in .spellcheck.yml
 ----------------------------------------------------------------
 Spelling check passed :)
 ```
+
+## Language Support
+
+Currently only the following languages are supported via [GNU Aspell][aspell]:
+
+- English via the [`aspell-en` Debian package][aspell-en], supporting:
+  - American (`en_US`),
+  - British (`en_GB`),
+  - Canadian (`en_CA`)
+  - and Australian (`en_AU`)
+- German via the [`aspell-de` Debian package][aspell-de], supporting:
+  - German (`de_DE`),
+  - Swiss (`de_CH`)
+  - Austrian (`de_AT`)
+
+Additional languages can be added by request, please open an issue.
+
+[Hunspell][hunspell] is supported by [PySpelling][pyspelling], but is **not** currently supported by this action
+
+Please open an issue, [Hunspell][hunspell] should be evaluated for inclusion.
 
 ## Diagnostics
 
@@ -386,6 +421,12 @@ $ cd <your project/repository directory>
 $ docker run -it -v $PWD:/tmp github-action-spellcheck
 ```
 
+## Resources and References
+
+- [GNU Aspell][aspell]
+- [Hunspell][hunspell]
+- [PySpelling][pyspelling]
+
 ## Author
 
 The original author of this GitHub Action is Robert Jordan (@rojopolis)
@@ -413,3 +454,7 @@ This repository is licensed under the MIT license.
 [actioncheckout]: https://github.com/marketplace/actions/checkout
 [markdown]: https://pypi.org/project/Markdown/
 [pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
+[hunspell]: http://hunspell.github.io/
+[aspell]: http://aspell.net/
+[aspell-de]: https://packages.debian.org/buster/aspell-de
+[aspell-en]: https://packages.debian.org/buster/aspell-en
