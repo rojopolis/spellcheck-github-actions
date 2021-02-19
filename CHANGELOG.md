@@ -1,8 +1,8 @@
 # Change Log for spellcheck-github-actions
 
-## 0.11.0 2021-02-06 feature release, update not required
+## 0.11.0 2021-02-19 feature release, update not required
 
-- Added support for German spelling: `lang: de`, including: Swiss and Austrian dictionaries
+- Added support for German spelling: `lang: de`, including: Swiss and Austrian dictionaries addressing issue [#35](https://github.com/rojopolis/spellcheck-github-actions/issues/35) via PR [#36](https://github.com/rojopolis/spellcheck-github-actions/pull/36). This is experimental and will need further investigation. Aspell support 53 different dictionaries and supporting them all increases the Docker image size significantly so dynamic loading of dictionaries has to be investigated further, without increasing build time to a point where a pre-built Docker image is not longer feasible
 
 ## 0.10.0 2021-02-06 feature release, update not required
 
@@ -10,11 +10,11 @@
 
 ## 0.9.1 2021-01-12 bug fix release, update not required
 
-- Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR #32 from Pavel Skipenes
+- Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR [#32](https://github.com/rojopolis/spellcheck-github-actions/pull/32) from Pavel Skipenes
 
 ## 0.9.0 2021-01-11 feature release, update not required
 
-- Added new ability specify an alternative path to a configuration file, PR #31 from Pavel Skipenes
+- Added new ability specify an alternative path to a configuration file, PR [#31](https://github.com/rojopolis/spellcheck-github-actions/pull/31) from Pavel Skipenes
 
 ## 0.8.0 2021-01-08 feature release, update not required
 
@@ -22,7 +22,7 @@
 
 ## 0.7.0 2020-12-14 maintenance release, update not required
 
-- Docker image updated to Python 3.9.1 slim via PR #27 from dependabot
+- Docker image updated to Python 3.9.1 slim via PR [#27](https://github.com/rojopolis/spellcheck-github-actions/pull/27) from dependabot
 
 ## 0.6.0 2020-10-18 feature release, update recommended
 
@@ -57,7 +57,7 @@
 - Introduced support for: `yml` extension in addition to `yaml` for YAML configuration files. Please refer to the documentation for details
 
 - Introduced support for hidden configuration files, so prefixing the spellcheck configuration file to make it less intrusive in your repository is now supported
-  patch from @sbates130272, PR: #7. Please refer to the documentation for details
+  patch from @sbates130272, PR: [#7](https://github.com/rojopolis/spellcheck-github-actions/pull/7). Please refer to the documentation for details
 
 - The default configuration has been limited to Markdown, please see additional examples in the `examples/` directory
 
