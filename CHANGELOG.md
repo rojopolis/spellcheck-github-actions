@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.12.0 2021-02-22 maintenance release, update not required
+
+- Docker image updated to Python 3.9.2 slim via PR [#38](https://github.com/rojopolis/spellcheck-github-actions/pull/38) from dependabot
+
 ## 0.11.0 2021-02-19 feature release, update not required
 
 - Added support for German spelling: `lang: de`, including: Swiss and Austrian dictionaries addressing issue [#35](https://github.com/rojopolis/spellcheck-github-actions/issues/35) via PR [#36](https://github.com/rojopolis/spellcheck-github-actions/pull/36). This is experimental and will need further investigation. Aspell support 53 different dictionaries and supporting them all increases the Docker image size significantly so dynamic loading of dictionaries has to be investigated further, without increasing build time to a point where a pre-built Docker image is not longer feasible
