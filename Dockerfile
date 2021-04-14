@@ -2,7 +2,7 @@
 ARG SPELLCHECK_LANGS="en,de"
 
 # Builder stage: configure env vars, labels, add plain files, install common packages
-FROM python:3.9.2-slim as spellcheck-builder
+FROM python:3.9.4-slim as spellcheck-builder
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
@@ -12,7 +12,7 @@ LABEL "repository"="http://github.com/rojopolis/spellcheck-github-actions"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 # label as builder stage, for easy cleanup (e.g. `docker image prune --filter label=stage=builder`)
-LABEL stage=builder 
+LABEL stage=builder
 
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
 COPY requirements.txt /requirements.txt
