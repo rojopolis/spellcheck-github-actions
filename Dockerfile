@@ -14,7 +14,7 @@ LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 # label as builder stage, for easy cleanup (e.g. `docker image prune --filter label=stage=builder`)
 LABEL stage=builder
 
-COPY --chmod=755 entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 COPY requirements.txt /requirements.txt
 COPY spellcheck.yaml /spellcheck.yaml
 RUN pip3 install -r /requirements.txt
@@ -35,4 +35,4 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
