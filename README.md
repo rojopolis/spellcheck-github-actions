@@ -1,3 +1,6 @@
+[GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
+[GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
+
 # spellcheck-github-actions
 
 A Github Action that spell checks Python, Markdown, and Text files.
