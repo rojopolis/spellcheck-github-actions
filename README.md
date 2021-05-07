@@ -1,7 +1,8 @@
-[GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
-[GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 
 # spellcheck-github-actions
+
+![Markdownlint Action][GHAMKDBADGE]
+![Spellcheck Action][GHASPLLBADGE]
 
 A Github Action that spell checks Python, Markdown, and Text files.
 
@@ -486,3 +487,5 @@ This repository is licensed under the MIT license.
 [aspell]: http://aspell.net/
 [aspell-de]: https://packages.debian.org/buster/aspell-de
 [aspell-en]: https://packages.debian.org/buster/aspell-en
+[GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
+[GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
