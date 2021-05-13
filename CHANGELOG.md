@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.14.0 2021-05-13 maintenance release, update not required
+
+- Docker image updated to Python 3.9.5 slim via PR [#48](https://github.com/rojopolis/spellcheck-github-actions/pull/48) from dependabot
+
 ## 0.13.0 2021-04-14 maintenance release, update not required
 
 - Docker image updated to Python 3.9.4 slim via PR [#41](https://github.com/rojopolis/spellcheck-github-actions/pull/41) from dependabot
