@@ -1,4 +1,4 @@
-FROM python:3.9.4-slim
+FROM python:3.9.5-slim
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
