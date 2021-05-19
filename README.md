@@ -318,6 +318,27 @@ updates:
       interval: "weekly"
 ```
 
+### Slimming Your Wordlist By Ignoring Case
+
+This tip works for `aspell`.
+
+You can slim down your `.wordlist.txt` file if you have case variations of entries of words.
+
+```yaml
+aspell:
+    ignore-case: true
+```
+
+To convert you existing `.wordlist.txt` you could do something along the lines of this using Bash version 4.
+
+```bash
+$ tr '[:upper:]' '[:lower:]' < .wordlist.txt > temp-wordlist.txt
+$ cat tmp-wordlist.txt | sort -u > .wordlist.txt
+$ rm tem-wordlist.txt
+```
+
+And you should be good to go.
+
 ## Diagnostics
 
 This is a list of common diagnostics, which can be emitted by the action and it's tools.
