@@ -1,0 +1,15 @@
+  
+name: Markdownlint Action
+on: push
+
+jobs:
+  build:
+    name: Markdownlint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: nosborn/github-action-markdown-cli@v1.1.1
+      name: Markdownlint
+      with:
+        files: .
+        config_file: ".markdownlint.json"

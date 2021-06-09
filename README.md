@@ -1,4 +1,8 @@
+
 # spellcheck-github-actions
+
+![Markdownlint Action][GHAMKDBADGE]
+![Spellcheck Action][GHASPLLBADGE]
 
 A Github Action that spell checks Python, Markdown, and Text files.
 
@@ -40,7 +44,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.13.0
+    - uses: rojopolis/spellcheck-github-actions@0.14.0
       name: Spellcheck
 ```
 
@@ -73,7 +77,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.13.0
+    - uses: rojopolis/spellcheck-github-actions@0.14.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -146,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.13.0
+    - uses: rojopolis/spellcheck-github-actions@0.14.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -289,6 +293,52 @@ Additional languages can be added by request, please open an issue.
 
 Please open an issue, [Hunspell][hunspell] should be evaluated for inclusion.
 
+## Tips
+
+### Getting Your Action Updated Automatically
+
+The _awesome_ tool dependabot lets you scan your used GitHub Marketplace Actions and lets you know if they are in need of an update.
+
+The update is proposed via a pull request, which can be accepted or declined, it will itself take care of deleting pull requests if these become irrelevant.
+
+You specify the configuration in the file: `.github/depedabot.yml` in your repository using this action - actually it scans all your actions.
+
+```yaml
+# Basic dependabot.yml file
+# REF: https://docs.github.com/en/code-security/supply-chain-security/keeping-your-actions-up-to-date-with-dependabot
+
+version: 2
+updates:
+  # Enable version updates for Actions
+  - package-ecosystem: "github-actions"
+    # Look for `.github/workflows` in the `root` directory
+    directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+```
+
+### Slimming Your Wordlist By Ignoring Case
+
+This tip works for `aspell`.
+
+You can slim down your `.wordlist.txt` file if you have case variations of entries of words.
+
+```yaml
+aspell:
+    ignore-case: true
+```
+
+To convert you existing `.wordlist.txt` you could do something along the lines of this using Bash version 4.
+
+```bash
+$ tr '[:upper:]' '[:lower:]' < .wordlist.txt > temp-wordlist.txt
+$ cat tmp-wordlist.txt | sort -u > .wordlist.txt
+$ rm tem-wordlist.txt
+```
+
+And you should be good to go.
+
 ## Diagnostics
 
 This is a list of common diagnostics, which can be emitted by the action and it's tools.
@@ -349,7 +399,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.13.0
+    - uses: rojopolis/spellcheck-github-actions@0.14.0
       name: Spellcheck
 ```
 
@@ -458,3 +508,5 @@ This repository is licensed under the MIT license.
 [aspell]: http://aspell.net/
 [aspell-de]: https://packages.debian.org/buster/aspell-de
 [aspell-en]: https://packages.debian.org/buster/aspell-en
+[GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
+[GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
