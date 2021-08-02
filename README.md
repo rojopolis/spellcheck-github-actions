@@ -333,8 +333,8 @@ To convert you existing `.wordlist.txt` you could do something along the lines o
 
 ```bash
 $ tr '[:upper:]' '[:lower:]' < .wordlist.txt > temp-wordlist.txt
-$ cat tmp-wordlist.txt | sort -u > .wordlist.txt
-$ rm tem-wordlist.txt
+$ cat temp-wordlist.txt | sort -u > .wordlist.txt
+$ rm temp-wordlist.txt
 ```
 
 And you should be good to go.
