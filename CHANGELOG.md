@@ -6,7 +6,7 @@ Issue [#53](https://github.com/rojopolis/spellcheck-github-actions/issues/53) de
 
 Thanks to @supernovae and @facelessuser
 
-This however demonstrated that several of the dependecies was not up to date.
+This however demonstrated that several of the dependencies was not up to date.
 
 'The following dependencies have been updated:
 
