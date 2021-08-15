@@ -44,7 +44,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.14.0
+    - uses: rojopolis/spellcheck-github-actions@0.15.0
       name: Spellcheck
 ```
 
@@ -77,7 +77,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.14.0
+    - uses: rojopolis/spellcheck-github-actions@0.15.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -150,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.14.0
+    - uses: rojopolis/spellcheck-github-actions@0.15.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -291,7 +291,7 @@ Additional languages can be added by request, please open an issue.
 
 [Hunspell][hunspell] is supported by [PySpelling][pyspelling], but is **not** currently supported by this action
 
-Please open an issue, [Hunspell][hunspell] should be evaluated for inclusion.
+Please open an issue or PR, if [Hunspell][hunspell] should be evaluated for possible inclusion.
 
 ## Tips
 
@@ -383,7 +383,7 @@ This diagnostic indicates that the configuration file pointed to with the `--con
 
 Indicates: `spellcheck.yaml` so this file should exist in the repository.
 
-If the file is available in the repository, please check that your workflow is configured correctly, with the following line, which enables [the action Checkout][actioncheckout].
+If the file is available in the repository, please check that your workflow is configured correctly, with the following line, which enables [the action: checkout][actioncheckout].
 
 `uses: actions/checkout@master`
 
@@ -399,7 +399,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.14.0
+    - uses: rojopolis/spellcheck-github-actions@0.15.0
       name: Spellcheck
 ```
 
@@ -485,12 +485,14 @@ The original author of this GitHub Action is Robert Jordan (@rojopolis)
 
 Here follows a list of contributors in alphabetical order:
 
-- Pavel Skipenes, @pavelskipenes
+- @aSemy
 - Albert Volkman, @albertvolkman
+- Byron Miller, @supernovae
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
 - Michael Flaxman, @mflaxman
+- Pavel Skipenes, @pavelskipenes
 - Stephen Bates, @sbates130272
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue

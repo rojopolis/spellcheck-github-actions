@@ -1,5 +1,32 @@
 # Change Log for spellcheck-github-actions
 
+## 0.15.0 2021-08-13 maintenance release, update not required
+
+Issue [#53](https://github.com/rojopolis/spellcheck-github-actions/issues/53) describes an issue with ignoring Markdown regions with code fences. This was an issue in `pyspelling`, which is the core component in this action. Luckily @facelessuser, the maintainer of `pyspelling` was to [fix it](https://github.com/facelessuser/pyspelling/pull/144). So the requirement for `pyspelling` was bumped from 2.6.1 to 2.7.3
+
+Thanks to @supernovae and @facelessuser
+
+This however demonstrated that several of the dependencies was not up to date.
+
+'The following dependencies have been updated:
+
+- [backrefs](https://pypi.org/project/backrefs/) updated from 4.5 to 5.0.1
+- [bracex](https://pypi.org/project/bracex/) updated from 2.0.1 to 2.1.1
+- [lxml](https://pypi.org/project/lxml/) updated from 4.6.0 to 4.6.3
+- [Markdown](https://pypi.org/project/Markdown/) updated from 3.3.1 to 3.3.4
+- [pymdown-extensions](https://pypi.org/project/pymdown-extensions/) updated from 8.1 to 8.2
+- [pyspelling](https://pypi.org/project/pyspelling/) updated from 2.6.1 to 2.7.3
+- [PyYAML](https://pypi.org/project/PyYAML/) updated from 5.3.1 to 5.4.1
+- [six](https://pypi.org/project/six/) updated from 1.15.0 to 1.16.0
+- [soupsieve](https://pypi.org/project/soupsieve/) updated from 2.0.1 to 2.2.1
+- [wcmatch](https://pypi.org/project/wcmatch/) updated from 7.1 to 8.2
+
+Additionally some work has been done in regard to the Docker build, so it is possible to specify new languages, using multi-stage build, see PR [#39](https://github.com/rojopolis/spellcheck-github-actions/pull/39) addressing issue: [#13](https://github.com/rojopolis/spellcheck-github-actions/issues/13)
+
+Please see [the Wiki](https://github.com/rojopolis/spellcheck-github-actions/wiki/Development) for details.
+
+Thanks to @aSemy and @edumco
+
 ## 0.14.0 2021-05-13 maintenance release, update not required
 
 - Docker image updated to Python 3.9.5 slim via PR [#48](https://github.com/rojopolis/spellcheck-github-actions/pull/48) from dependabot
