@@ -21,7 +21,7 @@ This however demonstrated that several of the dependencies was not up to date.
 - [soupsieve](https://pypi.org/project/soupsieve/) updated from 2.0.1 to 2.2.1
 - [wcmatch](https://pypi.org/project/wcmatch/) updated from 7.1 to 8.2
 
-Additionally some work has been done in regard to the Docker build, so it is possible to specify new languages, using multi-stage build.
+Additionally some work has been done in regard to the Docker build, so it is possible to specify new languages, using multi-stage build, see PR [#39](https://github.com/rojopolis/spellcheck-github-actions/pull/39) addressing issue: [#13](https://github.com/rojopolis/spellcheck-github-actions/issues/13)
 
 Please see [the Wiki](https://github.com/rojopolis/spellcheck-github-actions/wiki/Development) for details.
 
