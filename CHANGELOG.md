@@ -8,7 +8,7 @@ This release implements a _hack_ to make use that it is present, by reinstalling
 
 REF: PR [#56](https://github.com/rojopolis/spellcheck-github-actions/pull/56) addressing issue [#55](https://github.com/rojopolis/spellcheck-github-actions/issues/55)
 
-The issue in the Docker build is patched, but is still present, see issue []()
+The issue in the Docker build is patched, but is still present, see issue [#57](https://github.com/rojopolis/spellcheck-github-actions/issues/57)
 
 ## 0.15.0 2021-08-15 maintenance release, update not required
 
