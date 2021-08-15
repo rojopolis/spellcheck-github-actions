@@ -1,6 +1,12 @@
 # Change Log for spellcheck-github-actions
 
-## 0.15.0 2021-08-13 maintenance release, update not required
+## 0.16.0 2021-08-15 bug fix release, update recommended
+
+Experienced an issue with the new multi-stage Docker build, where `aspell` _disappears_.
+
+This release implements a _hack_ to make use that it is present, by reinstalling it :-/
+
+## 0.15.0 2021-08-15 maintenance release, update not required
 
 Issue [#53](https://github.com/rojopolis/spellcheck-github-actions/issues/53) describes an issue with ignoring Markdown regions with code fences. This was an issue in `pyspelling`, which is the core component in this action. Luckily @facelessuser, the maintainer of `pyspelling` was to [fix it](https://github.com/facelessuser/pyspelling/pull/144). So the requirement for `pyspelling` was bumped from 2.6.1 to 2.7.3
 
