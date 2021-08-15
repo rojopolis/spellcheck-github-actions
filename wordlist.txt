@@ -64,3 +64,4 @@ PyYAML
 soupsieve
 wcmatch
 aSemy
+expectmatch

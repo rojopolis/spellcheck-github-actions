@@ -358,8 +358,20 @@ This diagnostic indicates that files outlines by the `source` wildcard pattern m
 
 1. Either adjust the pattern
 1. Or remove the configuration part since it does not match the repository contents
+1. Or set `expect_match` to `false`
 
-Please see the documentation for [Wildcard Match][wcmatch].
+```yaml
+matrix:
+- name: markdown
+  pipeline:
+  - pyspelling.filters.text
+  sources:
+  - '**/*.md'
+  expect_match: false
+  default_encoding: utf-8
+```
+
+Please see the documentation for [Wildcard Match][wcmatch] (1 and 2) or [Expect Match][expectmatch].
 
 ### Diagnostic text: `FileNotFoundError: [Errno 2] No such file or directory: '.wordlist.txt'`
 
@@ -512,3 +524,4 @@ This repository is licensed under the MIT license.
 [aspell-en]: https://packages.debian.org/buster/aspell-en
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
+[expect_match]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
