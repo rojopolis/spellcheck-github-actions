@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
 FROM spellcheck-builder as spellcheck
 
 RUN apt-get update && apt-get install -y \
+    aspell \
     # split arg SPELLCHECK_LANGS to space separated, and prepend each with 'aspell-'
     $(echo "$SPELLCHECK_LANGS" | sed 's/,/ /g' | xargs printf -- 'aspell-%s\n')     \
     && rm -rf /var/lib/apt/lists/*
