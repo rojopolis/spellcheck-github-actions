@@ -435,6 +435,57 @@ And you can then put these to use in your configuration. The example below outli
 
 Please see the repository's `requirements.txt` for a list of all included Python modules and their exact versions.
 
+### Diagnostic text: `ValueError: Pipline step in unexpected format:`
+
+This error emitted from `pyspelling` indicates issues with the configuration file.
+
+Please see the section: "Configuration" above.
+
+With the update of [pyspelling](https://pypi.org/project/pyspelling/) from 2.6.1 to 2.7.3 with release 0.16.0  (0.15.0, do see the change log).
+
+This error would be emitted from the GitHub Action, if the configuration was not properly formatted. The Markdown example's earlier revisions in this repository would demonstrate the error.
+
+To address the error, the options below the filter should be properly indented.
+
+```yaml
+  - pyspelling.filters.html:
+    comments: false
+    ignores:
+    - code
+    - pre
+```
+
+Should be indented to:
+
+```yaml
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+```
+
+The complete error emitted could would look something along the lines of:
+
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/pyspelling", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.9/site-packages/pyspelling/__main__.py", line 30, in main
+    return run(
+  File "/usr/local/lib/python3.9/site-packages/pyspelling/__main__.py", line 55, in run
+    for results in spellcheck(
+  File "/usr/local/lib/python3.9/site-packages/pyspelling/__init__.py", line 673, in spellcheck
+    for result in spellchecker.run_task(task, source_patterns=sources):
+  File "/usr/local/lib/python3.9/site-packages/pyspelling/__init__.py", line 311, in run_task
+    self._build_pipeline(task)
+  File "/usr/local/lib/python3.9/site-packages/pyspelling/__init__.py", line 255, in _build_pipeline
+    raise ValueError(STEP_ERROR.format(str(step)))
+ValueError: Pipline step in unexpected format: {'pyspelling.filters.html': None, 'comments': False, 'ignores': ['code', 'pre']}
+```
+
+Example lifted from issue [#60](https://github.com/rojopolis/spellcheck-github-actions/issues/60)
+
 ## DockerHub
 
 This action is based on a Docker image available on DockerHub.

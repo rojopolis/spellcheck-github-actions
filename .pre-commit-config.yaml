@@ -13,8 +13,9 @@ repos:
     rev: v0.5.0
     hooks:
     - id: spellcheck
+      name: "Checking spelling using pyspelling"
 -   repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.27.1
     hooks:
     -   id: markdownlint
-        name: "Checking Markdown with markdownlint"
+        name: "Checking Markdown using markdownlint"
