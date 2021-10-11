@@ -48,6 +48,7 @@ pavelskipenes
 pre
 pyspelling
 rojopolis
+SAML
 sbates
 sexualized
 socio
