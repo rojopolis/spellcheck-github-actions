@@ -2,7 +2,7 @@
 ARG SPELLCHECK_LANGS="en,de"
 
 # Builder stage: configure env vars, labels, add plain files, install common packages
-FROM python:3.9.7-slim as spellcheck-builder
+FROM python:3.10.0-slim as spellcheck-builder
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repo"
