@@ -44,7 +44,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.16.0
+    - uses: rojopolis/spellcheck-github-actions@0.17.0
       name: Spellcheck
 ```
 
@@ -77,7 +77,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.16.0
+    - uses: rojopolis/spellcheck-github-actions@0.17.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -150,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.16.0
+    - uses: rojopolis/spellcheck-github-actions@0.17.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -411,7 +411,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.16.0
+    - uses: rojopolis/spellcheck-github-actions@0.17.0
       name: Spellcheck
 ```
 
@@ -554,8 +554,10 @@ Here follows a list of contributors in alphabetical order:
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
+- Matt Calvert, @miff2000
 - Michael Flaxman, @mflaxman
 - Pavel Skipenes, @pavelskipenes
+- Peter Petrik, @PeterPetrik
 - Stephen Bates, @sbates130272
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
