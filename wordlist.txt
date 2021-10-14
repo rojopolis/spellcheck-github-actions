@@ -65,3 +65,5 @@ soupsieve
 wcmatch
 aSemy
 expectmatch
+PeterPetrik
+Petrik

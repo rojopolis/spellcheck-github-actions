@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.17.0, 2021-10-14 maintenance release, update not required
+
+- Docker image updated to Python 3.9.7 slim via PR [#62](https://github.com/rojopolis/spellcheck-github-actions/pull/62) and again to Python 3.10.0 slim via PR [#64](https://github.com/rojopolis/spellcheck-github-actions/pull/64) both from dependabot
+
 ## 0.16.0 2021-08-15 bug fix release, update recommended
 
 Experienced an issue with the new multi-stage Docker build, where `aspell` _disappears_.
@@ -39,17 +43,21 @@ Please see [the Wiki](https://github.com/rojopolis/spellcheck-github-actions/wik
 
 Thanks to @aSemy and @edumco
 
+- Thanks to @PeterPetrik for correction to command line example in README
+
+- Docker image updated to Python 3.9.6 slim via PR [#51](https://github.com/rojopolis/spellcheck-github-actions/pull/51) from @dependabot
+
 ## 0.14.0 2021-05-13 maintenance release, update not required
 
-- Docker image updated to Python 3.9.5 slim via PR [#48](https://github.com/rojopolis/spellcheck-github-actions/pull/48) from dependabot
+- Docker image updated to Python 3.9.5 slim via PR [#48](https://github.com/rojopolis/spellcheck-github-actions/pull/48) from @dependabot
 
 ## 0.13.0 2021-04-14 maintenance release, update not required
 
-- Docker image updated to Python 3.9.4 slim via PR [#41](https://github.com/rojopolis/spellcheck-github-actions/pull/41) from dependabot
+- Docker image updated to Python 3.9.4 slim via PR [#41](https://github.com/rojopolis/spellcheck-github-actions/pull/41) from @dependabot
 
 ## 0.12.0 2021-02-22 maintenance release, update not required
 
-- Docker image updated to Python 3.9.2 slim via PR [#38](https://github.com/rojopolis/spellcheck-github-actions/pull/38) from dependabot
+- Docker image updated to Python 3.9.2 slim via PR [#38](https://github.com/rojopolis/spellcheck-github-actions/pull/38) from @dependabot
 
 ## 0.11.0 2021-02-19 feature release, update not required
 
@@ -57,15 +65,15 @@ Thanks to @aSemy and @edumco
 
 ## 0.10.0 2021-02-06 feature release, update not required
 
-- Added capability to specify a set of files in the action, bypassing the filename pattern specified in the configuration. Implementation from PR [#34](https://github.com/rojopolis/spellcheck-github-actions/pull/34) from Matt Calvert
+- Added capability to specify a set of files in the action, bypassing the filename pattern specified in the configuration. Implementation from PR [#34](https://github.com/rojopolis/spellcheck-github-actions/pull/34) from Matt Calvert, @miff2000
 
 ## 0.9.1 2021-01-12 bug fix release, update not required
 
-- Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR [#32](https://github.com/rojopolis/spellcheck-github-actions/pull/32) from Pavel Skipenes
+- Minor correction to the documentation, a significant change did not make it into 0.9.0, , PR [#32](https://github.com/rojopolis/spellcheck-github-actions/pull/32) from Pavel Skipenes, @pavelskipenes
 
 ## 0.9.0 2021-01-11 feature release, update not required
 
-- Added new ability specify an alternative path to a configuration file, PR [#31](https://github.com/rojopolis/spellcheck-github-actions/pull/31) from Pavel Skipenes
+- Added new ability specify an alternative path to a configuration file, PR [#31](https://github.com/rojopolis/spellcheck-github-actions/pull/31) from Pavel Skipenes, @pavelskipenes
 
 ## 0.8.0 2021-01-08 feature release, update not required
 
@@ -73,7 +81,7 @@ Thanks to @aSemy and @edumco
 
 ## 0.7.0 2020-12-14 maintenance release, update not required
 
-- Docker image updated to Python 3.9.1 slim via PR [#27](https://github.com/rojopolis/spellcheck-github-actions/pull/27) from dependabot
+- Docker image updated to Python 3.9.1 slim via PR [#27](https://github.com/rojopolis/spellcheck-github-actions/pull/27) from @dependabot
 
 ## 0.6.0 2020-10-18 feature release, update recommended
 
@@ -94,6 +102,8 @@ Thanks to @aSemy and @edumco
 - Python requirement `Markdown` updated to version 3.3.1
 
 - Python requirement `wcmatch` updated to version 7.1
+
+Contribution to documentation by Michael Flaxman, @mflaxman
 
 ## 0.5.0 2020-06-05 feature release, update recommended
 
@@ -116,7 +126,7 @@ Thanks to @aSemy and @edumco
 
 - Improved support to local development using Docker
 
-- Release 0.3.0 (below) never made it to [the GitHub Marketplace](https://github.community/t/who-can-publish-an-action-to-the-marketplace/115602/3), this might be due to a missing `action.yml` please see:
+- Release 0.3.0 (below) never made it to [the GitHub Marketplace](https://github.community/t/who-can-publish-an-action-to-the-marketplace/115602/3), this might be due to a missing `action.yml`
 
 ## 0.3.0 2020-02-14 bug fix release, update recommended
 
