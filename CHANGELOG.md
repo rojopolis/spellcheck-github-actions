@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.18.0, 2021-10-31 feature release, update not required
+
+- This release introduces an enhancement or new feature if your will, implemented by @riccardoporreca via PR [#67](https://github.com/rojopolis/spellcheck-github-actions/pull/67). The enhancement takes advantage of the ability to [make annotations on actions](https://docs.github.com/en/actions/learn-github-actions/workflow-commands-for-github-actions#setting-an-error-message), so you can from the action overview see an annotation indicating the error by the emitted error message from the action
+
 ## 0.17.0, 2021-10-14 maintenance release, update not required
 
 - Docker image updated to Python 3.9.7 slim via PR [#62](https://github.com/rojopolis/spellcheck-github-actions/pull/62) and again to Python 3.10.0 slim via PR [#64](https://github.com/rojopolis/spellcheck-github-actions/pull/64) both from dependabot
