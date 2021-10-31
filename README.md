@@ -4,6 +4,8 @@
 ![Markdownlint Action][GHAMKDBADGE]
 ![Spellcheck Action][GHASPLLBADGE]
 
+Debilerate speling erorr
+
 A Github Action that spell checks Python, Markdown, and Text files.
 
 This action uses [PySpelling][pyspelling] to check spelling in source files in the designated repository.
@@ -44,7 +46,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.17.0
+    - uses: rojopolis/spellcheck-github-actions@0.18.0
       name: Spellcheck
 ```
 
@@ -150,7 +152,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.17.0
+    - uses: rojopolis/spellcheck-github-actions@0.18.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -411,7 +413,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.17.0
+    - uses: rojopolis/spellcheck-github-actions@0.18.0
       name: Spellcheck
 ```
 
@@ -558,6 +560,7 @@ Here follows a list of contributors in alphabetical order:
 - Michael Flaxman, @mflaxman
 - Pavel Skipenes, @pavelskipenes
 - Peter Petrik, @PeterPetrik
+- Riccardo Porreca, @riccardoporreca
 - Stephen Bates, @sbates130272
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
