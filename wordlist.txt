@@ -68,3 +68,5 @@ expectmatch
 PeterPetrik
 Petrik
 riccardoporreca
+Porreca
+Riccardo
