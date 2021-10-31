@@ -4,7 +4,7 @@
 ![Markdownlint Action][GHAMKDBADGE]
 ![Spellcheck Action][GHASPLLBADGE]
 
-Debilerate speling erorr
+Debilerate speling erorrs
 
 A Github Action that spell checks Python, Markdown, and Text files.
 
