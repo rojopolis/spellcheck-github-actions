@@ -6,7 +6,8 @@
 
 From the [release notes for lxml 4.6.5](https://pypi.org/project/lxml/4.6.5/):
 
-> A vulnerability (GHSL-2021-1038) in the HTML cleaner allowed sneaking script content through SVG images.> A vulnerability (GHSL-2021-1037) in the HTML cleaner allowed sneaking script content through CSS imports and other crafted constructs.
+> A vulnerability (GHSL-2021-1038) in the HTML cleaner allowed sneaking script content through SVG images.
+> A vulnerability (GHSL-2021-1037) in the HTML cleaner allowed sneaking script content through CSS imports and other crafted constructs.
 
 - Docker image updated to Python 3.10.1 slim via PR [#70](https://github.com/rojopolis/spellcheck-github-actions/pull/70) from @dependabot
 
