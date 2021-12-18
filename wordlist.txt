@@ -70,3 +70,6 @@ Petrik
 riccardoporreca
 Porreca
 Riccardo
+SNYK
+XSS
+snyk

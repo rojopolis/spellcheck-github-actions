@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.19.0, 2021-12-18, security release , update recommended
+
+- Requirement [lxml](https://pypi.org/project/lxml/) updated from 4.6.3 to 4.6.5 via PR [#71](https://github.com/rojopolis/spellcheck-github-actions/pull/71) from @snyk-bot. This addresses a security, cross-site scripting vulnerability (XSS) in the [lxml](https://pypi.org/project/lxml/) library, see [SNYK-PYTHON-LXML-2316995](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2316995)
+
+- Docker image updated to Python 3.10.1 slim via PR [#70](https://github.com/rojopolis/spellcheck-github-actions/pull/70) from @dependabot
+
 ## 0.18.0, 2021-10-31 feature release, update not required
 
 - This release introduces an enhancement or new feature if your will, implemented by @riccardoporreca via PR [#67](https://github.com/rojopolis/spellcheck-github-actions/pull/67). The enhancement takes advantage of the ability to [make annotations on actions](https://docs.github.com/en/actions/learn-github-actions/workflow-commands-for-github-actions#setting-an-error-message), so you can from the action overview see an annotation indicating the error by the emitted error message from the action
