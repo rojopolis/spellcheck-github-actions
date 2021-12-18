@@ -44,7 +44,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.18.0
+    - uses: rojopolis/spellcheck-github-actions@0.19.0
       name: Spellcheck
 ```
 
@@ -150,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.18.0
+    - uses: rojopolis/spellcheck-github-actions@0.19.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -411,7 +411,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.18.0
+    - uses: rojopolis/spellcheck-github-actions@0.19.0
       name: Spellcheck
 ```
 
