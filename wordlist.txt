@@ -73,3 +73,5 @@ Riccardo
 SNYK
 XSS
 snyk
+GHSL
+SVG

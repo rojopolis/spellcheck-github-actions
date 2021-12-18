@@ -4,6 +4,10 @@
 
 - Requirement [lxml](https://pypi.org/project/lxml/) updated from 4.6.3 to 4.6.5 via PR [#71](https://github.com/rojopolis/spellcheck-github-actions/pull/71) from @snyk-bot. This addresses a security, cross-site scripting vulnerability (XSS) in the [lxml](https://pypi.org/project/lxml/) library, see [SNYK-PYTHON-LXML-2316995](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2316995)
 
+From the [release notes for lxml 4.6.5](https://pypi.org/project/lxml/4.6.5/):
+
+> A vulnerability (GHSL-2021-1038) in the HTML cleaner allowed sneaking script content through SVG images.> A vulnerability (GHSL-2021-1037) in the HTML cleaner allowed sneaking script content through CSS imports and other crafted constructs.
+
 - Docker image updated to Python 3.10.1 slim via PR [#70](https://github.com/rojopolis/spellcheck-github-actions/pull/70) from @dependabot
 
 ## 0.18.0, 2021-10-31 feature release, update not required
