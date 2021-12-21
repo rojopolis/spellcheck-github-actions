@@ -1,6 +1,10 @@
 # Change Log for spellcheck-github-actions
 
-## 0.19.0, 2021-12-18, security release , update recommended
+## 0.20.0, 2021-12-21, bug fix release, update recommended version
+
+- Made the version specified in the `action.yml` follow the version indicated in the repository. Apparently we where pointing to `latest`, which is good _when_ and _if_ we are backwards compatible and yes we are still in _alpha_ expressed semantically by the version numbers starting with `0` as in `0.20.0`. This would however allow for us to release breaking changes, without breaking a lot of workflows, which would fetch the _latest_ Docker image, which can be either _unstable_ or a major release
+
+## 0.19.0, 2021-12-18, security release, update recommended
 
 - Requirement [lxml](https://pypi.org/project/lxml/) updated from 4.6.3 to 4.6.5 via PR [#71](https://github.com/rojopolis/spellcheck-github-actions/pull/71) from @snyk-bot. This addresses a security, cross-site scripting vulnerability (XSS) in the [lxml](https://pypi.org/project/lxml/) library, see [SNYK-PYTHON-LXML-2316995](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2316995)
 
