@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.21.0, 2022-01-24, maintenance release, update not required
+
+- Docker image updated to Python 3.10.2 slim via PR [#78](https://github.com/rojopolis/spellcheck-github-actions/pull/70) from @dependabot
+
 ## 0.20.0, 2021-12-21, bug fix release, update recommended
 
 - Made the version specified in the `action.yml` follow the version indicated in the repository. Apparently we where pointing to `latest`, which is good _when_ and _if_ we are backwards compatible and yes we are still in _alpha_ expressed semantically by the version numbers starting with `0` as in `0.20.0`. This would however allow for us to release breaking changes, without breaking a lot of workflows, which would fetch the _latest_ Docker image, which can be either _unstable_ or a major release
