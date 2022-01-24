@@ -2,7 +2,7 @@
 
 ## 0.21.0, 2022-01-24, maintenance release, update not required
 
-- Docker image updated to Python 3.10.2 slim via PR [#78](https://github.com/rojopolis/spellcheck-github-actions/pull/70) from @dependabot
+- Docker image updated to Python 3.10.2 slim via PR [#78](https://github.com/rojopolis/spellcheck-github-actions/pull/78) from @dependabot
 
 ## 0.20.0, 2021-12-21, bug fix release, update recommended
 
