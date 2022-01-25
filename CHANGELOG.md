@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.21.1, 2022-01-24, bug fix release, update required
+
+- Release 0.21.0 was build and uploaded from the wrong architecutre. This release addressed this issue
+
 ## 0.21.0, 2022-01-24, maintenance release, update not required
 
 - Docker image updated to Python 3.10.2 slim via PR [#78](https://github.com/rojopolis/spellcheck-github-actions/pull/78) from @dependabot
