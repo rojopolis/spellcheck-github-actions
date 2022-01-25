@@ -75,3 +75,4 @@ XSS
 snyk
 GHSL
 SVG
+chrispat
