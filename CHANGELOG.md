@@ -1,8 +1,8 @@
 # Change Log for spellcheck-github-actions
 
-## 0.21.1, 2022-01-24, bug fix release, update required
+## 0.21.1, 2022-01-25, bug fix release, update required
 
-- Release 0.21.0 was build and uploaded from the wrong architecutre. This release addressed this issue
+- Release 0.21.0 was build and uploaded from the wrong architecture. This release addressed this issue
 
 ## 0.21.0, 2022-01-24, maintenance release, update not required
 
