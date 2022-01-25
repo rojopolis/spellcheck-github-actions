@@ -2,7 +2,7 @@
 
 ## 0.21.1, 2022-01-25, bug fix release, update required
 
-- Release 0.21.0 was build and uploaded from the wrong architecture. This release addressed this issue
+- Release 0.21.0 was build and uploaded from the wrong architecture. This release addressed this issue ([#79](https://github.com/rojopolis/spellcheck-github-actions/issues/79)), thanks @chrispat for reporting
 
 ## 0.21.0, 2022-01-24, maintenance release, update not required
 
