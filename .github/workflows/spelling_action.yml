@@ -1,5 +1,8 @@
 name: Spellcheck Action
-on: push
+
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
   build:
