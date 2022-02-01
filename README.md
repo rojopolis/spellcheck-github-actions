@@ -286,6 +286,7 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - German (`de_DE`),
   - Swiss (`de_CH`)
   - Austrian (`de_AT`)
+- Spanish via the [`aspell-se` Debian package][aspell-es]
 
 Additional languages can be added by request, please open an issue.
 
@@ -576,6 +577,7 @@ This repository is licensed under the MIT license.
 [aspell]: http://aspell.net/
 [aspell-de]: https://packages.debian.org/buster/aspell-de
 [aspell-en]: https://packages.debian.org/buster/aspell-en
+[aspell-es]: https://packages.debian.org/buster/aspell-es
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 [expect_match]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
