@@ -1,6 +1,8 @@
 name: Spellcheck Action
 
 on:
+  # Enabling manual test
+  # REF: https://stackoverflow.com/questions/58933155/manual-workflow-triggers-in-github-actions
   workflow_dispatch:
   push:
 
