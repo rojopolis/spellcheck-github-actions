@@ -16,6 +16,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - Support for the following languages:
   - English
   - German
+  - Spanish
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
