@@ -76,3 +76,4 @@ snyk
 GHSL
 SVG
 chrispat
+electrocucaracha

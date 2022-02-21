@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.22.0, 2022-02-21, feature release, update not required
+
+- Support for the Spanish language. Support requested and implemented by @electrocucaracha via PR [#81](https://github.com/rojopolis/spellcheck-github-actions/pull/81)
+
 ## 0.21.1, 2022-01-25, bug fix release, update required
 
 - Release 0.21.0 was build and uploaded from the wrong architecture. This release addressed this issue ([#79](https://github.com/rojopolis/spellcheck-github-actions/issues/79)), thanks @chrispat for reporting
