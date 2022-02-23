@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.22.1, 2022-02-23, bug fix release, update recommended
+
+- Testing the new Spanish support feature more throughly, demonstrated that the Docker build process was broken and only English worked
+  
+  - I addressed issue [#57](https://github.com/rojopolis/spellcheck-github-actions/issues/57), which demonstrated an issue with the Docker build, the issue is no longer relevant with the simplification of the Docker build via PR: [#82](https://github.com/rojopolis/spellcheck-github-actions/pull/82) by me (@jonasbn)
+
 ## 0.22.0, 2022-02-21, feature release, update not required
 
 - Support for the Spanish language. Support requested and implemented by @electrocucaracha via PR [#81](https://github.com/rojopolis/spellcheck-github-actions/pull/81)
