@@ -2,7 +2,7 @@
 
 ## 0.22.1, 2022-02-23, bug fix release, update recommended
 
-- Testing the new Spanish support feature more throughly, demonstrated that the Docker build process was broken and only English worked
+- Testing the new Spanish support feature more thoroughly, demonstrated that the Docker build process was broken and only English worked
   
   - I addressed issue [#57](https://github.com/rojopolis/spellcheck-github-actions/issues/57), which demonstrated an issue with the Docker build, the issue is no longer relevant with the simplification of the Docker build via PR: [#82](https://github.com/rojopolis/spellcheck-github-actions/pull/82) by me (@jonasbn)
 
