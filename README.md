@@ -287,7 +287,7 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - German (`de_DE`),
   - Swiss (`de_CH`)
   - Austrian (`de_AT`)
-- Spanish via the [`aspell-se` Debian package][aspell-es]
+- Spanish via the [`aspell-es` Debian package][aspell-es]
 
 Additional languages can be added by request, please open an issue.
 
