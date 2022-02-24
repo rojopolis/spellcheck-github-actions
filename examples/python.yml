@@ -11,9 +11,9 @@ matrix:
     encoding: utf-8
   pipeline:
   - pyspelling.filters.python:
-    comments: true
-    docstrings: true
-    group_comments: false
-    decode_escapes: true
-    strings: false
-    string_types: fu
+      comments: true
+      docstrings: true
+      group_comments: false
+      decode_escapes: true
+      strings: false
+      string_types: fu

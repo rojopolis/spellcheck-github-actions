@@ -178,10 +178,10 @@ matrix:
   pipeline:
   - pyspelling.filters.markdown:
   - pyspelling.filters.html:
-    comments: false
-    ignores:
-    - code
-    - pre
+      comments: false
+      ignores:
+      - code
+      - pre
   sources:
   - '**/*.md'
   default_encoding: utf-8
@@ -217,10 +217,10 @@ matrix:
   pipeline:
   - pyspelling.filters.markdown:
   - pyspelling.filters.html:
-    comments: false
-    ignores:
-    - code
-    - pre
+      comments: false
+      ignores:
+      - code
+      - pre
   sources:
   - '**/*.md'
   default_encoding: utf-8
