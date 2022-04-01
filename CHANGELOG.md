@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## HEAD
+
+- Docker image updated to Python 3.10.4 slim via PR [#86](https://github.com/rojopolis/spellcheck-github-actions/pull/86) from @dependabot
+
+- Docker image updated to Python 3.10.3 slim via PR [#85](https://github.com/rojopolis/spellcheck-github-actions/pull/85) from @dependabot
+
 ## 0.22.1, 2022-02-23, bug fix release, update recommended
 
 - Testing the new Spanish support feature more thoroughly, demonstrated that the Docker build process was broken and only English worked
