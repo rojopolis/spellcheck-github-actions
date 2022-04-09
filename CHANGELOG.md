@@ -2,9 +2,9 @@
 
 ## HEAD
 
-- Docker image updated to Python 3.10.4 slim via PR [#86](https://github.com/rojopolis/spellcheck-github-actions/pull/86) from @dependabot
+- Docker image updated to Python 3.10.4 slim via PR [#86](https://github.com/rojopolis/spellcheck-github-actions/pull/86) from @dependabot. [Release notes for Python 3.10.4](https://docs.python.org/release/3.10.4/whatsnew/changelog.html#python-3-10-4-final)
 
-- Docker image updated to Python 3.10.3 slim via PR [#85](https://github.com/rojopolis/spellcheck-github-actions/pull/85) from @dependabot
+- Docker image updated to Python 3.10.3 slim via PR [#85](https://github.com/rojopolis/spellcheck-github-actions/pull/85) from @dependabot. [Release notes for Python 3.10.3](https://docs.python.org/release/3.10.4/whatsnew/changelog.html#python-3-10-3-final)
 
 ## 0.22.1, 2022-02-23, bug fix release, update recommended
 
