@@ -69,7 +69,7 @@ Thanks to @supernovae and @facelessuser
 
 This however demonstrated that several of the dependencies was not up to date.
 
-'The following dependencies have been updated:
+The following dependencies have been updated:
 
 - [backrefs](https://pypi.org/project/backrefs/) updated from 4.5 to 5.0.1
 - [bracex](https://pypi.org/project/bracex/) updated from 2.0.1 to 2.1.1
