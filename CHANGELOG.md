@@ -1,6 +1,8 @@
 # Change Log for spellcheck-github-actions
 
-## HEAD
+## 0.23.0, 2022-04-09, feature release, update not required
+
+- Support for the French language. Support requested by @gcattan via issue [#87](https://github.com/rojopolis/spellcheck-github-actions/issue/87)
 
 - Docker image updated to Python 3.10.4 slim via PR [#86](https://github.com/rojopolis/spellcheck-github-actions/pull/86) from @dependabot. [Release notes for Python 3.10.4](https://docs.python.org/release/3.10.4/whatsnew/changelog.html#python-3-10-4-final)
 

@@ -16,7 +16,7 @@ RUN pip3 install -r /requirements.txt
 
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
 RUN apt-get update && apt-get install -y \
-    aspell aspell-en aspell-de aspell-es \
+    aspell aspell-en aspell-de aspell-es aspell-fr \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
