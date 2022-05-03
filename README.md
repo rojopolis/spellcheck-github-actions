@@ -60,6 +60,52 @@ By default, this action will use the `sources:` list under each task in your con
 
 When this option is used, you must also specify the `task_name` to override the `sources:` list for.
 
+Do note that file paths containing spaces need to be quoted using either `'` (single quotes) or `"` (double quotes). The quoting has to be uniform and the two quoting styles can not be intermixed.
+
+### Examples
+
+Parts are lifted from issue [#84](https://github.com/rojopolis/spellcheck-github-actions/issues/84)
+
+#### No spaces, quotes not required
+
+```yaml
+source_files: README.md CHANGELOG.md notes/Notes.md
+```
+
+#### No spaces, quotes not required, double quotes used for complete parameter
+
+```yaml
+source_files: "README.md CHANGELOG.md notes/Notes.md"
+```
+
+This might actually work, but it is not recommended and might it might break, instead using proper quoting.
+
+#### No spaces, quotes not required, double quotes used for single parameters
+
+```yaml
+source_files: "README.md" "CHANGELOG.md" "notes/Notes.md"
+```
+
+This would also work using single quotes
+
+#### Spaces, quotes required, single quotes used
+
+```yaml
+source_files: 'Managed Services/Security Monitor/README.md' 'Terraform/Development Guide/README.md'
+```
+
+#### Spaces, quotes required, double quotes used
+
+```yaml
+source_files: "Managed Services/Security Monitor/README.md" "Terraform/Development Guide/README.md"
+```
+
+#### Spaces, quotes required, intermixed quotes, will not work
+
+```yaml
+source_files: README.md CHANGELOG.md notes/Notes.md
+```
+
 ## Specify A Specific Task To Run
 
 By default, all tasks in your config file will be run. By setting `task_name` you can override this and run only the task you require.
