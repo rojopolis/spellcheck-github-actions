@@ -15,6 +15,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - Support for `aspell`, Do see the section on Language Support for details
 - Support for the following languages:
   - English
+  - French
   - German
   - Spanish
   - Do see the section on Language Support for details
