@@ -46,7 +46,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.0
+    - uses: rojopolis/spellcheck-github-actions@0.23.1
       name: Spellcheck
 ```
 
@@ -59,6 +59,52 @@ For example, it could be named `.github/workflows/spelling_action.yml` for easy 
 By default, this action will use the `sources:` list under each task in your config file to identify which files to scan. You can override this behaviour by setting `source_files` to the list of files or file patterns you want scanning.
 
 When this option is used, you must also specify the `task_name` to override the `sources:` list for.
+
+Do note that file paths containing spaces need to be quoted using either `'` (single quotes) or `"` (double quotes). The quoting has to be uniform and the two quoting styles can not be intermixed.
+
+### Examples
+
+Parts are lifted from issue [#84](https://github.com/rojopolis/spellcheck-github-actions/issues/84)
+
+#### No spaces, quotes not required
+
+```yaml
+source_files: README.md CHANGELOG.md notes/Notes.md
+```
+
+#### No spaces, quotes not required, double quotes used for complete parameter
+
+```yaml
+source_files: "README.md CHANGELOG.md notes/Notes.md"
+```
+
+This might actually work, but it is not recommended and might it might break, instead using proper quoting.
+
+#### No spaces, quotes not required, double quotes used for single parameters
+
+```yaml
+source_files: "README.md" "CHANGELOG.md" "notes/Notes.md"
+```
+
+This would also work using single quotes
+
+#### Spaces, quotes required, single quotes used
+
+```yaml
+source_files: 'Managed Services/Security Monitor/README.md' 'Terraform/Development Guide/README.md'
+```
+
+#### Spaces, quotes required, double quotes used
+
+```yaml
+source_files: "Managed Services/Security Monitor/README.md" "Terraform/Development Guide/README.md"
+```
+
+#### Spaces, quotes required, intermixed quotes, will not work
+
+```yaml
+source_files: README.md CHANGELOG.md notes/Notes.md
+```
 
 ## Specify A Specific Task To Run
 
@@ -79,7 +125,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.0
+    - uses: rojopolis/spellcheck-github-actions@0.23.1
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -152,7 +198,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.0
+    - uses: rojopolis/spellcheck-github-actions@0.23.1
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -414,7 +460,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.0
+    - uses: rojopolis/spellcheck-github-actions@0.23.1
       name: Spellcheck
 ```
 
