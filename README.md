@@ -611,7 +611,6 @@ Here follows a list of contributors in alphabetical order:
 - Riccardo Porreca, @riccardoporreca
 - Stephen Bates, @sbates130272
 
-
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
 
 ## Copyright and License

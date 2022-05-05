@@ -78,3 +78,5 @@ SVG
 chrispat
 electrocucaracha
 gcattan
+Starov
+xsaero
