@@ -1,5 +1,8 @@
 # Change Log for spellcheck-github-actions
 
+## 0.23.1, 2022-05-05, bug fix release, update not required
+
+- Addressing issue [#84](https://github.com/rojopolis/spellcheck-github-actions/issues/84) via PR [#90](https://github.com/rojopolis/spellcheck-github-actions/pull/90) from @jonasbn. With the introduction of use of optional quotes, do note the limitations outlined in the [documentation](https://github.com/rojopolis/spellcheck-github-actions#specifying-sources-files-to-check) - thanks to @xsaero00 for the bug report 
 ## 0.23.0, 2022-04-09, feature release, update not required
 
 - Support for the French language. Support requested by @gcattan via issue [#87](https://github.com/rojopolis/spellcheck-github-actions/issue/87)

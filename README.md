@@ -605,10 +605,12 @@ Here follows a list of contributors in alphabetical order:
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
 - Matt Calvert, @miff2000
 - Michael Flaxman, @mflaxman
+- Mike Starov, @xsaero00
 - Pavel Skipenes, @pavelskipenes
 - Peter Petrik, @PeterPetrik
 - Riccardo Porreca, @riccardoporreca
 - Stephen Bates, @sbates130272
+
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
 
