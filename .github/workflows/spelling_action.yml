@@ -11,16 +11,20 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
+
     # The checkout step
     - uses: actions/checkout@v3
+
     - uses: rojopolis/spellcheck-github-actions@0.23.2
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md
         task_name: Markdown
-    - name: Archive workflow run output
-      run: echo hello > run-report.txt
-      uses: actions/upload-artifact@v3
+    
+    - run: echo hello > run-report.txt
+
+    - uses: actions/upload-artifact@v3
+      name: Archive workflow run output
       with:
         name: run-report
         path: run-report.txt
