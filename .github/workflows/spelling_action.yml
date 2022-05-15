@@ -18,3 +18,8 @@ jobs:
       with:
         source_files: README.md CHANGELOG.md
         task_name: Markdown
+    - name: Archive workflow run output
+      uses: actions/upload-artifact@v3
+      with:
+        name: run-report
+        path: /tmp/run-report.txt
