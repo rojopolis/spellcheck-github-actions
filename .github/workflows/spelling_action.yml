@@ -24,8 +24,8 @@ jobs:
     - uses: shrink/actions-docker-extract@v1
       id: extract
       with:
-        image: run-report.txt
-        path: /tmp/.
+        image: rojopolis/spellcheck-github-actions@0.23.2
+        path: /tmp/run-report.txt
 
     - uses: actions/upload-artifact@v3
       name: Archive workflow run output
