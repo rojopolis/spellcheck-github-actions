@@ -20,11 +20,15 @@ jobs:
       with:
         source_files: README.md CHANGELOG.md
         task_name: Markdown
-    
-    - run: echo hello > /tmp/run-report.txt
+
+    - uses: shrink/actions-docker-extract@v1
+      id: extract
+      with:
+        image: run-report.txt
+        path: /tmp/.
 
     - uses: actions/upload-artifact@v3
       name: Archive workflow run output
       with:
         name: run-report
-        path: /tmp/run-report.txt
+        path: ${{ steps.extract.outputs.destination }}
