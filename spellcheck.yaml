@@ -4,7 +4,7 @@ matrix:
   - '!venv/**/*.md|**/*.md'
   default_encoding: utf-8
   aspell:
-    lang: en
+    lang: fr
   dictionary:
     wordlists:
     - wordlist.txt
