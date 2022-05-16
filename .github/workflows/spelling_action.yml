@@ -15,7 +15,7 @@ jobs:
     # The checkout step
     - uses: actions/checkout@v3
 
-    - uses: rojopolis/spellcheck-github-actions@latest
+    - uses: rojopolis/spellcheck-github-actions@master
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md
