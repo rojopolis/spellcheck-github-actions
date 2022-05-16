@@ -136,7 +136,7 @@ jobs:
 
 #### Extra Configuration for PySpelling
 
-Do check the [PySpelling documentation][pyspelling] for elaborate details on configuration of.
+Do check the [PySpelling documentation][pyspelling] for elaborate details on configuration of [PySpelling][pyspelling].
 
 #### Extra Configuration for Markdown
 
