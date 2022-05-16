@@ -88,7 +88,7 @@ fi
 
 echo "----------------------------------------------------------------"
 
-pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee /tmp/run-report.txt
+pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee run-report.txt
 
 EXITCODE=$?
 
