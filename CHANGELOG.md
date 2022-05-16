@@ -1,5 +1,48 @@
 # Change Log for spellcheck-github-actions
 
+## 0.24.0, 2022-05-17, feature release, update not required
+
+- @riccardoporreca created issue [#68](https://github.com/rojopolis/spellcheck-github-actions/issues/68) requested the ability to create an output artifact.
+  
+  With release 0.24.0 this is now available.
+
+  The action configuration has to have the `output_file` parameter specified, which is a new optional parameter.
+
+  ```yaml
+  name: Spellcheck Action
+  
+  on:
+    workflow_dispatch:
+    push:
+  
+  jobs:
+    build:
+      name: Spellcheck
+      runs-on: ubuntu-latest
+      steps:
+  
+      - uses: actions/checkout@v3
+  
+      - uses: rojopolis/spellcheck-github-actions@master
+        name: Spellcheck
+        with:
+          source_files: README.md CHANGELOG.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
+  
+      - uses: actions/upload-artifact@v3
+        name: Archive spellcheck output output
+        with:
+          name: Spellcheck artifact
+          path: spellcheck-output.txt
+  ```
+
+  This introduces the use of the `upload-artifact@v3` action.
+
+  The generated artiface can be downloaded via GitHub UI/API, please consult the documentation for details and pointers.
+
+  Thanks to @riccardoporreca for his suggestion.
+
 ## 0.23.2, 2022-05-05, bug fix release, update not required
 
 - Minor issue in release 0.23.1, the action was not adjusted to the latest release
