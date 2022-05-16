@@ -88,7 +88,13 @@ fi
 
 echo "----------------------------------------------------------------"
 
-pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee run-report.txt
+if [ -z "$OUTPUT_FILE" ]; then
+    pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee spellcheck-output.txt
+else
+    pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST
+fi
+
+
 
 EXITCODE=$?
 
