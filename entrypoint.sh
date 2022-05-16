@@ -88,8 +88,8 @@ fi
 
 echo "----------------------------------------------------------------"
 
-if [ -z "$OUTPUT_FILE" ]; then
-    pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee spellcheck-output.txt
+if [ -n "$INPUT_OUTPUT_FILE" ]; then
+    pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee $INPUT_OUTPUT_FILE
 else
     pyspelling --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST
 fi
