@@ -20,10 +20,10 @@ jobs:
       with:
         source_files: README.md CHANGELOG.md
         task_name: Markdown
-        output_file: spellcheck-output.txt
+        #output_file: spellcheck-output.txt
 
-    - uses: actions/upload-artifact@v3
-      name: Archive spellcheck output output
-      with:
-        name: Spellcheck artifact
-        path: spellcheck-output.txt
+    #- uses: actions/upload-artifact@v3
+    #  name: Archive spellcheck output output
+    #  with:
+    #    name: Spellcheck artifact
+    #    path: spellcheck-output.txt
