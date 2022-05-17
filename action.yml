@@ -16,8 +16,7 @@ inputs:
     required: false
   output_file:
     description: |
-      Indication that an artifact named `spellcheck-output.txt` 
-      containing output from pyspelling should be generated
+      Name of a generated output file containing output from pyspelling.
     required: false
 branding:
   color: green

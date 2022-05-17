@@ -46,7 +46,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.2
+    - uses: rojopolis/spellcheck-github-actions@0.24.0
       name: Spellcheck
 ```
 
@@ -106,11 +106,11 @@ source_files: "Managed Services/Security Monitor/README.md" "Terraform/Developme
 source_files: README.md CHANGELOG.md notes/Notes.md
 ```
 
-## Specify A Specific Task To Run
+## Specify a Specific Task To Run
 
 By default, all tasks in your config file will be run. By setting `task_name` you can override this and run only the task you require.
 
-A configuration for designated source files could look as follows:
+A configuration for designated source files could look as follows.
 
 Example:
 
@@ -125,12 +125,47 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.2
+    - uses: rojopolis/spellcheck-github-actions@0.24.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
         task_name: Markdown
 ```
+
+## Specify a PySpelling Output Artifact
+
+In order to make it easier to process larger amount of output. The action allows for the user to enable the generation of an artifact.
+
+The optional `output_file` input parameter, if specified, defines the name of the generated file containing the spellcheck output. Such file can then be stored as workflow artifact using the `actions/upload-artifact` step.
+
+A configuration for emitting an output artifact could look as follows.
+
+Example:
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    # The checkout step
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.24.0
+      name: Spellcheck
+      with:
+        source_files: README.md CHANGELOG.md notes/Notes.md
+        task_name: Markdown
+        output_file: spellcheck-output.txt
+```
+
+The artifact can be downloaded via the GitHub UI or via the GitHub API. The artifact is names: `Spellcheck artifact`, based on the name of the workflow (see above example).
+
+Do see the [official documentation](https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api) for handling artifacts via the API.
+
+Artifacts are by default available for 3 months.
 
 ### Extra Configuration
 
@@ -198,7 +233,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.2
+    - uses: rojopolis/spellcheck-github-actions@0.24.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -460,7 +495,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.2
+    - uses: rojopolis/spellcheck-github-actions@0.24.0
       name: Spellcheck
 ```
 

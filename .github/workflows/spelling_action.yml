@@ -23,7 +23,7 @@ jobs:
         output_file: spellcheck-output.txt
 
     - uses: actions/upload-artifact@v3
-      name: Archive spellcheck output output
+      name: Archive spellcheck output
       with:
         name: Spellcheck artifact
         path: spellcheck-output.txt
