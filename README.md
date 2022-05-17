@@ -136,7 +136,7 @@ jobs:
 
 In order to make it easier to process larger amount of output. The action allows for the user to enable the generation of an artifact.
 
-The `output_file` both enables the generation of the artifact and specifies the name of the file archived.
+The optional `output_file` input parameter, if specified, defines the name of the generated file containing the spellcheck output. Such file can then be stored as workflow artifact using the `actions/upload-artifact` step.
 
 A configuration for emitting an output artifact could look as follows.
 
