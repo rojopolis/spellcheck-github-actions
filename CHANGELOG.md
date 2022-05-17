@@ -23,12 +23,12 @@
   
       - uses: actions/checkout@v3
   
-      - uses: rojopolis/spellcheck-github-actions@master
+      - uses: rojopolis/spellcheck-github-actions@0.24.0
         name: Spellcheck (no output file)
         with:
           source_files: README.md CHANGELOG.md
   
-      - uses: rojopolis/spellcheck-github-actions@master
+      - uses: rojopolis/spellcheck-github-actions@0.24.0
         name: Spellcheck (with output file)
         with:
           source_files: README.md CHANGELOG.md
