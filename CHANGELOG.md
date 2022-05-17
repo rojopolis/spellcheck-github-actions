@@ -44,7 +44,7 @@
 
   This introduces the use of the `upload-artifact@v3` action.
 
-  The generated artiface can be downloaded via GitHub UI/API, please consult the documentation for details and pointers.
+  The generated artifact can be downloaded via GitHub UI/API, please consult the documentation for details and pointers.
 
   Thanks to @riccardoporreca for his suggestion.
 
