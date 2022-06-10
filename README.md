@@ -379,6 +379,45 @@ Please open an issue or PR, if [Hunspell][hunspell] should be evaluated for poss
 
 ## Tips
 
+## Specify Code Not To Have Spelling Checked
+
+Since this action checks all available text, you might run into problems with section of code examples etc.
+
+This can be circumvented by the following configuration:
+
+```yaml
+      ignores:
+      - code
+      - pre
+```
+
+This works on the intermediate HTML form of the data.
+
+A complete configuration could look as follows:
+
+```yaml
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+```
+
+And `code` and `pre` sections are ignored by the spelling check.
+
 ### Getting Your Action Updated Automatically
 
 The _awesome_ tool dependabot lets you scan your used GitHub Marketplace Actions and lets you know if they are in need of an update.
