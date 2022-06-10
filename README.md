@@ -424,7 +424,7 @@ The _awesome_ tool dependabot lets you scan your used GitHub Marketplace Actions
 
 The update is proposed via a pull request, which can be accepted or declined, it will itself take care of deleting pull requests if these become irrelevant.
 
-You specify the configuration in the file: `.github/depedabot.yml` in your repository using this action - actually it scans all your actions.
+You specify the configuration in the file: `.github/dependabot.yml` in your repository using this action - actually it scans all your actions.
 
 ```yaml
 # Basic dependabot.yml file
