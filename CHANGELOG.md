@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.25.0, 2022-07-08, maintenance release, update recommended
+
+- `lxml` requirement bumped from version 4.6.5 to 4.9.1 addressing a security issue [SNYK-PYTHON-LXML-2940874](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2940874) / [CVE-2022-2309](https://www.cve.org/CVERecord?id=CVE-2022-2309) / [CWE-476](https://cwe.mitre.org/data/definitions/476.html) via PR [#104](https://github.com/rojopolis/spellcheck-github-actions/pull/104) from @snyk-bot
+
+- Docker image updated to Python 3.10.5 slim from 3.10.4 slim via PR [#102](https://github.com/rojopolis/spellcheck-github-actions/pull/102) from @dependabot
+
 ## 0.24.0, 2022-05-17, feature release, update not required
 
 - @riccardoporreca created issue [#68](https://github.com/rojopolis/spellcheck-github-actions/issues/68) requested the ability to create an output artifact.
