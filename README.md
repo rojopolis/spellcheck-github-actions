@@ -3,6 +3,7 @@
 
 ![Markdownlint Action][GHAMKDBADGE]
 ![Spellcheck Action][GHASPLLBADGE]
+[![Docker Pulls](https://img.shields.io/docker/pulls/jonasbn/github-action-spellcheck.svg?style=flat)](https://hub.docker.com/r/jonasbn/github-action-spellcheck/)
 
 A Github Action that spell checks Python, Markdown, and Text files.
 
