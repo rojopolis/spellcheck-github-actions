@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.26.0, 2022-08-04, maintenance release, update recommended
+
+- The core component PySpelling has been updated from version 2.7.3 to version 2.8.1, see the [release history for PySpelling](https://github.com/facelessuser/pyspelling/releases)
+
 ## 0.25.0, 2022-07-08, maintenance release, update recommended
 
 - `lxml` requirement bumped from version 4.6.5 to 4.9.1 addressing a security issue [SNYK-PYTHON-LXML-2940874](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2940874) / [CVE-2022-2309](https://www.cve.org/CVERecord?id=CVE-2022-2309) / [CWE-476](https://cwe.mitre.org/data/definitions/476.html) via PR [#104](https://github.com/rojopolis/spellcheck-github-actions/pull/104) from @snyk-bot
