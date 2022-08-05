@@ -11,6 +11,12 @@ else
         SPELLCHECK_CONFIG_FILE=".spellcheck.yaml"
     elif [ -f "./spellcheck.yml" ]; then
         SPELLCHECK_CONFIG_FILE="spellcheck.yml"
+    elif [ -f "./spellcheck.yaml" ]; then
+        SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
+    elif [ -f "./.pyspelling.yaml" ]; then
+        SPELLCHECK_CONFIG_FILE=".pyspelling.yaml"
+    elif [ -f "./.pyspelling.yml" ]; then
+        SPELLCHECK_CONFIG_FILE=".pyspelling.yml"
     else
         SPELLCHECK_CONFIG_FILE="spellcheck.yaml"
     fi
