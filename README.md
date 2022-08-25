@@ -679,6 +679,7 @@ Here follows a list of contributors in alphabetical order:
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
 - Matt Calvert, @miff2000
+- Matthew Macdonald-Wallace, @proffalken
 - Michael Flaxman, @mflaxman
 - Mike Starov, @xsaero00
 - Pavel Skipenes, @pavelskipenes
