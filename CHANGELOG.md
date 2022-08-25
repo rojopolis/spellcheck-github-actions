@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.27.0
+
+- Support for default PySpelling configuration files via PR [#116](https://github.com/rojopolis/spellcheck-github-actions/pull/116) from @proffalken
+
+- Docker image updated to Python 3.10.6 slim via PR [#117](https://github.com/rojopolis/spellcheck-github-actions/pull/117) from @dependabot. [Release notes for Python 3.10.6](https://docs.python.org/release/3.10.6/whatsnew/changelog.html#python-3-10-6-final)
+
 ## 0.26.0, 2022-08-04, maintenance release, update recommended
 
 - The core component PySpelling has been updated from version 2.7.3 to version 2.8.1, see the [release history for PySpelling](https://github.com/facelessuser/pyspelling/releases)
@@ -8,7 +14,7 @@
 
 - `lxml` requirement bumped from version 4.6.5 to 4.9.1 addressing a security issue [SNYK-PYTHON-LXML-2940874](https://security.snyk.io/vuln/SNYK-PYTHON-LXML-2940874) / [CVE-2022-2309](https://www.cve.org/CVERecord?id=CVE-2022-2309) / [CWE-476](https://cwe.mitre.org/data/definitions/476.html) via PR [#104](https://github.com/rojopolis/spellcheck-github-actions/pull/104) from @snyk-bot
 
-- Docker image updated to Python 3.10.5 slim from 3.10.4 slim via PR [#102](https://github.com/rojopolis/spellcheck-github-actions/pull/102) from @dependabot
+- Docker image updated to Python 3.10.5 slim from 3.10.4 slim via PR [#102](https://github.com/rojopolis/spellcheck-github-actions/pull/102) from @dependabot. [Release notes for Python 3.10.5](https://docs.python.org/release/3.10.5/whatsnew/changelog.html#python-3-10-5-final)
 
 ## 0.24.0, 2022-05-17, feature release, update not required
 
@@ -72,7 +78,7 @@
 
 - Docker image updated to Python 3.10.4 slim via PR [#86](https://github.com/rojopolis/spellcheck-github-actions/pull/86) from @dependabot. [Release notes for Python 3.10.4](https://docs.python.org/release/3.10.4/whatsnew/changelog.html#python-3-10-4-final)
 
-- Docker image updated to Python 3.10.3 slim via PR [#85](https://github.com/rojopolis/spellcheck-github-actions/pull/85) from @dependabot. [Release notes for Python 3.10.3](https://docs.python.org/release/3.10.4/whatsnew/changelog.html#python-3-10-3-final)
+- Docker image updated to Python 3.10.3 slim via PR [#85](https://github.com/rojopolis/spellcheck-github-actions/pull/85) from @dependabot. [Release notes for Python 3.10.3](https://docs.python.org/release/3.10.3/whatsnew/changelog.html#python-3-10-3-final)
 
 ## 0.22.1, 2022-02-23, bug fix release, update recommended
 
