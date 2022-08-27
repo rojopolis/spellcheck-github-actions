@@ -22,7 +22,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
-- Support for Python's Markdown extensions, namely the `pymdown-extensions` via [PySpelling][pyspelling]
+- Support for Python's Markdown extensions, namely the `[pymdown-extensions]` via [PySpelling][pyspelling]
 
 ## Configuration
 
@@ -213,7 +213,7 @@ Current Spellcheck Action support the following extensions (_in alphabetical ord
 - Tasklist
 - Tilde
 
-Please consult [the documentation](https://facelessuser.github.io/pymdown-extensions/) for the extensions for more details.
+Please consult [the documentation][pymdown-extensions] for the extensions for more details.
 
 Currently only the case of use of `superfences` has been requested as outlined in the above example.
 
@@ -547,7 +547,7 @@ This indicates issues with the Markdown and is reported by `Markdown` (See: [PyP
 
 [PySpelling][pyspelling]  does however support extension of the standard Markdown parser and you can specify the use of extensions of these are support.
 
-This action support the extensions included in: `pymdown-extensions` (See: [PyPi site](https://pypi.org/project/pymdown-extensions/))
+This action support the extensions included in: `pymdown-extensions` (See: [PyPi site][pymdown-extensions])
 
 And you can then put these to use in your configuration. The example below outlines the `superfences` extension.
 
@@ -705,4 +705,4 @@ This repository is licensed under the MIT license.
 [aspell-es]: https://packages.debian.org/buster/aspell-es
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
-[expect_match]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
+[expectmatch]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
