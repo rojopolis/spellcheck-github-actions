@@ -249,7 +249,7 @@ jobs:
 1. `spellcheck.yml`
 1. `spellcheck.yaml` (the old default)
 1. `.pyspelling.yaml` (PySpelling default)
-1. `pyspelling.yml` (PySpelling default)
+1. `.pyspelling.yml` (PySpelling default)
 
 And is attempted read in that order, meaning first match is used, This means that you can use files prefixed with the `.` to have a less intrusive Spellcheck configuration in your repository.
 
