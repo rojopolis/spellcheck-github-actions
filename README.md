@@ -47,7 +47,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.26.0
+    - uses: rojopolis/spellcheck-github-actions@0.27.0
       name: Spellcheck
 ```
 
@@ -126,7 +126,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.26.0
+    - uses: rojopolis/spellcheck-github-actions@0.27.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -154,7 +154,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.26.0
+    - uses: rojopolis/spellcheck-github-actions@0.27.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -234,7 +234,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.26.0
+    - uses: rojopolis/spellcheck-github-actions@0.27.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -248,6 +248,8 @@ jobs:
 1. `.spellcheck.yaml`
 1. `spellcheck.yml`
 1. `spellcheck.yaml` (the old default)
+1. `.pyspelling.yaml` (PySpelling default)
+1. `pyspelling.yml` (PySpelling default)
 
 And is attempted read in that order, meaning first match is used, This means that you can use files prefixed with the `.` to have a less intrusive Spellcheck configuration in your repository.
 
@@ -275,7 +277,7 @@ The above configuration will check the spelling of your repository's `README.md`
 When and if the run locates spelling errors, you have two options:
 
 1. Correct the spelling errors in the relevant files
-1. Add the relevant words to a custom word list, to be ignored
+2. Add the relevant words to a custom word list, to be ignored
 
 If you do the latter, you have to add the following to the Spellcheck configuration, under `dictionary`:
 
@@ -535,7 +537,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.26.0
+    - uses: rojopolis/spellcheck-github-actions@0.27.0
       name: Spellcheck
 ```
 
