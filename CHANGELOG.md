@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## 0.27.0
+## 0.27.0, 2022-09-08, feature release, update not required
 
 - Support for default PySpelling configuration files via PR [#116](https://github.com/rojopolis/spellcheck-github-actions/pull/116) from @proffalken
 
