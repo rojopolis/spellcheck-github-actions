@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## HEAD
+
+- Docker image updated to Python 3.10.8 slim via PR [#129](https://github.com/rojopolis/spellcheck-github-actions/pull/129) from @snyk-bot. [Release notes for Python 3.10.8](https://docs.python.org/release/3.10.8/whatsnew/changelog.html)
+
 ## 0.27.0, 2022-09-09, feature release, update not required
 
 - Support for default PySpelling configuration files via PR [#116](https://github.com/rojopolis/spellcheck-github-actions/pull/116) from @proffalken
