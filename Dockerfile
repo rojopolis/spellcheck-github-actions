@@ -9,15 +9,15 @@ LABEL "repository"="http://github.com/rojopolis/spellcheck-github-actions"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
+# REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
+RUN apt-get update && apt-get install -y \
+    aspell aspell-en aspell-de aspell-es aspell-fr libxml2-dev libxslt1-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY entrypoint.sh /entrypoint.sh
 COPY requirements.txt /requirements.txt
 COPY spellcheck.yaml /spellcheck.yaml
 RUN pip3 install -r /requirements.txt
-
-# REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
-RUN apt-get update && apt-get install -y \
-    aspell aspell-en aspell-de aspell-es aspell-fr \
-    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
