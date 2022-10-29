@@ -11,7 +11,7 @@ LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
 RUN apt-get update && apt-get install -y \
-    aspell aspell-en aspell-de aspell-es aspell-fr libxml2-dev libxslt1-dev \
+    aspell aspell-en aspell-de aspell-es aspell-fr libxml2-dev libxslt1-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
