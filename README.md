@@ -22,7 +22,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
-- Support for Python's Markdown extensions, namely the `[pymdown-extensions]` via [PySpelling][pyspelling]
+- Support for Python's Markdown extensions, namely the [pymdown-extensions] via [PySpelling][pyspelling]
 
 ## Configuration
 
@@ -176,7 +176,7 @@ Do check the [PySpelling documentation][pyspelling] for elaborate details on con
 
 #### Extra Configuration for Markdown
 
-[PySpelling][pyspelling] uses the [Python Markdown][markdown] project. [PySpelling][pyspelling] allows for configuration of the Markdown handling using the `[pymdown-extensions]` authored by the author of [PySpelling][pyspelling].
+[PySpelling][pyspelling] uses the [Python Markdown][markdown] project. [PySpelling][pyspelling] allows for configuration of the Markdown handling using the [pymdown-extensions] authored by the author of [PySpelling][pyspelling].
 
 If for example wanted to use the `superfences` extension, you could configure it as follows:
 
