@@ -421,6 +421,39 @@ matrix:
 
 And `code` and `pre` sections are ignored by the spelling check.
 
+Code fences in Markdown require additional configuration using the Markdown extension: `pymdownx.superfences`:
+
+```yaml
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - pymdownx.superfences:
+```
+
+A complete example could look as follows:
+
+```yaml
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - pymdownx.superfences
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+```
+
 ### Getting Your Action Updated Automatically
 
 The _awesome_ tool dependabot lets you scan your used GitHub Marketplace Actions and lets you know if they are in need of an update.
