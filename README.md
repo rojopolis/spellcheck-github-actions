@@ -5,7 +5,7 @@
 ![Spellcheck Action][GHASPLLBADGE]
 [![Docker Pulls](https://img.shields.io/docker/pulls/jonasbn/github-action-spellcheck.svg?style=flat)](https://hub.docker.com/r/jonasbn/github-action-spellcheck/)
 
-A Github Action that spell checks Python, Markdown, and Text files.
+A GitHub Action that spell checks Python, Markdown, and Text files.
 
 This action uses [PySpelling][pyspelling] to check spelling in source files in the designated repository.
 
@@ -596,11 +596,11 @@ Please see the repository's `requirements.txt` for a list of all included Python
 
 ### Diagnostic text: `ValueError: Pipline step in unexpected format:`
 
-This error emitted from `pyspelling` indicates issues with the configuration file.
+This error emitted from [PySpelling][pyspelling] indicates issues with the configuration file.
 
 Please see the section: "Configuration" above.
 
-With the update of [pyspelling](https://pypi.org/project/pyspelling/) from 2.6.1 to 2.7.3 with release 0.16.0  (0.15.0, do see the change log).
+With the update of [PySpelling](https://pypi.org/project/pyspelling/) from 2.6.1 to 2.7.3 with release 0.16.0  (0.15.0, do see the change log).
 
 This error would be emitted from the GitHub Action, if the configuration was not properly formatted. The Markdown example's earlier revisions in this repository would demonstrate the error.
 

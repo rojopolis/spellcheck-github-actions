@@ -9,7 +9,7 @@ DockerHub
 EscapeAll
 Flaxman
 GHSL
-Github
+GitHub
 InlineHilite
 José
 Macdonald
