@@ -23,38 +23,38 @@
 ## 0.24.0, 2022-05-17, feature release, update not required
 
 - @riccardoporreca created issue [#68](https://github.com/rojopolis/spellcheck-github-actions/issues/68) requested the ability to create an output artifact.
-  
+
   With release 0.24.0 this is now available.
 
   The action configuration has to have the `output_file` parameter specified, which is a new optional parameter.
 
   ```yaml
   name: Spellcheck Action
-  
+
   on:
     workflow_dispatch:
     push:
-  
+
   jobs:
     build:
       name: Spellcheck
       runs-on: ubuntu-latest
       steps:
-  
+
       - uses: actions/checkout@v3
-  
+
       - uses: rojopolis/spellcheck-github-actions@0.24.0
         name: Spellcheck (no output file)
         with:
           source_files: README.md CHANGELOG.md
-  
+
       - uses: rojopolis/spellcheck-github-actions@0.24.0
         name: Spellcheck (with output file)
         with:
           source_files: README.md CHANGELOG.md
           task_name: Markdown
           output_file: spellcheck-output.txt
-  
+
       - uses: actions/upload-artifact@v3
         name: Archive spellcheck output output
         with:
@@ -87,7 +87,7 @@
 ## 0.22.1, 2022-02-23, bug fix release, update recommended
 
 - Testing the new Spanish support feature more thoroughly, demonstrated that the Docker build process was broken and only English worked
-  
+
   - I addressed issue [#57](https://github.com/rojopolis/spellcheck-github-actions/issues/57), which demonstrated an issue with the Docker build, the issue is no longer relevant with the simplification of the Docker build via PR: [#82](https://github.com/rojopolis/spellcheck-github-actions/pull/82) by me (@jonasbn)
 
 ## 0.22.0, 2022-02-21, feature release, update not required

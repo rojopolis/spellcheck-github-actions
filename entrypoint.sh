@@ -69,13 +69,13 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
 
             SOURCES_LIST="$SOURCES_LIST --source $FILE"
             echo "Checking quoted file >$FILE<"
-        
+
         done
 
         IFS=$OIFS
         unset OIFS
 
-    else 
+    else
         read -a arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do

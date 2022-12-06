@@ -4,13 +4,16 @@ repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-yaml
-    -   id: check-added-large-files
-    -   id: no-commit-to-branch
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-json
+    - id: file-contents-sorter
+      files: wordlist.txt
+    - id: check-added-large-files
+    - id: no-commit-to-branch
 -   repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.32.2
     hooks:
-    -   id: markdownlint
-        name: "Checking Markdown using markdownlint"
+    - id: markdownlint
+      name: "Checking Markdown using markdownlint"
