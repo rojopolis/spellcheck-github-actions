@@ -2,20 +2,15 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v4.4.0
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
     -   id: no-commit-to-branch
--   repo: https://github.com/jonasbn/pre-commit-hooks
-    rev: v0.5.0
-    hooks:
-    - id: spellcheck
-      name: "Checking spelling using pyspelling"
 -   repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.27.1
+    rev: v0.32.2
     hooks:
     -   id: markdownlint
         name: "Checking Markdown using markdownlint"
