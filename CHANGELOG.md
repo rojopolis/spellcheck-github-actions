@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.29.0, 2022-12-29, maintenance release, update not required
+
+- Docker image updated to Python 3.11.1 slim via PR [#139](https://github.com/rojopolis/spellcheck-github-actions/pull/139) from @dependabot. [Release notes for Python 3.11.1](https://docs.python.org/release/3.11.1/whatsnew/changelog.html)
+
+- [lxml](https://pypi.org/project/lxml/) bumped to version 4.9.1 from 4.9.1 to get the build to work, without jumping through too many hoops. We prefer relying on wheel instead of building from source, since `lxml` can become quite a time sink
+
 ## 0.28.0, 2022-11-16, maintenance release, update not required
 
 - Docker image updated to Python 3.10.8 slim via PR [#129](https://github.com/rojopolis/spellcheck-github-actions/pull/129) from @snyk-bot. [Release notes for Python 3.10.8](https://docs.python.org/release/3.10.8/whatsnew/changelog.html)
