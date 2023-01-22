@@ -382,6 +382,52 @@ Please open an issue or PR, if [Hunspell][hunspell] should be evaluated for poss
 
 ## Tips
 
+## How to declutter your root directory from Spellcheck configuration files
+
+If you think that the GitHub Spellcheck Action is cluttering the root directory of you project, you can move the configuration files to a subdirectory.
+
+1. In the action configuration (`.github/workflows/<your action configuration of the spellcheck action>`) you add the `config_path` parameter and specify where you want you have put you spellcheck configuration file
+2. In the spellcheck configuration file (mentioned above), you can specify the `wordlist` parameter to point to a designated path
+
+Moving both files to `.github` could look at follows:
+
+```yaml
+name: Spellcheck Action
+on: push
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.29.0
+      name: Spellcheck
+      with:
+        config_path: .github/spellcheck.yml # <--- put path to configuration file here
+```
+
+```yaml
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .github/wordlist.txt # <-- put path to custom dictionary file here
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+  ```
+
+
 ## Specify Code Not To Have Spelling Checked
 
 Since this action checks all available text, you might run into problems with section of code examples etc.
