@@ -54,7 +54,7 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
 
     if [ "$SPLIT" = true ]; then
         echo "IFS = >$IFS<"
-        read -a arr <<< "$INPUT_SOURCE_FILES"
+        read -a -r arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do
 
@@ -76,7 +76,7 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
         unset OIFS
 
     else
-        read -a arr <<< "$INPUT_SOURCE_FILES"
+        read -a -r arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do
             SOURCES_LIST="$SOURCES_LIST --source $FILE"
@@ -94,10 +94,11 @@ fi
 
 echo "----------------------------------------------------------------"
 
+# shellcheck disable=SC2086
 if [ -n "$INPUT_OUTPUT_FILE" ]; then
-    pyspelling -v --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST | tee $INPUT_OUTPUT_FILE
+    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
 else
-    pyspelling -v --config $SPELLCHECK_CONFIG_FILE $TASK_NAME $SOURCES_LIST
+    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST
 fi
 
 
