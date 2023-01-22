@@ -438,7 +438,6 @@ matrix:
   default_encoding: utf-8
   ```
 
-
 ## Specify Code Not To Have Spelling Checked
 
 Since this action checks all available text, you might run into problems with section of code examples etc.
