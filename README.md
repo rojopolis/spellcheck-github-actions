@@ -12,7 +12,18 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 ## Features
 
 - Customizable configuration and spell checking using [PySpelling][pyspelling]
-- Support for the following formats: Python, Markdown and plain text
+- Support for the following formats (via [PySpelling](https://facelessuser.github.io/pyspelling/pipeline/)):
+  - Markdown
+  - Python
+  - C++
+  - HTML
+  - JavaScript
+  - Markdown
+  - ODF
+  - OOXML
+  - CSS
+  - XML
+  - Plain text
 - Support for `aspell`, Do see the section on Language Support for details
 - Support for the following languages:
   - English
