@@ -25,6 +25,4 @@ prototypes/issue86.sh
 prototypes/quotes.sh
 prototypes/shell-loop.sh
 prototypes/split.sh
-requirements.txt
 spellcheck-github-actions.code-workspace
-spellcheck.yaml
