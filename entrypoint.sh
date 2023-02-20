@@ -54,7 +54,7 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
 
     if [ "$SPLIT" = true ]; then
         echo "IFS = >$IFS<"
-        read -a -r arr <<< "$INPUT_SOURCE_FILES"
+        read -r -a arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do
 
@@ -76,7 +76,7 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
         unset OIFS
 
     else
-        read -a -r arr <<< "$INPUT_SOURCE_FILES"
+        read -r -a arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do
             SOURCES_LIST="$SOURCES_LIST --source $FILE"
