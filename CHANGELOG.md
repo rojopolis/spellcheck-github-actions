@@ -1,6 +1,12 @@
 # Change Log for spellcheck-github-actions
 
-## 0.30.0, _UNRELEASED_, maintenance release, update not required
+## 0.30.0, 2023-02-20, maintenance release, update not required
+
+- PySpelling updated from version 2.8.1 to 2.8.2, including several fixes
+  - FIX: Ensure that Aspell actually uses the encoding passed to it for dictionaries.
+  - FIX: Use a disallow list for problematic or unsupported arguments to the underlying spell checker instead of using a more restrictive allow list.
+  - FIX: Fix logic bug in JavaScript filter.
+- Lifted from  the [release notes for PySpelling](https://github.com/facelessuser/pyspelling/releases/tag/2.8.2)
 
 - Docker image updated to Python 3.11.2 slim via PR [#142](https://github.com/rojopolis/spellcheck-github-actions/pull/142) from @dependabot. [Release notes for Python 3.11.2](https://docs.python.org/release/3.11.2/whatsnew/changelog.html)
 
