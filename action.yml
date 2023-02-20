@@ -23,4 +23,4 @@ branding:
   icon: type
 runs:
   using: docker
-  image: 'docker://jonasbn/github-action-spellcheck:0.29.0'
+  image: 'docker://jonasbn/github-action-spellcheck:0.30.0'
