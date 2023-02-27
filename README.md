@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # The checkout step
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
 ```
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # The checkout step
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@v0
       name: Spellcheck
 ```
@@ -153,7 +153,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # The checkout step
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
       with:
@@ -181,7 +181,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # The checkout step
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
       with:
@@ -261,7 +261,7 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
       with:
@@ -427,7 +427,7 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
       with:
@@ -629,7 +629,7 @@ Indicates: `spellcheck.yaml` so this file should exist in the repository.
 
 If the file is available in the repository, please check that your workflow is configured correctly, with the following line, which enables [the action: checkout][actioncheckout].
 
-`uses: actions/checkout@master`
+`uses: actions/checkout@v3`
 
 In full context:
 
@@ -642,7 +642,7 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - uses: rojopolis/spellcheck-github-actions@0.30.0
       name: Spellcheck
 ```
