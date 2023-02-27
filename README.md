@@ -66,6 +66,23 @@ This configuration file must be created in a the `.github/workflows/` directory.
 
 For example, it could be named `.github/workflows/spelling_action.yml` for easy identification, if other actions are present.
 
+In the above example, the configuration is pointing to the exact version of `0.30.0`, this repository also offers  the canonical version `v0`, so there is less hassle keeping the action up to date.
+
+```yaml
+name: Spellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    # The checkout step
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@v0
+      name: Spellcheck
+```
+
 ## Specifying Sources Files To Check
 
 By default, this action will use the `sources:` list under each task in your config file to identify which files to scan. You can override this behaviour by setting `source_files` to the list of files or file patterns you want scanning.
