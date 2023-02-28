@@ -1,0 +1,11 @@
+name: Shellcheck Action
+on: push
+
+jobs:
+  build:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: ludeeus/action-shellcheck@2.0.0
+      name: Shellcheck
