@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.31.0, 2023-05-16, maintenance release, update not required
+
+- Docker image updated to Python 3.11.3 slim via PR [#152](https://github.com/rojopolis/spellcheck-github-actions/pull/152) from @dependabot. [Release notes for Python 3.11.3](https://docs.python.org/release/3.11.3/whatsnew/changelog.html)
+
 ## 0.30.0, 2023-02-20, maintenance release, update not required
 
 - PySpelling updated from version 2.8.1 to 2.8.2, including several fixes
