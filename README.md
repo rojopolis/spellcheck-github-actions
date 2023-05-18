@@ -66,6 +66,8 @@ This configuration file must be created in a the `.github/workflows/` directory.
 
 For example, it could be named `.github/workflows/spelling_action.yml` for easy identification, if other actions are present.
 
+### Using a Canonical Version
+
 In the above example, the configuration is pointing to the exact version of `0.32.0`, this repository also offers  the canonical version `v0`, so there is less hassle keeping the action up to date.
 
 ```yaml
