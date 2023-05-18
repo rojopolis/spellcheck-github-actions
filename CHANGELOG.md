@@ -1,5 +1,13 @@
 # Change Log for spellcheck-github-actions
 
+## 0.32.0, 2023-05-18, security patch release, update recommended
+
+- @dependabot raised [an alert](https://github.com/rojopolis/spellcheck-github-actions/security/dependabot/3) for the used dependency: [pymdown-extensions](https://github.com/facelessuser/pymdown-extensions). The vulnerability is labelled as [CVE-2023-32309](https://nvd.nist.gov/vuln/detail/CVE-2023-32309). The issue has been present in [pymdown-extensions](https://github.com/facelessuser/pymdown-extensions) since version [1.5.0](https://github.com/facelessuser/pymdown-extensions/releases/tag/1.5.0) and is patched in version [10.0](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.0).
+
+- Snyk has provided a patch via PR [#158](https://github.com/rojopolis/spellcheck-github-actions/pull/158), which has been tested and no regressions has been observed, even with a version leap for [pymdown-extensions](https://github.com/facelessuser/pymdown-extensions). from version [8.2](https://github.com/facelessuser/pymdown-extensions/releases/tag/8.2) to [10.0](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.0). The GitHub Action has been updated to use the patched version, even though there are no direct use of the vulnerable code in the action, but we do not want to be the source of a vulnerability.
+
+- [pymdown-extensions](https://github.com/facelessuser/pymdown-extensions) was increased to version [10.0.1](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.0.1), since a bug fix was released to follow up on the security patch.
+
 ## 0.31.0, 2023-05-16, maintenance release, update not required
 
 - Docker image updated to Python 3.11.3 slim via PR [#152](https://github.com/rojopolis/spellcheck-github-actions/pull/152) from @dependabot. [Release notes for Python 3.11.3](https://docs.python.org/release/3.11.3/whatsnew/changelog.html)
