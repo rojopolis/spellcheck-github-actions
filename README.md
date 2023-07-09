@@ -190,6 +190,10 @@ jobs:
         source_files: README.md CHANGELOG.md notes/Notes.md
         task_name: Markdown
         output_file: spellcheck-output.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Spellcheck Output
+        path: spellcheck-output.txt
 ```
 
 The artifact can be downloaded via the GitHub UI or via the GitHub API. The artifact is names: `Spellcheck artifact`, based on the name of the workflow (see above example).
