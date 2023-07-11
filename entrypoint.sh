@@ -94,19 +94,19 @@ fi
 
 echo "----------------------------------------------------------------"
 
+EXITCODE=0
+
 # shellcheck disable=SC2086
 if [ -n "$INPUT_OUTPUT_FILE" ]; then
     pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
+    EXITCODE=${PIPESTATUS[0]}
 else
     pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST
+    EXITCODE=$?
 fi
 
+test "$EXITCODE" -gt 1 && echo "::error title=Spelling check::Spelling check action failed, please check diagnostics";
 
+test "$EXITCODE" -eq 1 && echo "::error title=Spelling errors::Files in repository contain spelling errors";
 
-EXITCODE=$?
-
-test $EXITCODE -gt 1 && echo "::error title=Spelling check::Spelling check action failed, please check diagnostics";
-
-test $EXITCODE -eq 1 && echo "::error title=Spelling errors::Files in repository contain spelling errors";
-
-exit $EXITCODE
+exit "$EXITCODE"
