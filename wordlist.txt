@@ -12,8 +12,11 @@ GHSL
 GitHub
 InlineHilite
 José
+Lhomme
 Macdonald
 MagicLink
+ODF
+OOXML
 Oliveira
 PathConverter
 Pavel
@@ -48,6 +51,7 @@ chrispat
 codefences
 config
 de
+declutter
 dependabot
 edumco
 electrocucaracha
@@ -62,6 +66,7 @@ jonasbn
 linters
 lxml
 mflaxman
+nlhomme
 pavelskipenes
 pre
 proffalken
@@ -74,11 +79,8 @@ sexualized
 snyk
 socio
 soupsieve
+subdirectory
 toolchain
 wcmatch
 www
 xsaero
-declutter
-subdirectory
-OOXML
-ODF
