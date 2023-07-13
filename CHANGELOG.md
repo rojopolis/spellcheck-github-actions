@@ -1,5 +1,13 @@
 # Change Log for spellcheck-github-actions
 
+## 0.33.1, 2023-07-13, bug fix release, update not required
+
+- An update is recommended if you are using the `output_file` parameter, since the output file handling was shielding the propagation of the status of the actual spellcheck.
+
+  The issue was observed in [#166](https://github.com/rojopolis/spellcheck-github-actions/issues/166) reported by @nlhomme, where the action was reporting success, even though the spellcheck was failing.
+
+  The bug information was lifted into a new issue [#167](https://github.com/rojopolis/spellcheck-github-actions/issues/167) and was addressed in PR [#168](https://github.com/rojopolis/spellcheck-github-actions/pull/168) by @jonasbn
+
 ## 0.33.0, 2023-06-16, maintenance release, update not required
 
 - Docker image updated to Python 3.11.4 slim via PR [#164](https://github.com/rojopolis/spellcheck-github-actions/pull/164) from Snyk. [Release notes for Python 3.11.4](https://docs.python.org/release/3.11.4/whatsnew/changelog.html)
