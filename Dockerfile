@@ -11,7 +11,10 @@ LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY requirements.txt /requirements.txt
+COPY constraint.txt /constraint.txt
 COPY spellcheck.yaml /spellcheck.yaml
+
+ENV PIP_CONSTRAINT=/constraint.txt
 RUN pip3 install -r /requirements.txt
 
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
