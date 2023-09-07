@@ -5,6 +5,7 @@ CVE
 CWE
 Cavalcanti
 Customizable
+Cython
 DockerHub
 EscapeAll
 Flaxman
@@ -44,6 +45,7 @@ Wordlist
 XSS
 YAML
 aSemy
+aicore
 albertvolkman
 backrefs
 bracex
@@ -84,5 +86,3 @@ toolchain
 wcmatch
 www
 xsaero
-aicore
-Cython
