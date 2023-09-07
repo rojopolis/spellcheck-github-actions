@@ -8,8 +8,8 @@
 
 I found two guides to fixing the problem:
 
-- https://answers.sap.com/questions/13931156/getting-requirements-to-build-wheel-did-not-run-su.html
-- https://discuss.python.org/t/getting-requirements-to-build-wheel-did-not-run-successfully-exit-code-1/30365
+- ["Getting requirements to build wheel did not run successfully for sap aicore"](https://answers.sap.com/questions/13931156/getting-requirements-to-build-wheel-did-not-run-su.html)
+- ["Getting requirements to build wheel did not run successfully exit code: 1"](https://discuss.python.org/t/getting-requirements-to-build-wheel-did-not-run-successfully-exit-code-1/30365)
 
 They state somewhat the same and I have applied a fix via PR [#172](https://github.com/rojopolis/spellcheck-github-actions/pull/172) now the Docker image can build again
 

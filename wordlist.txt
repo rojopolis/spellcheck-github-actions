@@ -84,3 +84,5 @@ toolchain
 wcmatch
 www
 xsaero
+aicore
+Cython
