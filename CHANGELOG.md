@@ -1,5 +1,18 @@
 # Change Log for spellcheck-github-actions
 
+## 0.34.0, 2023-09-XX, maintenance release, update not required
+
+- Docker image updated to Python 3.11.5 slim via PR [#170](https://github.com/rojopolis/spellcheck-github-actions/pull/170) from Snyk. [Release notes for Python 3.11.5](https://docs.python.org/release/3.11.5/whatsnew/changelog.html)
+
+- Added constraint for `requirements.txt` since one of the dependencies does not support Cython version 3.
+
+I found two guides to fixing the problem:
+
+- https://answers.sap.com/questions/13931156/getting-requirements-to-build-wheel-did-not-run-su.html
+- https://discuss.python.org/t/getting-requirements-to-build-wheel-did-not-run-successfully-exit-code-1/30365
+
+They state somewhat the same and I have applied a fix via PR [#172](https://github.com/rojopolis/spellcheck-github-actions/pull/172) now the Docker image can build again
+
 ## 0.33.1, 2023-07-13, bug fix release, update not required
 
 - An update is recommended if you are using the `output_file` parameter, since the output file handling was shielding the propagation of the status of the actual spellcheck.
