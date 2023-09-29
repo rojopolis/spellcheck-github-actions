@@ -1,6 +1,8 @@
 # Change Log for spellcheck-github-actions
 
-## 0.34.0, 2023-09-XX, maintenance release, update not required
+## 0.34.0, 2023-09-29, maintenance release, update not required
+
+- Bumped the core component PySpelling to version 2.9, together with wcmatch, bumped to version 2.5, all via PR [#174](https://github.com/rojopolis/spellcheck-github-actions/pull/170) bu @jonasbn
 
 - Docker image updated to Python 3.11.5 slim via PR [#170](https://github.com/rojopolis/spellcheck-github-actions/pull/170) from Snyk. [Release notes for Python 3.11.5](https://docs.python.org/release/3.11.5/whatsnew/changelog.html)
 
