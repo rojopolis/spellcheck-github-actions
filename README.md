@@ -191,14 +191,17 @@ jobs:
         task_name: Markdown
         output_file: spellcheck-output.txt
     - uses: actions/upload-artifact@v3
+      if: '!cancelled()' # Do not upload artifact if job was cancelled
       with:
         name: Spellcheck Output
         path: spellcheck-output.txt
 ```
 
-The artifact can be downloaded via the GitHub UI or via the GitHub API. The artifact is names: `Spellcheck artifact`, based on the name of the workflow (see above example).
+The artifact can be downloaded via the GitHub UI or via the GitHub API. The artifact is named: `Spellcheck Outout`, based on the name specified in the above example and the file is named: `spellcheck-output.txt`, based on the name specified in the above example, it comes zipped.
 
 Do see the [official documentation](https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api) for handling artifacts via the API.
+
+The reason why `if: '!cancelled()'` is that the default behavior of GitHub Actions is to fail and stop processing. That would mean the proper state is displayed, but the artefact with the output is not available, this sort of beats the purpose.
 
 Artifacts are by default available for 3 months.
 
