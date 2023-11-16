@@ -1,5 +1,19 @@
 # Change Log for spellcheck-github-actions
 
+## 0.35.0, 2023-11-16, maintenance release, update not required
+
+- Docker image updated to Python 3.12.0 slim via PR [#177](https://github.com/rojopolis/spellcheck-github-actions/pull/177) from Snyk. [Release notes for Python 3.12.0](https://docs.python.org/release/3.12.0/whatsnew/changelog.html)
+
+Bumping to Python 3.12.0 slim, introduced a number of dependency updates, not all were required, but I have decided to update quite a few, since the Docker image is rebuilt anyway.
+
+- backrefs bumped from version 5.0.1 to 5.6.0, see [release notes](https://github.com/facelessuser/backrefs/releases/tag/5.6)
+- beautifulsoup4 bumped from version 4.9.3 to 4.12.2, see [release notes](https://git.launchpad.net/beautifulsoup/tree/CHANGELOG)
+- lxml bumped from version 4.9.2 to 4.9.3, see [release notes](https://github.com/lxml/lxml/blob/master/CHANGES.txt)
+- Markdown bumped from version 3.3.4 to 3.4.4, see [release notes](https://python-markdown.github.io/changelog/#344-2023-07-25)
+- pymdown-extension bumped from version 10.0.1 to 10.4, see [release notes](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.4)
+- PyYAML bumped from version 5.4.1 to 6.0.1, see [release notes](https://github.com/yaml/pyyaml/blob/main/CHANGES)
+- soupsieve bumped from version 2.2.1 to 2.5, see [release notes](https://github.com/facelessuser/soupsieve/releases/tag/2.5)
+
 ## 0.34.0, 2023-09-29, maintenance release, update not required
 
 - Bumped the core component PySpelling to version 2.9, together with wcmatch, bumped to version 2.5, all via PR [#174](https://github.com/rojopolis/spellcheck-github-actions/pull/170) bu @jonasbn
