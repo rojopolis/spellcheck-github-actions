@@ -727,6 +727,16 @@ ValueError: Pipline step in unexpected format: {'pyspelling.filters.html': None,
 
 Example lifted from issue [#60](https://github.com/rojopolis/spellcheck-github-actions/issues/60)
 
+### Diagnostic text: `re.error: global flags not at the start of the expression at position 1`
+
+This error is emitted from [PySpelling][pyspelling] and indicate an issue with interpreting the configuration file.
+
+From version [0.29.0](https://github.com/rojopolis/spellcheck-github-actions/releases/tag/0.29.0) the action is using Python 3.11 and since [Python 3.11](https://docs.python.org/3/whatsnew/3.11.html#porting-to-python-3-11) the regular expression engine `(?i)` can now only be used at the start of regular expression not elsewhere.
+
+If you specify `delimiters` in the configuration file and use the `(?i)` flag, you will get this error, if used in the deprecated manner.
+
+Thanks to @lasic for reporting and resolving the issue [#189](https://github.com/rojopolis/spellcheck-github-actions/issues/189).
+
 ## DockerHub
 
 This action is based on a Docker image available on DockerHub.
@@ -795,6 +805,7 @@ Here follows a list of contributors in alphabetical order:
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn
 - José Eduardo Montenegro Cavalcanti de Oliveira, @edumco
+- @Lasica
 - Matt Calvert, @miff2000
 - Matthew Macdonald-Wallace, @proffalken
 - Michael Flaxman, @mflaxman
