@@ -13,6 +13,7 @@ GHSL
 GitHub
 InlineHilite
 José
+Lasica
 Lhomme
 Macdonald
 MagicLink
@@ -66,6 +67,7 @@ gmail
 html
 https
 jonasbn
+lasic
 linters
 lxml
 mflaxman
