@@ -22,7 +22,7 @@ jobs:
         task_name: Markdown
         output_file: spellcheck-output.txt
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: '!cancelled()'
       name: Archive spellcheck output
       with:
