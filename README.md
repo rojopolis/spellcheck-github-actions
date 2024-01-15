@@ -350,6 +350,40 @@ matrix:
 
 Change the configuration to suit your repository and needs, please see the `examples/` directory for more example configurations.
 
+## Specifying Number of Jobs for Parallel Processing
+
+This action supports parallel processing of the configured tasks, this is done using the `jobs` parameter. Introduced in version 4.10 of **PySpelling**.
+
+The default value is `1`, which means that the action will run in a single job.
+
+```yaml
+jobs: 4
+```
+
+Full example:
+
+```yaml
+jobs: 4
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+```
+
 ## Specifying Language
 
 This action currently only support `aspell`, please see the section on Language Support below.
