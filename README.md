@@ -1,5 +1,6 @@
-
+<!-- omit from toc -->
 # spellcheck-github-actions
+<!-- omit from toc -->
 
 ![Markdownlint Action][GHAMKDBADGE]
 ![Spellcheck Action][GHASPLLBADGE]
@@ -8,6 +9,50 @@
 A GitHub Action that spell checks Python, Markdown, and Text files.
 
 This action uses [PySpelling][pyspelling] to check spelling in source files in the designated repository.
+
+## Table of Contents
+
+- [Features](#features)
+- [Configuration](#configuration)
+  - [Using a Canonical Version](#using-a-canonical-version)
+- [Specifying Sources Files To Check](#specifying-sources-files-to-check)
+  - [Examples](#examples)
+    - [No spaces, quotes not required](#no-spaces-quotes-not-required)
+    - [No spaces, quotes not required, double quotes used for complete parameter](#no-spaces-quotes-not-required-double-quotes-used-for-complete-parameter)
+    - [No spaces, quotes not required, double quotes used for single parameters](#no-spaces-quotes-not-required-double-quotes-used-for-single-parameters)
+    - [Spaces, quotes required, single quotes used](#spaces-quotes-required-single-quotes-used)
+    - [Spaces, quotes required, double quotes used](#spaces-quotes-required-double-quotes-used)
+    - [Spaces, quotes required, intermixed quotes, will not work](#spaces-quotes-required-intermixed-quotes-will-not-work)
+- [Specify a Specific Task To Run](#specify-a-specific-task-to-run)
+- [Specify a PySpelling Output Artifact](#specify-a-pyspelling-output-artifact)
+  - [Extra Configuration](#extra-configuration)
+    - [Extra Configuration for PySpelling](#extra-configuration-for-pyspelling)
+    - [Extra Configuration for Markdown](#extra-configuration-for-markdown)
+- [Spellcheck Configuration File](#spellcheck-configuration-file)
+  - [Predefined Name](#predefined-name)
+- [Specifying Language](#specifying-language)
+- [Checking For Bad Spelling](#checking-for-bad-spelling)
+- [Language Support](#language-support)
+- [Tips](#tips)
+- [How to declutter your root directory from Spellcheck configuration files](#how-to-declutter-your-root-directory-from-spellcheck-configuration-files)
+- [Specify Code Not To Have Spelling Checked](#specify-code-not-to-have-spelling-checked)
+  - [Getting Your Action Updated Automatically](#getting-your-action-updated-automatically)
+  - [Slimming Your Wordlist By Ignoring Case](#slimming-your-wordlist-by-ignoring-case)
+- [Diagnostics](#diagnostics)
+  - [Diagnostic text: `!!!Spelling check failed!!!`](#diagnostic-text-spelling-check-failed)
+  - [Diagnostic text: `RuntimeError: None of the source targets from the configuration match any files:`](#diagnostic-text-runtimeerror-none-of-the-source-targets-from-the-configuration-match-any-files)
+  - [Diagnostic text: `FileNotFoundError: [Errno 2] No such file or directory: '.wordlist.txt'`](#diagnostic-text-filenotfounderror-errno-2-no-such-file-or-directory-wordlisttxt)
+  - [Diagnostic text: `ValueError: Unable to find or load pyspelling configuration from`](#diagnostic-text-valueerror-unable-to-find-or-load-pyspelling-configuration-from)
+  - [Diagnostic text: `ERROR: *.md -- 'NoneType' object has no attribute 'end'`](#diagnostic-text-error-md----nonetype-object-has-no-attribute-end)
+  - [Diagnostic text: `ValueError: Pipline step in unexpected format:`](#diagnostic-text-valueerror-pipline-step-in-unexpected-format)
+  - [Diagnostic text: `re.error: global flags not at the start of the expression at position 1`](#diagnostic-text-reerror-global-flags-not-at-the-start-of-the-expression-at-position-1)
+- [DockerHub](#dockerhub)
+  - [A note on DockerHub](#a-note-on-dockerhub)
+- [Development](#development)
+- [Resources and References](#resources-and-references)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
+- [Copyright and License](#copyright-and-license)
 
 ## Features
 
