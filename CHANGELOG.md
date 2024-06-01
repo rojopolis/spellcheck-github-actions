@@ -1,10 +1,16 @@
 # Change Log for spellcheck-github-actions
 
+## 0.37.0, 2024-01-01, maintenance release, update not required
+
+- Docker image updated to Python 3.12.3 slim via PR [#199](https://github.com/rojopolis/spellcheck-github-actions/pull/199) from Dependabot. [Release notes for Python 3.12.3](https://docs.python.org/release/3.12.3/whatsnew/changelog.html)
+
+- Docker image updated to Python 3.12.2 slim via PR [#197](https://github.com/rojopolis/spellcheck-github-actions/pull/197) from Dependabot. [Release notes for Python 3.12.2](https://docs.python.org/release/3.12.2/whatsnew/changelog.html)
+
 ## 0.36.0, 2024-02-06, feature release, update not required
 
 - With version 2.10 of **PySpelling** the action now supports the configuration of running jobs in parallel, see the [documentation for PySpelling](https://facelessuser.github.io/pyspelling/configuration/)
 
-- Docker image updated to Python 3.12.1 slim via PR [#177](https://github.com/rojopolis/spellcheck-github-actions/pull/191) from Dependabot. [Release notes for Python 3.12.1](https://docs.python.org/release/3.12.1/whatsnew/changelog.html)
+- Docker image updated to Python 3.12.1 slim via PR [#191](https://github.com/rojopolis/spellcheck-github-actions/pull/191) from Dependabot. [Release notes for Python 3.12.1](https://docs.python.org/release/3.12.1/whatsnew/changelog.html)
 
 ## 0.35.0, 2023-11-16, maintenance release, update not required
 
