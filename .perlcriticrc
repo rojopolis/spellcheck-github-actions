@@ -1,0 +1,13 @@
+[InputOutput::RequireCheckedSyscalls]
+functions = :builtins
+exclude_functions = print say
+
+[-Modules::RequireVersionVar]
+
+[CodeLayout::RequireTidyCode]
+
+[-Miscellanea::ProhibitUselessNoCritic]
+
+[-ValuesAndExpressions::ProhibitVersionStrings]
+
+[-ErrorHandling::RequireCarping]
