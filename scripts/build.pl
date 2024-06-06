@@ -54,8 +54,8 @@ say 'Pushing tags';
 say 'git push --tags';
 system 'git push --tags';
 
-# The tagging of the version number is a part of the release process, so not need 
-# to tag create this tag separately
+# The tagging of the version number is a part of the release process, so not need
+# to create this tag separately
 say 'Creating release on GitHub with auto generated release notes and discussion';
 system "gh release create $version --discussion-category 'General' --generate-notes";
 
