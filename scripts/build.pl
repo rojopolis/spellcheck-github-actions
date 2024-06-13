@@ -3,6 +3,7 @@
 use warnings;
 use strict;
 use v5.10.0;
+use autodie qw(:all);   # Recommended more: defaults and system/exec.
 
 my $version = $ARGV[0];
 
