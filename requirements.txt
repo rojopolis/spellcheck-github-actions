@@ -11,3 +11,4 @@ six==1.16.0
 soupsieve==2.5
 wcmatch>=8.5
 webencodings==0.5.1
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
