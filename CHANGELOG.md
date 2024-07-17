@@ -1,5 +1,20 @@
 # Change Log for spellcheck-github-actions
 
+## 0.39.0, 2024-07-17, maintenance release, update recommended
+
+- PR from @snyk-bot [#204](https://github.com/rojopolis/spellcheck-github-actions/pull/204) this updates the indirect Python dependency `zipp` from version `3.15.0` to `3.19.1`
+  The dependency has a security flaw, please see below references.
+
+  Do note `zipp` is not a direct dependency, but it is a dependency of `importlib-metadata`, which is a dependency of `pyspelling`, which is the core component of this action.
+
+  By indicating is as a direct dependency of version 3.19.1, we can ensure that the action is not vulnerable, even though the vulnerability might not directly exploitable in the context of this action.
+
+  References:
+  - [Snyk description of issue](https://security.snyk.io/package/pip/zipp/3.15.0)
+  - [GitHub Security Advisory](https://github.com/advisories/GHSA-jfmj-5v4g-7637)
+  - [CVE-2024-5569](https://github.com/advisories/GHSA-jfmj-5v4g-7637)
+  - [Release notes for zipp 3.19.1](https://pypi.org/project/zipp/3.19.1/)
+
 ## 0.38.0, 2024-06-13, maintenance release, update not required
 
 - Docker image updated to Python 3.12.4 slim via PR [#202](https://github.com/rojopolis/spellcheck-github-actions/pull/202) from Dependabot. [Release notes for Python 3.12.4](https://docs.python.org/release/3.12.4/whatsnew/changelog.html)
