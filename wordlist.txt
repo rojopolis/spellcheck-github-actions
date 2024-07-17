@@ -89,3 +89,4 @@ toolchain
 wcmatch
 www
 xsaero
+zipp
