@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.40.0, 2024-07-18, maintenance release, update recommended
+
+- Minor error in the previous release, re-releasing as `0.40.0` see changes from `0.39.0` below
+
 ## 0.39.0, 2024-07-17, maintenance release, update recommended
 
 - PR from @snyk-bot [#204](https://github.com/rojopolis/spellcheck-github-actions/pull/204) this updates the indirect Python dependency `zipp` from version `3.15.0` to `3.19.1`
