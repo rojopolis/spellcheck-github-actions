@@ -11,6 +11,25 @@ if (not $version) {
     die 'Usage build.pl <version>';
 }
 
+if (not -f 'Dockerfile') {
+    die 'No Dockerfile found';
+}
+
+if (not -f 'gh') {
+    die 'No gh found';
+}
+
+if (not -f 'action.yml') {
+    die 'No action.yml found';
+}
+
+open my $fh, '<', 'action.yml';
+my $action_yml = do { local $/; <$fh> };
+if ($action_yml !~ m/docker:\/\/jonasbn\/github-action-spellcheck:$version/) {
+    die "Version in action.yml does not match: $version";
+}
+close $fh;
+
 say "Building Docker images for version: $version";
 
 my @targets = qw(v0 latest);
