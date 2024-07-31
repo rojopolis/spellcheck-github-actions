@@ -64,7 +64,6 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - C++
   - HTML
   - JavaScript
-  - Markdown
   - ODF
   - OOXML
   - CSS
