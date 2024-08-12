@@ -15,7 +15,7 @@ if (not -f 'Dockerfile') {
     die 'No Dockerfile found';
 }
 
-if (not -f 'gh') {
+if (not -e '/opt/homebrew/bin/gh') {
     die 'No gh found';
 }
 
