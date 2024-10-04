@@ -39,6 +39,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - [Specify Code Not To Have Spelling Checked](#specify-code-not-to-have-spelling-checked)
   - [Getting Your Action Updated Automatically](#getting-your-action-updated-automatically)
   - [Slimming Your Wordlist By Ignoring Case](#slimming-your-wordlist-by-ignoring-case)
+  - [Check only the changed files](#check-only-the-changed-files)
 - [Diagnostics](#diagnostics)
   - [Diagnostic text: `!!!Spelling check failed!!!`](#diagnostic-text-spelling-check-failed)
   - [Diagnostic text: `RuntimeError: None of the source targets from the configuration match any files:`](#diagnostic-text-runtimeerror-none-of-the-source-targets-from-the-configuration-match-any-files)
@@ -658,6 +659,32 @@ $ rm temp-wordlist.txt
 ```
 
 And you should be good to go.
+
+### Check only the changed files
+
+The marvellous GitHub Action: [tj-actions/changed-files](https://github.com/tj-actions/changed-files) can be used to check only the files changed in a pull request.
+
+Your workflow could look something like this:
+
+```yaml
+    - name: Get all changed markdown files
+      uses: tj-actions/changed-files@v45
+      id: changed_files
+      with:
+        files: |
+           **.md
+
+    - name: Run Spellcheck
+      id: spellcheck
+      uses: rojopolis/spellcheck-github-actions@v0
+      with:
+        task_name: Markdown
+        source_files: ${{ steps.changed_files.outputs.all_changed_files }}
+```
+
+Lifted from: [jonabsn/TIL](https://jonasbn.github.io/til/).
+
+This can be very use for very large repositories, where you only want to check the files changed in a pull request, so you can focus on the changes and do not have to wait so long for the action to complete.
 
 ## Diagnostics
 
