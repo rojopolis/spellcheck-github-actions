@@ -35,8 +35,8 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - [Checking For Bad Spelling](#checking-for-bad-spelling)
 - [Language Support](#language-support)
 - [Tips](#tips)
-- [How to declutter your root directory from Spellcheck configuration files](#how-to-declutter-your-root-directory-from-spellcheck-configuration-files)
-- [Specify Code Not To Have Spelling Checked](#specify-code-not-to-have-spelling-checked)
+  - [How to declutter your root directory from Spellcheck configuration files](#how-to-declutter-your-root-directory-from-spellcheck-configuration-files)
+  - [Specify Code Not To Have Spelling Checked](#specify-code-not-to-have-spelling-checked)
   - [Getting Your Action Updated Automatically](#getting-your-action-updated-automatically)
   - [Slimming Your Wordlist By Ignoring Case](#slimming-your-wordlist-by-ignoring-case)
 - [Diagnostics](#diagnostics)
@@ -498,7 +498,7 @@ Please open an issue or PR, if [Hunspell][hunspell] should be evaluated for poss
 
 ## Tips
 
-## How to declutter your root directory from Spellcheck configuration files
+### How to declutter your root directory from Spellcheck configuration files
 
 If you think that the GitHub Spellcheck Action is cluttering the root directory of you project, you can move the configuration files to a subdirectory.
 
@@ -543,7 +543,7 @@ matrix:
   default_encoding: utf-8
   ```
 
-## Specify Code Not To Have Spelling Checked
+### Specify Code Not To Have Spelling Checked
 
 Since this action checks all available text, you might run into problems with section of code examples etc.
 
