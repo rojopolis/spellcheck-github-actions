@@ -682,7 +682,7 @@ Your workflow could look something like this:
         source_files: ${{ steps.changed_files.outputs.all_changed_files }}
 ```
 
-Lifted from: [jonabsn/TIL](https://jonasbn.github.io/til/).
+Lifted from: [jonasbn/TIL](https://github.com/jonasbn/til/blob/master/.github/workflows/spellcheck.yml).
 
 This can be very use for very large repositories, where you only want to check the files changed in a pull request, so you can focus on the changes and do not have to wait so long for the action to complete.
 
