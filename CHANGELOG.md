@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.43.0, 2024-10-08, maintenance release, update not required
+
+- Docker image updated to Python 3.12.7 slim via PR [#215](https://github.com/rojopolis/spellcheck-github-actions/pull/215) from Dependabot. [Release notes for Python 3.12.7](https://docs.python.org/release/3.12.7/whatsnew/changelog.html)
+
 ## 0.42.0, 2024-09-22, maintenance release, update not required
 
 - Docker image updated to Python 3.12.6 slim via PR [#212](https://github.com/rojopolis/spellcheck-github-actions/pull/212) from Dependabot. [Release notes for Python 3.12.6](https://docs.python.org/release/3.12.6/whatsnew/changelog.html)
