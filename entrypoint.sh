@@ -31,6 +31,8 @@ SPLIT=false
 
 if [ -n "$INPUT_SOURCE_FILES" ]; then
 
+    echo "Source files to check: >$INPUT_SOURCE_FILES<"
+
     if grep -q $SINGLE <<< "$INPUT_SOURCE_FILES"; then
         OIFS=$IFS
         IFS=$SINGLE
@@ -58,6 +60,15 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
 
         for FILE in "${arr[@]}"; do
 
+            echo "$FILE" | python3 /pwc.py "$SPELLCHECK_CONFIG_FILE"
+
+            PATTERN_MATCH_EXITCODE=$?
+
+            if [ $PATTERN_MATCH_EXITCODE -eq 1 ]; then
+                echo "Skipping file >$FILE<"
+                continue
+            fi
+
             # Skip null items
             if [ -z "$FILE" ]; then
                 continue
@@ -79,34 +90,59 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
         read -r -a arr <<< "$INPUT_SOURCE_FILES"
 
         for FILE in "${arr[@]}"; do
+            echo "$FILE" | python3 /pwc.py "$SPELLCHECK_CONFIG_FILE"
+
+            PATTERN_MATCH_EXITCODE=$?
+
+            if [ $PATTERN_MATCH_EXITCODE -eq 1 ]; then
+                echo "Skipping file >$FILE<"
+                continue
+            fi
             SOURCES_LIST="$SOURCES_LIST --source $FILE"
             echo "Checking file >$FILE<"
         done
     fi
 
+    echo "Checking files specification in sources_list as: >$SOURCES_LIST<"
+
 else
-    echo "Checking files matching specified outlined in >$SPELLCHECK_CONFIG_FILE<"
+    echo "Checking files matching specification outlined in: >$SPELLCHECK_CONFIG_FILE<"
 fi
 
 if [ -n "$INPUT_TASK_NAME" ]; then
     TASK_NAME="--name $INPUT_TASK_NAME"
 fi
 
-echo "----------------------------------------------------------------"
-
 EXITCODE=0
 
 # shellcheck disable=SC2086
-if [ -n "$INPUT_OUTPUT_FILE" ]; then
+if [ -n "$INPUT_OUTPUT_FILE" ] && [ -n "$SOURCES_LIST" ]; then
     pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
-else
+elif [ -n "$INPUT_OUTPUT_FILE" ]; then
+    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
+    EXITCODE=${PIPESTATUS[0]}
+elif [ -n "$SOURCES_LIST" ]; then
     pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST
     EXITCODE=$?
+elif [ -z "$INPUT_SOURCE_FILES" ]; then
+    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME
+    EXITCODE=$?
+else
+    echo "No files to check, exiting"
+    EXITCODE=0
 fi
 
-test "$EXITCODE" -gt 1 && echo "::error title=Spelling check::Spelling check action failed, please check diagnostics";
+echo "----------------------------------------------------------------"
 
-test "$EXITCODE" -eq 1 && echo "::error title=Spelling errors::Files in repository contain spelling errors";
+if [ -n "$GITHUB_ACTIONS" ]; then
+    test "$EXITCODE" -gt 1 && echo "::error title=Spelling check::Spelling check action failed, please check diagnostics";
+
+    test "$EXITCODE" -eq 1 && echo "::error title=Spelling errors::Files in repository contain spelling errors";
+else
+    test "$EXITCODE" -gt 1 && echo "Spelling check action failed, please check diagnostics";
+
+    test "$EXITCODE" -eq 1 && echo "Files in repository contain spelling errors";
+fi
 
 exit "$EXITCODE"
