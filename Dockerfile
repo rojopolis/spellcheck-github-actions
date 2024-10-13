@@ -6,13 +6,14 @@ LABEL "com.github.actions.description"="Check spelling of files in repository"
 LABEL "com.github.actions.icon"="clipboard"
 LABEL "com.github.actions.color"="green"
 LABEL "repository"="http://github.com/rojopolis/spellcheck-github-actions"
-LABEL "homepage"="http://github.com/actions"
+LABEL "homepage"="https://github.com/marketplace/actions/github-spellcheck-action"
 LABEL "maintainer"="rojopolis <rojo@deba.cl>"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY requirements.txt /requirements.txt
 COPY constraint.txt /constraint.txt
 COPY spellcheck.yaml /spellcheck.yaml
+COPY pwc.py /pwc.py
 
 ENV PIP_CONSTRAINT=/constraint.txt
 RUN pip3 install -r /requirements.txt
