@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.43.1, 2024-10-17, bug fix release, update recommended
+
+- This is an attempt at addressing the conflict between using the PySpelling `--source` parameter and the `sources` parameter in the PySpelling configuration file introduced by this action. With the recommendation of using the GitHub Action: [tj-actions/changed-files](https://github.com/marketplace/actions/changed-files), the use of the `--source` flag was adopted, but this bypasses the filtering mechanism, which can be enabled in the configuration file. The update recommendation is due to the fact that you might experience unwanted behaviour if your `sources` contain negated file patterns. The patch enables application of the configured filter to the source parameters, so the action can be used with the `--source` parameter and the `sources` configuration parameter in combination.
+
+  - Issue [#213](https://github.com/rojopolis/spellcheck-github-actions/issues/213)
+
 ## 0.43.0, 2024-10-08, maintenance release, update not required
 
 - Docker image updated to Python 3.12.7 slim via PR [#215](https://github.com/rojopolis/spellcheck-github-actions/pull/215) from Dependabot. [Release notes for Python 3.12.7](https://docs.python.org/release/3.12.7/whatsnew/changelog.html)
