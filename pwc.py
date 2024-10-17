@@ -1,7 +1,7 @@
 #!python3
 
 # This little helper script was implemented to extract the sources from the spellcheck configuration file
-# The name comes from Python WCMatch, which is used to match the files against the sources
+# The name pwc comes from Python WCMatch, which is used to match the files against the sources
 # That is the short name I call it PriceWaterhouseCoopers, since it revises the file listing
 
 # read file and interpret it as yaml
