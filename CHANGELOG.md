@@ -1,5 +1,18 @@
 # Change Log for spellcheck-github-actions
 
+## 0.44.0, 2024-10-25, maintenance release, update not required
+
+- Docker image updated to Python 3.13.0 slim via PR [#217](https://github.com/rojopolis/spellcheck-github-actions/pull/217) from Dependabot. [Release notes for Python 3.13.0](https://docs.python.org/release/3.13.0/whatsnew/changelog.html)
+
+- Since lxml was not building I bumped to the lastest release 5.3.0. In in relation to that, so I while I was at it I went through the dependencies and updated the ones possible using a PySpelling build as the baseline. The following dependencies were updated:
+
+- beautifulsoup4 bumped from version 4.12.2 to 4.12.3, see [release notes](https://git.launchpad.net/beautifulsoup/tree/CHANGELOG)
+- lxml bumped from version 4.9.3 to 5.3.0, see [release notes](https://github.com/lxml/lxml/blob/master/CHANGES.txt)
+- Markdown bumped from version 3.4.4 to 3.7, see [release notes](https://python-markdown.github.io/changelog/#37-2024-08-16)
+- pymdown-extensions bumped from version 10.4 to 10.11.2, see [release notes](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.11.2)
+- PyYAML bumped from version 6.0.1 to 6.0.2, see [release notes](https://github.com/yaml/pyyaml/blob/main/CHANGES)
+- soupsieve bumped from version 2.5 to 2.6, see [release notes](https://github.com/facelessuser/soupsieve/releases/tag/2.6)
+
 ## 0.43.1, 2024-10-17, bug fix release, update recommended
 
 - This is an attempt at addressing the conflict between using the PySpelling `--source` parameter and the `sources` parameter in the PySpelling configuration file introduced by this action. With the recommendation of using the GitHub Action: [tj-actions/changed-files](https://github.com/marketplace/actions/changed-files), the use of the `--source` flag was adopted, but this bypasses the filtering mechanism, which can be enabled in the configuration file. The update recommendation is due to the fact that you might experience unwanted behaviour if your `sources` contain negated file patterns. The patch enables application of the configured filter to the source parameters, so the action can be used with the `--source` parameter and the `sources` configuration parameter in combination.
@@ -63,7 +76,7 @@ Bumping to Python 3.12.0 slim, introduced a number of dependency updates, not al
 - beautifulsoup4 bumped from version 4.9.3 to 4.12.2, see [release notes](https://git.launchpad.net/beautifulsoup/tree/CHANGELOG)
 - lxml bumped from version 4.9.2 to 4.9.3, see [release notes](https://github.com/lxml/lxml/blob/master/CHANGES.txt)
 - Markdown bumped from version 3.3.4 to 3.4.4, see [release notes](https://python-markdown.github.io/changelog/#344-2023-07-25)
-- pymdown-extension bumped from version 10.0.1 to 10.4, see [release notes](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.4)
+- pymdown-extensions bumped from version 10.0.1 to 10.4, see [release notes](https://github.com/facelessuser/pymdown-extensions/releases/tag/10.4)
 - PyYAML bumped from version 5.4.1 to 6.0.1, see [release notes](https://github.com/yaml/pyyaml/blob/main/CHANGES)
 - soupsieve bumped from version 2.2.1 to 2.5, see [release notes](https://github.com/facelessuser/soupsieve/releases/tag/2.5)
 
