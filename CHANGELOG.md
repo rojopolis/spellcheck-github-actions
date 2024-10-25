@@ -4,7 +4,7 @@
 
 - Docker image updated to Python 3.13.0 slim via PR [#217](https://github.com/rojopolis/spellcheck-github-actions/pull/217) from Dependabot. [Release notes for Python 3.13.0](https://docs.python.org/release/3.13.0/whatsnew/changelog.html)
 
-- Since lxml was not building I bumped to the lastest release 5.3.0. In in relation to that, so I while I was at it I went through the dependencies and updated the ones possible using a PySpelling build as the baseline. The following dependencies were updated:
+- Since lxml was not building I bumped to the latest release 5.3.0. In in relation to that, so I while I was at it I went through the dependencies and updated the ones possible using a PySpelling build as the baseline. The following dependencies were updated:
 
 - beautifulsoup4 bumped from version 4.12.2 to 4.12.3, see [release notes](https://git.launchpad.net/beautifulsoup/tree/CHANGELOG)
 - lxml bumped from version 4.9.3 to 5.3.0, see [release notes](https://github.com/lxml/lxml/blob/master/CHANGES.txt)
