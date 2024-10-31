@@ -1,5 +1,5 @@
 # REF: https://hub.docker.com/_/python
-FROM python:3.13.0-slim-bullseye
+FROM python:3.13.0-slim-bookworm
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repository"
