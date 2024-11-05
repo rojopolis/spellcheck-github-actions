@@ -55,10 +55,12 @@ chrispat
 codefences
 config
 de
+debian
 declutter
 dependabot
 edumco
 electrocucaracha
+endoflife
 facelessuser
 faq
 gcattan
@@ -85,9 +87,9 @@ snyk
 socio
 soupsieve
 subdirectory
+tj
 toolchain
 wcmatch
 www
 xsaero
 zipp
-tj

@@ -1,5 +1,12 @@
 # Change Log for spellcheck-github-actions
 
+## 0.45.0, 2024-11-05, maintenance release, update not required
+
+- Docker base image updated from `python:3.13.0-slim-bullseye` to `python:3.13.0-slim-bookworm`. Which should
+  give us some time in to live, end of life take into consideration:
+
+  - https://endoflife.date/debian
+
 ## 0.44.0, 2024-10-25, maintenance release, update not required
 
 - Docker image updated to Python 3.13.0 slim via PR [#217](https://github.com/rojopolis/spellcheck-github-actions/pull/217) from Dependabot. [Release notes for Python 3.13.0](https://docs.python.org/release/3.13.0/whatsnew/changelog.html)
