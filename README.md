@@ -490,6 +490,8 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - Swiss (`de_CH`)
   - Austrian (`de_AT`)
 - Spanish via the [`aspell-es` Debian package][aspell-es]
+- Russian via the [`aspell-ru` Debian package][aspell-ru]
+- Ukranian via the [`aspell-uk` Debian package][aspell-uk]
 
 Currently only the following languages are supported via [Hunspell][hunspell]:
 
@@ -504,6 +506,8 @@ Currently only the following languages are supported via [Hunspell][hunspell]:
   - Austrian (`de_AT`, via [`hunspell-de-at` Debian package][hunspell-de-at])
 - Spanish via the [`hunspell-es` Debian package][hunspell-es]
 - French via the [`hunspell-fr` Debian package][hunspell-fr]
+- Russian via the [`hunspell-ru` Debian package][hunspell-ru]
+- Ukranian via the [`hunspell-uk` Debian package][hunspell-uk]
 
 Additional languages can be added by request, please open an issue.
 
@@ -948,6 +952,8 @@ This repository is licensed under the MIT license.
 [aspell-de]: https://packages.debian.org/buster/aspell-de
 [aspell-en]: https://packages.debian.org/buster/aspell-en
 [aspell-es]: https://packages.debian.org/buster/aspell-es
+[aspell-ru]: https://packages.debian.org/buster/aspell-ru
+[aspell-uk]: https://packages.debian.org/buster/aspell-uk
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 [expectmatch]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
@@ -960,3 +966,5 @@ This repository is licensed under the MIT license.
 [hunspell-de-de]: https://packages.debian.org/buster/hunspell-de-de
 [hunspell-es]: https://packages.debian.org/buster/hunspell-es
 [hunspell-fr]: https://packages.debian.org/buster/hunspell-fr
+[hunspell-ru]: https://packages.debian.org/buster/hunspell-ru
+[hunspell-uk]: https://packages.debian.org/buster/hunspell-uk
