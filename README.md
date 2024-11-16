@@ -491,7 +491,7 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - Austrian (`de_AT`)
 - Spanish via the [`aspell-es` Debian package][aspell-es]
 - Russian via the [`aspell-ru` Debian package][aspell-ru]
-- Ukranian via the [`aspell-uk` Debian package][aspell-uk]
+- Ukrainian via the [`aspell-uk` Debian package][aspell-uk]
 
 Currently only the following languages are supported via [Hunspell][hunspell]:
 
@@ -507,7 +507,7 @@ Currently only the following languages are supported via [Hunspell][hunspell]:
 - Spanish via the [`hunspell-es` Debian package][hunspell-es]
 - French via the [`hunspell-fr` Debian package][hunspell-fr]
 - Russian via the [`hunspell-ru` Debian package][hunspell-ru]
-- Ukranian via the [`hunspell-uk` Debian package][hunspell-uk]
+- Ukrainian via the [`hunspell-uk` Debian package][hunspell-uk]
 
 Additional languages can be added by request, please open an issue.
 
