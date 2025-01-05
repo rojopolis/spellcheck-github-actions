@@ -490,12 +490,26 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - Swiss (`de_CH`)
   - Austrian (`de_AT`)
 - Spanish via the [`aspell-es` Debian package][aspell-es]
+- Russian via the [`aspell-ru` Debian package][aspell-ru]
+- Ukrainian via the [`aspell-uk` Debian package][aspell-uk]
+
+Currently only the following languages are supported via [Hunspell][hunspell]:
+
+- English, supporting:
+  - American (`en_US`, via [`hunspell-en-us` Debian package][hunspell-en-us]),
+  - British (`en_GB`, via [`hunspell-en-gb` Debian package][hunspell-en-gb]),
+  - Canadian (`en_CA`, via [`hunspell-en-ca` Debian package][hunspell-en-ca])
+  - and Australian (`en_AU`, via [`hunspell-en-au` Debian package][hunspell-en-au])
+- German, supporting:
+  - German (`de_DE`, via [`hunspell-de-de` Debian package][hunspell-de-de]),
+  - Swiss (`de_CH`, via [`hunspell-de-ch` Debian package][hunspell-de-ch])
+  - Austrian (`de_AT`, via [`hunspell-de-at` Debian package][hunspell-de-at])
+- Spanish via the [`hunspell-es` Debian package][hunspell-es]
+- French via the [`hunspell-fr` Debian package][hunspell-fr]
+- Russian via the [`hunspell-ru` Debian package][hunspell-ru]
+- Ukrainian via the [`hunspell-uk` Debian package][hunspell-uk]
 
 Additional languages can be added by request, please open an issue.
-
-[Hunspell][hunspell] is supported by [PySpelling][pyspelling], but is **not** currently supported by this action
-
-Please open an issue or PR, if [Hunspell][hunspell] should be evaluated for possible inclusion.
 
 ## Tips
 
@@ -935,9 +949,22 @@ This repository is licensed under the MIT license.
 [pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
 [hunspell]: http://hunspell.github.io/
 [aspell]: http://aspell.net/
-[aspell-de]: https://packages.debian.org/buster/aspell-de
-[aspell-en]: https://packages.debian.org/buster/aspell-en
-[aspell-es]: https://packages.debian.org/buster/aspell-es
+[aspell-de]: https://packages.debian.org/bookworm/aspell-de
+[aspell-en]: https://packages.debian.org/bookworm/aspell-en
+[aspell-es]: https://packages.debian.org/bookworm/aspell-es
+[aspell-ru]: https://packages.debian.org/bookworm/aspell-ru
+[aspell-uk]: https://packages.debian.org/bookworm/aspell-uk
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 [expectmatch]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
+[hunspell-en-au]: https://packages.debian.org/bookworm/hunspell-en-au
+[hunspell-en-ca]: https://packages.debian.org/bookworm/hunspell-en-ca
+[hunspell-en-gb]: https://packages.debian.org/bookworm/hunspell-en-gb
+[hunspell-en-us]: https://packages.debian.org/bookworm/hunspell-en-us
+[hunspell-de-at]: https://packages.debian.org/bookworm/hunspell-de-at
+[hunspell-de-ch]: https://packages.debian.org/bookworm/hunspell-de-ch
+[hunspell-de-de]: https://packages.debian.org/bookworm/hunspell-de-de
+[hunspell-es]: https://packages.debian.org/bookworm/hunspell-es
+[hunspell-fr]: https://packages.debian.org/bookworm/hunspell-fr
+[hunspell-ru]: https://packages.debian.org/bookworm/hunspell-ru
+[hunspell-uk]: https://packages.debian.org/bookworm/hunspell-uk
