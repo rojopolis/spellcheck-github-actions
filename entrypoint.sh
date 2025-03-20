@@ -117,16 +117,16 @@ EXITCODE=0
 
 # shellcheck disable=SC2086
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ -n "$SOURCES_LIST" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
+    pyspelling -vv --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
+    pyspelling -vv --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$SOURCES_LIST" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST
+    pyspelling -vv --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME $SOURCES_LIST
     EXITCODE=$?
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME
+    pyspelling -vv --config "$SPELLCHECK_CONFIG_FILE" $TASK_NAME
     EXITCODE=$?
 else
     echo "No files to check, exiting"
