@@ -26,6 +26,7 @@ echo ""
 echo "Using pyspelling on configuration outlined in >$SPELLCHECK_CONFIG_FILE<"
 pyspelling --version
 aspell --version
+hunspell --version
 
 SINGLE="'"
 DOUBLE='"'
