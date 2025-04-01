@@ -31,7 +31,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - [Spellcheck Configuration File](#spellcheck-configuration-file)
   - [Predefined Name](#predefined-name)
 - [Specifying Number of Jobs for Parallel Processing](#specifying-number-of-jobs-for-parallel-processing)
-- [Specifying Language](#specifying-language)
+- [Specifying Language and spellchecker](#specifying-language-and-spellchecker)
 - [Checking For Bad Spelling](#checking-for-bad-spelling)
 - [Language Support](#language-support)
 - [Tips](#tips)
@@ -70,12 +70,14 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - CSS
   - XML
   - Plain text
-- Support for `aspell`, Do see the section on Language Support for details
+- Support for `aspell` and `hunspell`, Do see the section on Language Support for details
 - Support for the following languages:
   - English
   - French
   - German
   - Spanish
+  - Russian
+  - Ukrainian
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
@@ -430,15 +432,37 @@ matrix:
   default_encoding: utf-8
 ```
 
-## Specifying Language
+## Specifying Language and spellchecker
 
-This action currently only support `aspell`, please see the section on Language Support below.
+This action supports:
+
+- `aspell`
+- `hunspell`
+
+Please see the section on Language Support below for more details.
 
 In the section for `aspell` you can specify the main language, for example `en`, via the `lang` parameter.
 
 You can further specify dialect, using the `d` parameter.
 
 See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling/configuration/#spell-checker-options) for more details.
+
+The action can be specified to use `hunspell` instead of `aspell` by setting the `spellchecker` parameter to `hunspell`.
+
+```yaml
+    - uses: rojopolis/spellcheck-github-actions@0.47.0
+      name: Spellcheck
+      with:
+        task_name: Markdown
+        spell_checker: hunspell
+```
+
+Do remember to configure `hunspell` in the PySpelling configuration file as well as Hunspell has no default language, so you have to specify the language.
+
+```yaml
+  hunspell:
+    d: en_US
+```
 
 ## Checking For Bad Spelling
 

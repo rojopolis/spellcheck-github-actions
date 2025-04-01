@@ -27,6 +27,7 @@ echo "Using pyspelling on configuration outlined in >$SPELLCHECK_CONFIG_FILE<"
 pyspelling --version
 aspell --version
 hunspell --version
+echo "----------------------------------------------------------------"
 
 SINGLE="'"
 DOUBLE='"'
@@ -117,13 +118,24 @@ if [ -n "$INPUT_TASK_NAME" ]; then
 fi
 
 SPELL_CHECKER='aspell'
-if [ "${INPUT_SPELL_CHECKER,,}" = "hunspell" ]; then # lowercased INPUT_SPELL_CHECKER for caseinsensitive compare
-    SPELL_CHECKER="hunspell"
+if [ -n "$INPUT_SPELL_CHECKER" ]; then
+    if [ "${INPUT_SPELL_CHECKER,,}" = "hunspell" ]; then # lowercased INPUT_SPELL_CHECKER for caseinsensitive compare
+        echo "Using hunspell as spell checker via action configuration"
+        SPELL_CHECKER="hunspell"
+    elif [ "${INPUT_SPELL_CHECKER,,}" = "aspell" ]; then # lowercased INPUT_SPELL_CHECKER for caseinsensitive compare
+        echo "Using aspell as spell checker via action configuration"
+    else
+        echo "Using aspell as spell checker by default"
+    fi
 fi
 
 EXITCODE=0
 
 # shellcheck disable=SC2086
+# Command line template
+# pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" --name $TASK_NAME --source $SOURCES_LIST
+# source and name are included in the parameters used
+
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ -n "$SOURCES_LIST" ]; then
     pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}

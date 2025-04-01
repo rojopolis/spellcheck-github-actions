@@ -18,6 +18,10 @@ inputs:
     description: |
       Name of a generated output file containing output from pyspelling.
     required: false
+  spell_checker:
+    description: |
+      The spell checker to use. Either `hunspell` or `aspell`.
+    required: false
 branding:
   color: green
   icon: type
