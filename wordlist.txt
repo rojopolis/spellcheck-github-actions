@@ -41,6 +41,7 @@ StripHTML
 SuperFences
 Tasklist
 UI
+Ukranian
 Volkman
 Wordlist
 XSS
@@ -51,6 +52,7 @@ albertvolkman
 backrefs
 beautifulsoup
 bracex
+brooke
 chrispat
 codefences
 config
@@ -63,9 +65,11 @@ electrocucaracha
 endoflife
 facelessuser
 faq
+funkill
 gcattan
 github
 gmail
+hamilton
 html
 https
 jonasbn
@@ -83,10 +87,12 @@ riccardoporreca
 rojopolis
 sbates
 sexualized
+shyim
 snyk
 socio
 soupsieve
 subdirectory
+sxd
 tj
 toolchain
 wcmatch
