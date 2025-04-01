@@ -20,6 +20,7 @@ jobs:
       with:
         source_files: README.md CHANGELOG.md
         task_name: Markdown
+        spell_checker: hunspell
         output_file: spellcheck-output.txt
 
     - uses: actions/upload-artifact@v4
