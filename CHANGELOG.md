@@ -1,5 +1,39 @@
 # Change Log for spellcheck-github-actions
 
+## 0.48.0, 2025-04-01, feature release, update not required
+
+- Support for `hunspell` via PR [#224](https://github.com/rojopolis/spellcheck-github-actions/pull/224) from @funkill
+
+  These opens up for use of `hunspell` instead of the default: `aspell`. The following languages are supported:
+
+  - English
+  - German
+  - Spanish
+  - French
+  - Russian
+  - Ukranian
+
+  And the `aspell` language support has been extended with:
+
+  - Russian
+  - Ukranian
+
+  So the two spell checkers are aligned.
+
+- The action now emits more information on what versions of tools it is using thanks to PR [#234](https://github.com/rojopolis/spellcheck-github-actions/pull/234) from @brooke-hamilton
+
+  The tools are:
+
+  - `aspell`
+  - `hunspell`
+  - `pyspelling`
+
+- One step closer to full Docker image build automation via PR [#218](https://github.com/rojopolis/spellcheck-github-actions/pull/218) from @shyim.
+
+  This means that the PR [#108](https://github.com/rojopolis/spellcheck-github-actions/pull/108) from @sxd was closed - the contribution from @sxd was highly appreciated since it helped to understand the problem area and the solution.
+
+  PR [#218](https://github.com/rojopolis/spellcheck-github-actions/pull/218) addresses issue: [#193](https://github.com/rojopolis/spellcheck-github-actions/issues/193), which was a request for `arm64` support. Issue [#80](https://github.com/rojopolis/spellcheck-github-actions/issues/80) is still open and will not be closed until we have a fully automated build process for the Docker image.
+
 ## 0.47.0, 2025-02-11, maintenance release, update not required
 
 - Docker image updated to Python 3.13.2 slim via PR [#228](https://github.com/rojopolis/spellcheck-github-actions/pull/228) from Dependabot. [Release notes for Python 3.13.2](https://docs.python.org/release/3.13.2/whatsnew/changelog.html)
