@@ -20,12 +20,14 @@ RUN pip3 install -r /requirements.txt
 
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
 RUN apt-get update && apt-get install -y \
-    aspell aspell-en aspell-de aspell-es aspell-fr aspell-ru aspell-uk \
-    hunspell \
-    hunspell-en-au hunspell-en-ca hunspell-en-gb hunspell-en-us \
-    hunspell-de-at hunspell-de-ch hunspell-de-de \
-    hunspell-es hunspell-fr \
-    hunspell-ru hunspell-uk \
+    aspell hunspell \
+    aspell-en hunspell-en-au hunspell-en-ca hunspell-en-gb hunspell-en-us \
+    aspell-de hunspell-de-at hunspell-de-ch hunspell-de-de \
+    aspell-es hunspell-es \
+    aspell-fr hunspell-fr \
+    aspell-ru hunspell-ru \
+    aspell-uk hunspell-uk \
+    aspell-it hunspell-it \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
