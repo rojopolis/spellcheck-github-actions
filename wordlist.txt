@@ -11,14 +11,18 @@ EscapeAll
 Flaxman
 GHSL
 GitHub
+Hobert
 InlineHilite
+Isengo
 José
 Lasica
 Lhomme
 Macdonald
 MagicLink
+Micha
 ODF
 OOXML
+Oderbolz
 Oliveira
 PathConverter
 Pavel
@@ -76,6 +80,8 @@ jonasbn
 lasic
 linters
 lxml
+metaode
+metaodi
 mflaxman
 nlhomme
 pavelskipenes

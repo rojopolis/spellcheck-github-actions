@@ -1,5 +1,13 @@
 # Change Log for spellcheck-github-actions
 
+## 0.49.0, 2025-05-22, feature release, update not required
+
+- Support for Italian as requested by: Stefan Oderbolz (@metaode) via issue [#241](https://github.com/rojopolis/spellcheck-github-actions/issues/241), the support is both for `aspell` and `hunspell`
+
+- Docker image updated to Python 3.13.3 slim via PR [#238](https://github.com/rojopolis/spellcheck-github-actions/pull/238) from Dependabot. [Release notes for Python 3.13.3](https://docs.python.org/release/3.13.3/whatsnew/changelog.html)
+
+- `pymdown-extensions`  have been updated to: `10.15.0` hopefully addressing the issue outlined in issue [#233](https://github.com/rojopolis/spellcheck-github-actions/issues/233) from: Micha Hobert (@Isengo1989). @facelessuser made the release of the dependency and I have included it in this release
+
 ## 0.48.0, 2025-04-01, feature release, update not required
 
 - Support for `hunspell` via PR [#224](https://github.com/rojopolis/spellcheck-github-actions/pull/224) from @funkill

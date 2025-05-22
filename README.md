@@ -75,6 +75,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - English
   - French
   - German
+  - Italian
   - Spanish
   - Russian
   - Ukrainian
@@ -106,7 +107,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
 ```
 
@@ -116,7 +117,7 @@ For example, it could be named `.github/workflows/spelling_action.yml` for easy 
 
 ### Using a Canonical Version
 
-In the above example, the configuration is pointing to the exact version of `0.47.0`, this repository also offers  the canonical version `v0`, so there is less hassle keeping the action up to date.
+In the above example, the configuration is pointing to the exact version of `0.49.0`, this repository also offers  the canonical version `v0`, so there is less hassle keeping the action up to date.
 
 ```yaml
 name: Spellcheck Action
@@ -204,7 +205,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -232,7 +233,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -319,7 +320,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -450,7 +451,7 @@ See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling
 The action can be specified to use `hunspell` instead of `aspell` by setting the `spellchecker` parameter to `hunspell`.
 
 ```yaml
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
       with:
         task_name: Markdown
@@ -507,30 +508,32 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
 - English via the [`aspell-en` Debian package][aspell-en], supporting:
   - American (`en_US`),
   - British (`en_GB`),
-  - Canadian (`en_CA`)
-  - and Australian (`en_AU`)
+  - Australian (`en_AU`)
+  - and Canadian (`en_CA`)
 - German via the [`aspell-de` Debian package][aspell-de], supporting:
+  - Austrian (`de_AT`)
   - German (`de_DE`),
   - Swiss (`de_CH`)
-  - Austrian (`de_AT`)
-- Spanish via the [`aspell-es` Debian package][aspell-es]
+- Italian via (`it_IT`), via the [`aspell-it` Debian package][aspell-it]
 - Russian via the [`aspell-ru` Debian package][aspell-ru]
+- Spanish via the [`aspell-es` Debian package][aspell-es]
 - Ukrainian via the [`aspell-uk` Debian package][aspell-uk]
 
 Currently only the following languages are supported via [Hunspell][hunspell]:
 
 - English, supporting:
   - American (`en_US`, via [`hunspell-en-us` Debian package][hunspell-en-us]),
+  - Australian (`en_AU`, via [`hunspell-en-au` Debian package][hunspell-en-au])
   - British (`en_GB`, via [`hunspell-en-gb` Debian package][hunspell-en-gb]),
-  - Canadian (`en_CA`, via [`hunspell-en-ca` Debian package][hunspell-en-ca])
-  - and Australian (`en_AU`, via [`hunspell-en-au` Debian package][hunspell-en-au])
+  - and Canadian (`en_CA`, via [`hunspell-en-ca` Debian package][hunspell-en-ca])
+- French via the [`hunspell-fr` Debian package][hunspell-fr]
 - German, supporting:
+  - Austrian (`de_AT`, via [`hunspell-de-at` Debian package][hunspell-de-at])
   - German (`de_DE`, via [`hunspell-de-de` Debian package][hunspell-de-de]),
   - Swiss (`de_CH`, via [`hunspell-de-ch` Debian package][hunspell-de-ch])
-  - Austrian (`de_AT`, via [`hunspell-de-at` Debian package][hunspell-de-at])
-- Spanish via the [`hunspell-es` Debian package][hunspell-es]
-- French via the [`hunspell-fr` Debian package][hunspell-fr]
+- Italian via the [`hunspell-it` Debian package][hunspell-it]
 - Russian via the [`hunspell-ru` Debian package][hunspell-ru]
+- Spanish via the [`hunspell-es` Debian package][hunspell-es]
 - Ukrainian via the [`hunspell-uk` Debian package][hunspell-uk]
 
 Additional languages can be added by request, please open an issue.
@@ -555,7 +558,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
       with:
         config_path: .github/spellcheck.yml # <--- put path to configuration file here
@@ -796,7 +799,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.47.0
+    - uses: rojopolis/spellcheck-github-actions@0.49.0
       name: Spellcheck
 ```
 
@@ -953,11 +956,13 @@ Here follows a list of contributors in alphabetical order:
 - Matt Calvert, @miff2000
 - Matthew Macdonald-Wallace, @proffalken
 - Michael Flaxman, @mflaxman
+- Micha Hobert, @Isengo1989
 - Mike Starov, @xsaero00
 - Nicolas Lhomme, @nlhomme
 - Pavel Skipenes, @pavelskipenes
 - Peter Petrik, @PeterPetrik
 - Riccardo Porreca, @riccardoporreca
+- Stefan Oderbolz @metaodi
 - Stephen Bates, @sbates130272
 
 Do you want to be left out, or feel left out of this list or have a different representation of your name, please submit a pull request or raise an issue
@@ -978,6 +983,7 @@ This repository is licensed under the MIT license.
 [aspell-es]: https://packages.debian.org/bookworm/aspell-es
 [aspell-ru]: https://packages.debian.org/bookworm/aspell-ru
 [aspell-uk]: https://packages.debian.org/bookworm/aspell-uk
+[aspell-it]: https://packages.debian.org/bookworm/aspell-it
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 [expectmatch]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
@@ -992,3 +998,4 @@ This repository is licensed under the MIT license.
 [hunspell-fr]: https://packages.debian.org/bookworm/hunspell-fr
 [hunspell-ru]: https://packages.debian.org/bookworm/hunspell-ru
 [hunspell-uk]: https://packages.debian.org/bookworm/hunspell-uk
+[hunspell-it]: https://packages.debian.org/bookworm/hunspell-it
