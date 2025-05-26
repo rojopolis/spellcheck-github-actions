@@ -12,6 +12,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Features](#features)
 - [Configuration](#configuration)
   - [Using a Canonical Version](#using-a-canonical-version)
@@ -28,6 +29,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - [Extra Configuration](#extra-configuration)
     - [Extra Configuration for PySpelling](#extra-configuration-for-pyspelling)
     - [Extra Configuration for Markdown](#extra-configuration-for-markdown)
+      - [Extra Configuration for Superfences](#extra-configuration-for-superfences)
 - [Spellcheck Configuration File](#spellcheck-configuration-file)
   - [Predefined Name](#predefined-name)
 - [Specifying Number of Jobs for Parallel Processing](#specifying-number-of-jobs-for-parallel-processing)
@@ -307,7 +309,15 @@ Do also see the Diagnostics sections below, demonstrating diagnostics emitted fr
 
 ##### Extra Configuration for Superfences
 
+Some statis site generators like Vitepress or Docusaurus use the code fence line for extra information, for example line highlighting or code block headlines. Superfencing
+would break here and spelling would be checked in the specific code section. To avoid this you can set the `relaxed_headers` option to `true`.
 
+```yaml
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - pymdownx.superfences:
+          relaxed_headers: true
+```
 
 ## Spellcheck Configuration File
 
