@@ -305,6 +305,10 @@ Currently only the case of use of `superfences` has been requested as outlined i
 
 Do also see the Diagnostics sections below, demonstrating diagnostics emitted from [Python Markdown][markdown], which might require the use of an extension.
 
+##### Extra Configuration for Superfences
+
+
+
 ## Spellcheck Configuration File
 
 You can either provide a path to the configuration file or save a file in the root of your repository with a predefined name (list below). If `config_path` is provided then it will be used and the other configuration options will be ignored. If `config_path` is not provided then the repository is searched after a first match
