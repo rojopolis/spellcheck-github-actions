@@ -101,7 +101,6 @@ shyim
 snyk
 socio
 soupsieve
-statis
 subdirectory
 sxd
 tj
