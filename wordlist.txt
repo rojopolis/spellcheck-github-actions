@@ -7,6 +7,7 @@ Cavalcanti
 Customizable
 Cython
 DockerHub
+Docusaurus
 EscapeAll
 Flaxman
 GHSL
@@ -43,9 +44,12 @@ SmartSymbols
 Starov
 StripHTML
 SuperFences
+Superfences
+Superfencing
 Tasklist
 UI
 Ukranian
+Vitepress
 Volkman
 Wordlist
 XSS
@@ -97,6 +101,7 @@ shyim
 snyk
 socio
 soupsieve
+statis
 subdirectory
 sxd
 tj
@@ -105,8 +110,3 @@ wcmatch
 www
 xsaero
 zipp
-Superfences
-Docusaurus
-Superfencing
-Vitepress
-statis
