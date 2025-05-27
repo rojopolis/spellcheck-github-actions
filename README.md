@@ -12,7 +12,6 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Features](#features)
 - [Configuration](#configuration)
   - [Using a Canonical Version](#using-a-canonical-version)
