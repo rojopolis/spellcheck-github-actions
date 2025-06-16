@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.50.0, 2025-06-16, maintenance release, update not required
+
+- Docker image updated to Python 3.13.4 slim via PR [#246](https://github.com/rojopolis/spellcheck-github-actions/pull/246) from Dependabot. [Release notes for Python 3.13.4](https://docs.python.org/release/3.13.4/whatsnew/changelog.html)
+
 ## 0.49.0, 2025-05-22, feature release, update not required
 
 - Support for Italian as requested by: Stefan Oderbolz (@metaodi) via issue [#241](https://github.com/rojopolis/spellcheck-github-actions/issues/241), the support is both for `aspell` and `hunspell`
