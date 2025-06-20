@@ -6,6 +6,6 @@ jobs:
     name: Shellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: ludeeus/action-shellcheck@2.0.0
-      name: Shellcheck
+      - uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089 # ratchet:actions/checkout@master
+      - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # ratchet:ludeeus/action-shellcheck@2.0.0
+        name: Shellcheck

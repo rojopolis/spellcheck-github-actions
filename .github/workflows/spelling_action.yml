@@ -12,19 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    # The checkout step
-    - uses: actions/checkout@v4
+      # The checkout step
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
 
-    - uses: rojopolis/spellcheck-github-actions@v0
-      name: Spellcheck
-      with:
-        source_files: README.md CHANGELOG.md
-        task_name: Markdown
-        output_file: spellcheck-output.txt
+      - uses: rojopolis/spellcheck-github-actions@35a02bae020e6999c5c37fabaf447f2eb8822ca7 # ratchet:rojopolis/spellcheck-github-actions@v0
+        name: Spellcheck
+        with:
+          source_files: README.md CHANGELOG.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
 
-    - uses: actions/upload-artifact@v4
-      if: '!cancelled()'
-      name: Archive spellcheck output
-      with:
-        name: Spellcheck artifact
-        path: spellcheck-output.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # ratchet:actions/upload-artifact@v4
+        if: '!cancelled()'
+        name: Archive spellcheck output
+        with:
+          name: Spellcheck artifact
+          path: spellcheck-output.txt
