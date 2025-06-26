@@ -1,5 +1,5 @@
 # REF: https://hub.docker.com/_/python
-# Pythong 3.13.5-slim-bookworm
+# Python 3.13.5-slim-bookworm
 FROM python@sha256:f2fdaec50160418e0c2867ba3e254755edd067171725886d5d303fd7057bbf81
 
 LABEL "com.github.actions.name"="Spellcheck Action"
