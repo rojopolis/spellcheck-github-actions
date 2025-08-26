@@ -1,6 +1,6 @@
 # REF: https://hub.docker.com/_/python
 # Python 3.13.5-slim-bookworm
-FROM python@sha256:f2fdaec50160418e0c2867ba3e254755edd067171725886d5d303fd7057bbf81
+FROM python@sha256:18634e45b29c0dd1a9a3a3d0781f9f8a221fe32ee7a853db01e9120c710ef535
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repository"
