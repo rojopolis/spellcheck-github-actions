@@ -129,6 +129,23 @@ if [ -n "$INPUT_SPELL_CHECKER" ]; then
     fi
 fi
 
+SKIP_DICT_COMPILE='true'
+if [ -n "$INPUT_SKIP_DICT_COMPILE" ]; then
+    if [ "${INPUT_SKIP_DICT_COMPILE,,}" = "true" ]; then # lowercased INPUT_SKIP_DICT_COMPILE for caseinsensitive compare
+        echo "Skipping dictionary compilation via action configuration"
+        SKIP_DICT_COMPILE="true"
+    elif [ "${INPUT_SKIP_DICT_COMPILE,,}" = "false" ]; then # lowercased INPUT_SKIP_DICT_COMPILE for caseinsensitive compare
+        echo "Not skipping dictionary compilation via action configuration"
+    else
+        echo "Invalid value for skip_dict_compile, using default: false"
+    fi
+fi
+
+COMMAND="pyspelling --verbose"
+if [ "$SKIP_DICT_COMPILE" = "false" ]; then
+    COMMAND="$COMMAND --skip-dict-compile"
+fi
+
 EXITCODE=0
 
 # shellcheck disable=SC2086
@@ -137,16 +154,16 @@ EXITCODE=0
 # source and name are included in the parameters used
 
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ -n "$SOURCES_LIST" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$SOURCES_LIST" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST
     EXITCODE=$?
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
-    pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME
     EXITCODE=$?
 else
     echo "No files to check, exiting"

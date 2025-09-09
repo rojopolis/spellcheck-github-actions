@@ -1,5 +1,12 @@
 # Change Log for spellcheck-github-actions
 
+## 0.52.0, 2025-09-10, feature release, update not required
+
+- With version 2.11 of **PySpelling** a new command line option `--skip-dict-compile` is introduced to **PySpelling**  and is adopted by this action. This will skip the dictionary compiling step if the dictionary already exists. Changes to a custom dictionary will be ignored., see the [release notes for PySpelling](https://github.com/facelessuser/pyspelling/releases/tag/2.11). Do see the updated documentation for details.
+
+  - The feature can be enabled by setting the input parameter `skip_dict_compile` to `true`, the default is `false`, meaning that the dictionary will be compiled on each run of the action.
+  - This can save time if you have a large custom dictionary that does not change often.
+
 ## 0.51.0, 2025-06-20, maintenance release, update not required
 
 - Docker image updated to Python 3.13.5 slim via PR [#249](https://github.com/rojopolis/spellcheck-github-actions/pull/249) from Dependabot. [Release notes for Python 3.13.5](https://docs.python.org/release/3.13.5/whatsnew/changelog.html)
