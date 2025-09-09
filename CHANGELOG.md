@@ -7,6 +7,8 @@
   - The feature can be enabled by setting the input parameter `skip_dict_compile` to `true`, the default is `false`, meaning that the dictionary will be compiled on each run of the action.
   - This can save time if you have a large custom dictionary that does not change often.
 
+- Docker image updated to Python 3.13.7 bookworm slim [Release notes for Python 3.13.7](https://docs.python.org/release/3.13.7/whatsnew/changelog.html)
+
 ## 0.51.0, 2025-06-20, maintenance release, update not required
 
 - Docker image updated to Python 3.13.5 slim via PR [#249](https://github.com/rojopolis/spellcheck-github-actions/pull/249) from Dependabot. [Release notes for Python 3.13.5](https://docs.python.org/release/3.13.5/whatsnew/changelog.html)
