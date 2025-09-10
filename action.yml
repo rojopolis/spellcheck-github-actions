@@ -22,9 +22,15 @@ inputs:
     description: |
       The spell checker to use. Either `hunspell` or `aspell`.
     required: false
+  skip_dict_compile:
+    description: |
+      Skip dictionary compiling step if the dictionary already exists.
+      Changes to a custom dictionary will be ignored.
+      Accepts "true" or "false" and defaults to "false".
+    required: false
 branding:
   color: green
   icon: type
 runs:
   using: docker
-  image: 'docker://jonasbn/github-action-spellcheck:0.51.0'
+  image: 'docker://jonasbn/github-action-spellcheck:0.52.0'

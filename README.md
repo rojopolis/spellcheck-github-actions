@@ -35,6 +35,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
 - [Specifying Language and spellchecker](#specifying-language-and-spellchecker)
 - [Checking For Bad Spelling](#checking-for-bad-spelling)
 - [Language Support](#language-support)
+- [Configuring Action to Skip Custom Dictionary Compilation if Not Needed](#configuring-action-to-skip-custom-dictionary-compilation-if-not-needed)
 - [Tips](#tips)
   - [How to declutter your root directory from Spellcheck configuration files](#how-to-declutter-your-root-directory-from-spellcheck-configuration-files)
   - [Specify Code Not To Have Spelling Checked](#specify-code-not-to-have-spelling-checked)
@@ -108,7 +109,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
 ```
 
@@ -206,7 +207,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -234,7 +235,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -332,7 +333,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -463,7 +464,7 @@ See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling
 The action can be specified to use `hunspell` instead of `aspell` by setting the `spellchecker` parameter to `hunspell`.
 
 ```yaml
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
       with:
         task_name: Markdown
@@ -550,6 +551,30 @@ Currently only the following languages are supported via [Hunspell][hunspell]:
 
 Additional languages can be added by request, please open an issue.
 
+## Configuring Action to Skip Custom Dictionary Compilation if Not Needed
+
+If you want to skip the compilation of the custom dictionary, you can set the `skip_dict_compile` input to `true` in your action configuration:
+
+```yaml
+name: Spellcheck Action
+on: push
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
+      name: Spellcheck
+      with:
+        config_path: .github/spellcheck.yml
+        skip_dict_compile: true # <--- set to true to skip custom dictionary compilation
+```
+
+This can be useful if you have a large custom dictionary that does not change often, as it can save time during the action run.
+
+The feature was added in version `0.52.0` of the action and it can be disabled by setting the input to `false` or omitting it altogether. The default value is `false`.
+
 ## Tips
 
 ### How to declutter your root directory from Spellcheck configuration files
@@ -570,7 +595,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
       with:
         config_path: .github/spellcheck.yml # <--- put path to configuration file here
@@ -811,7 +836,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.51.0
+    - uses: rojopolis/spellcheck-github-actions@0.52.0
       name: Spellcheck
 ```
 
