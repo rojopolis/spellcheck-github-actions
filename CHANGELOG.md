@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.53.0, 2025-10-25, maintenance release, update not required
+
+- Docker image updated to Python 3.14.0 bookworm slim [Release notes for Python 3.14.0](https://docs.python.org/release/3.14.0/whatsnew/changelog.html)
+
+- Bumped the requirement for cython to `3.0.11` or above, addressing a build issue with lxml, located when testing the PR : [#274](https://github.com/rojopolis/spellcheck-github-actions/pull/274) from @dependabot, the above updated of Python
+
 ## 0.52.0, 2025-09-10, feature release, update not required
 
 - With version 2.11 of **PySpelling** a new command line option `--skip-dict-compile` is introduced to **PySpelling**  and is adopted by this action. This will skip the dictionary compiling step if the dictionary already exists. Changes to a custom dictionary will be ignored., see the [release notes for PySpelling](https://github.com/facelessuser/pyspelling/releases/tag/2.11). Do see the updated documentation for details.
