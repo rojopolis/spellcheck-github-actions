@@ -64,6 +64,7 @@ brooke
 chrispat
 codefences
 config
+cython
 de
 debian
 declutter
