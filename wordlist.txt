@@ -7,6 +7,7 @@ Cavalcanti
 Customizable
 Cython
 DockerHub
+Dockerfile
 Docusaurus
 EscapeAll
 Flaxman
@@ -47,6 +48,7 @@ SuperFences
 Superfences
 Superfencing
 Tasklist
+Trixie
 UI
 Ukranian
 Vitepress
@@ -64,10 +66,12 @@ brooke
 chrispat
 codefences
 config
+cython
 de
 debian
 declutter
 dependabot
+dev
 edumco
 electrocucaracha
 endoflife
@@ -82,6 +86,8 @@ html
 https
 jonasbn
 lasic
+libxml
+libxslt
 linters
 lxml
 metaode
@@ -105,7 +111,9 @@ subdirectory
 sxd
 tj
 toolchain
+trixie
 wcmatch
 www
 xsaero
 zipp
+zlib

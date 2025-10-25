@@ -1,6 +1,6 @@
 # REF: https://hub.docker.com/_/python
-# Python 3.13.7-slim-bookworm
-FROM python@sha256:5fa2567616c8d0e9a9470c8b4c1cb8b6f4d9f2fd45a548df393bed3537a7a324
+# Python 3.14.0-slim-trixie
+FROM python@sha256:4ed33101ee7ec299041cc41dd268dae17031184be94384b1ce7936dc4e5dead3
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repository"
@@ -17,11 +17,11 @@ COPY constraint.txt /constraint.txt
 COPY spellcheck.yaml /spellcheck.yaml
 COPY pwc.py /pwc.py
 
-ENV PIP_CONSTRAINT=/constraint.txt
-RUN pip3 install -r /requirements.txt
-
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
 RUN apt-get update && apt-get install -y \
+    build-essential pkg-config \
+    libxml2-dev libxslt1-dev \
+    zlib1g-dev \
     aspell hunspell \
     aspell-en hunspell-en-au hunspell-en-ca hunspell-en-gb hunspell-en-us \
     aspell-de hunspell-de-at hunspell-de-ch hunspell-de-de \
@@ -31,6 +31,9 @@ RUN apt-get update && apt-get install -y \
     aspell-uk hunspell-uk \
     aspell-it hunspell-it \
     && rm -rf /var/lib/apt/lists/*
+
+ENV PIP_CONSTRAINT=/constraint.txt
+RUN pip3 install -r /requirements.txt
 
 WORKDIR /tmp
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

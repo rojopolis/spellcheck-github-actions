@@ -1,5 +1,20 @@
 # Change Log for spellcheck-github-actions
 
+## 0.53.0, 2025-10-25, maintenance release, update not required
+
+- Docker image updated to Python 3.14.0 trixie slim [Release notes for Python 3.14.0](https://docs.python.org/release/3.14.0/whatsnew/changelog.html), this originated from the PR mentioned below, however updated to Trixie from Bookworm and as always the slim variant is used
+
+- Bumped the requirement for cython to `3.0.11` or above, addressing a build issue with lxml, located when testing the PR : [#274](https://github.com/rojopolis/spellcheck-github-actions/pull/274) from @dependabot, the above update of Python
+
+- In general the Docker build file had a few updates since the above changes required some tweaking of the Dockerfile
+  - Order of installation of dependencies adjusted to ensure that lxml can build correctly
+  - Installation of:
+    - build-essential
+    - pkg-config
+    - libxml2-dev
+    - libxslt1-dev
+    - zlib1g-dev
+
 ## 0.52.0, 2025-09-10, feature release, update not required
 
 - With version 2.11 of **PySpelling** a new command line option `--skip-dict-compile` is introduced to **PySpelling**  and is adopted by this action. This will skip the dictionary compiling step if the dictionary already exists. Changes to a custom dictionary will be ignored., see the [release notes for PySpelling](https://github.com/facelessuser/pyspelling/releases/tag/2.11). Do see the updated documentation for details.
