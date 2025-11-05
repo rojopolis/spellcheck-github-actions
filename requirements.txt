@@ -5,7 +5,7 @@ html5lib==1.1
 lxml==5.3.0
 Markdown==3.7
 pymdown-extensions==10.15.0
-pyspelling==2.11
+pyspelling==2.12
 PyYAML==6.0.2
 six==1.16.0
 soupsieve==2.6
