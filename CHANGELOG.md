@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.54.0, 2025-11-05, feature release, update not required
+
+- PySpelling the core component has been updated to version 2.12.0, which introduces support for maximum available cores. The feature is described in the [release notes for PySpelling 2.12.0](https://github.com/facelessuser/pyspelling/releases/tag/2.12.0). See the [documentation for PySpelling](https://facelessuser.github.io/pyspelling/configuration/).
+
+- The flag was introduced with [release 2.10 of PySpelling](https://github.com/facelessuser/pyspelling/releases/tag/2.10.0), which was adopted in release 0.36.0 of this action.
+
 ## 0.53.0, 2025-10-25, maintenance release, update not required
 
 - Docker image updated to Python 3.14.0 trixie slim [Release notes for Python 3.14.0](https://docs.python.org/release/3.14.0/whatsnew/changelog.html), this originated from the PR mentioned below, however updated to Trixie from Bookworm and as always the slim variant is used
