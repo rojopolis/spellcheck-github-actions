@@ -1,0 +1,6 @@
+# CODEOWNERS file
+# This file defines who is responsible for code in this repository
+# More information: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+* @jonasbn
