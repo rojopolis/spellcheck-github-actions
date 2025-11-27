@@ -109,7 +109,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
 ```
 
@@ -207,7 +207,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -235,7 +235,7 @@ jobs:
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
@@ -333,7 +333,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         config_path: config/.spellcheck.yml # put path to configuration file here
@@ -464,7 +464,7 @@ See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling
 The action can be specified to use `hunspell` instead of `aspell` by setting the `spellchecker` parameter to `hunspell`.
 
 ```yaml
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         task_name: Markdown
@@ -564,7 +564,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         config_path: .github/spellcheck.yml
@@ -595,7 +595,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
       with:
         config_path: .github/spellcheck.yml # <--- put path to configuration file here
@@ -836,7 +836,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.54.0
+    - uses: rojopolis/spellcheck-github-actions@0.55.0
       name: Spellcheck
 ```
 
