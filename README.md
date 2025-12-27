@@ -534,7 +534,7 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
 - Ukrainian via the [`aspell-uk` Debian package][aspell-uk]
 - Portuguese supporting:
   - Portugal (`pt_PT`, via [`aspell-pt` Debian package][aspell-pt-pt])
-  - Brazillian Portuguese (`pt_BR`, via [`aspell-pt-br` Debian package][aspell-pt-br])
+  - Brazilian Portuguese (`pt_BR`, via [`aspell-pt-br` Debian package][aspell-pt-br])
 
 Currently only the following languages are supported via [Hunspell][hunspell]:
 

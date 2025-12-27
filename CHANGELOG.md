@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-- Support for Portuguese (Portugal and Brazil) for both Hunsspell and Aspell, requested by: @mdiazgoncalves via issue [#298](https://github.com/rojopolis/spellcheck-github-actions/issues/298)
+- Support for Portuguese (Portugal and Brazil) for both Hunspell and Aspell, requested by: @mdiazgoncalves via issue [#298](https://github.com/rojopolis/spellcheck-github-actions/issues/298)
 
 ## 0.55.0, 2025-11-27, maintenance release, update not required
 
