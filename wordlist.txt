@@ -90,6 +90,7 @@ libxml
 libxslt
 linters
 lxml
+mdiazgoncalves
 metaode
 metaodi
 mflaxman

@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y \
     aspell-ru hunspell-ru \
     aspell-uk hunspell-uk \
     aspell-it hunspell-it \
+    aspell-pt-pt aspell-pt-br hunspell-pt-pt hunspell-pt-br \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 ENV PIP_CONSTRAINT=/constraint.txt
