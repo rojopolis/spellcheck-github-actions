@@ -1,5 +1,6 @@
 # Change Log for spellcheck-github-actions
 
+- Docker image updated to Python 3.14.2 trixie slim [Release notes for Python 3.14.2](https://docs.python.org/release/3.14.2/whatsnew/changelog.html)
 - Support for Portuguese (Portugal and Brazil) for both Hunspell and Aspell, requested by: @mdiazgoncalves via issue [#298](https://github.com/rojopolis/spellcheck-github-actions/issues/298)
 
 ## 0.55.0, 2025-11-27, maintenance release, update not required
