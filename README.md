@@ -81,6 +81,7 @@ This action uses [PySpelling][pyspelling] to check spelling in source files in t
   - Spanish
   - Russian
   - Ukrainian
+  - Portuguese
   - Do see the section on Language Support for details
 - Per repository and format custom word list to avoid errors based on words not known to default dictionary, see: [PySpelling](https://facelessuser.github.io/pyspelling/configuration/) for more options
 - Flexible repository layout integration via file name matching using [Wildcard Match][wcmatch]
@@ -527,10 +528,13 @@ Currently only the following languages are supported via [GNU Aspell][aspell]:
   - Austrian (`de_AT`)
   - German (`de_DE`),
   - Swiss (`de_CH`)
-- Italian via (`it_IT`), via the [`aspell-it` Debian package][aspell-it]
+- Italian (`it_IT`), via the [`aspell-it` Debian package][aspell-it]
 - Russian via the [`aspell-ru` Debian package][aspell-ru]
 - Spanish via the [`aspell-es` Debian package][aspell-es]
 - Ukrainian via the [`aspell-uk` Debian package][aspell-uk]
+- Portuguese supporting:
+  - Portugal (`pt_PT`, via [`aspell-pt` Debian package][aspell-pt-pt])
+  - Brazillian Portuguese (`pt_BR`, via [`aspell-pt-br` Debian package][aspell-pt-br])
 
 Currently only the following languages are supported via [Hunspell][hunspell]:
 
@@ -548,6 +552,9 @@ Currently only the following languages are supported via [Hunspell][hunspell]:
 - Russian via the [`hunspell-ru` Debian package][hunspell-ru]
 - Spanish via the [`hunspell-es` Debian package][hunspell-es]
 - Ukrainian via the [`hunspell-uk` Debian package][hunspell-uk]
+- Portuguese supporting:
+  - Portuguese (`pt_PT`, via [`hunspell-pt-pt` Debian package][hunspell-pt-pt])
+  - Brazilian Portuguese (`pt_BR`, via [`hunspell-pt-br` Debian package][hunspell-pt-br])
 
 Additional languages can be added by request, please open an issue.
 
@@ -1015,24 +1022,28 @@ This repository is licensed under the MIT license.
 [pymdown-extensions]: https://pypi.org/project/pymdown-extensions/
 [hunspell]: http://hunspell.github.io/
 [aspell]: http://aspell.net/
-[aspell-de]: https://packages.debian.org/bookworm/aspell-de
-[aspell-en]: https://packages.debian.org/bookworm/aspell-en
-[aspell-es]: https://packages.debian.org/bookworm/aspell-es
-[aspell-ru]: https://packages.debian.org/bookworm/aspell-ru
-[aspell-uk]: https://packages.debian.org/bookworm/aspell-uk
-[aspell-it]: https://packages.debian.org/bookworm/aspell-it
+[aspell-de]: https://packages.debian.org/trixie/aspell-de
+[aspell-en]: https://packages.debian.org/trixie/aspell-en
+[aspell-es]: https://packages.debian.org/trixie/aspell-es
+[aspell-ru]: https://packages.debian.org/trixie/aspell-ru
+[aspell-uk]: https://packages.debian.org/trixie/aspell-uk
+[aspell-it]: https://packages.debian.org/trixie/aspell-it
+[aspell-pt-pt]: https://packages.debian.org/trixie/aspell-pt-pt
+[aspell-pt-br]: https://packages.debian.org/trixie/aspell-pt-br
 [GHAMKDBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Markdownlint%20Action/badge.svg
 [GHASPLLBADGE]: https://github.com/rojopolis/spellcheck-github-actions/workflows/Spellcheck%20Action/badge.svg
 [expectmatch]: https://facelessuser.github.io/pyspelling/configuration/#expect-match
-[hunspell-en-au]: https://packages.debian.org/bookworm/hunspell-en-au
-[hunspell-en-ca]: https://packages.debian.org/bookworm/hunspell-en-ca
-[hunspell-en-gb]: https://packages.debian.org/bookworm/hunspell-en-gb
-[hunspell-en-us]: https://packages.debian.org/bookworm/hunspell-en-us
-[hunspell-de-at]: https://packages.debian.org/bookworm/hunspell-de-at
-[hunspell-de-ch]: https://packages.debian.org/bookworm/hunspell-de-ch
-[hunspell-de-de]: https://packages.debian.org/bookworm/hunspell-de-de
-[hunspell-es]: https://packages.debian.org/bookworm/hunspell-es
-[hunspell-fr]: https://packages.debian.org/bookworm/hunspell-fr
-[hunspell-ru]: https://packages.debian.org/bookworm/hunspell-ru
-[hunspell-uk]: https://packages.debian.org/bookworm/hunspell-uk
-[hunspell-it]: https://packages.debian.org/bookworm/hunspell-it
+[hunspell-en-au]: https://packages.debian.org/trixie/hunspell-en-au
+[hunspell-en-ca]: https://packages.debian.org/trixie/hunspell-en-ca
+[hunspell-en-gb]: https://packages.debian.org/trixie/hunspell-en-gb
+[hunspell-en-us]: https://packages.debian.org/trixie/hunspell-en-us
+[hunspell-de-at]: https://packages.debian.org/trixie/hunspell-de-at
+[hunspell-de-ch]: https://packages.debian.org/trixie/hunspell-de-ch
+[hunspell-de-de]: https://packages.debian.org/trixie/hunspell-de-de
+[hunspell-es]: https://packages.debian.org/trixie/hunspell-es
+[hunspell-fr]: https://packages.debian.org/trixie/hunspell-fr
+[hunspell-ru]: https://packages.debian.org/trixie/hunspell-ru
+[hunspell-uk]: https://packages.debian.org/trixie/hunspell-uk
+[hunspell-it]: https://packages.debian.org/trixie/hunspell-it
+[hunspell-pt-pt]: https://packages.debian.org/trixie/hunspell-pt-pt
+[hunspell-pt-br]: https://packages.debian.org/trixie/hunspell-pt-br

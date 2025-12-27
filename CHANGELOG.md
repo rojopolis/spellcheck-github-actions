@@ -1,5 +1,7 @@
 # Change Log for spellcheck-github-actions
 
+- Support for Portuguese (Portugal and Brazil) for both Hunsspell and Aspell, requested by: @mdiazgoncalves via issue [#298](https://github.com/rojopolis/spellcheck-github-actions/issues/298)
+
 ## 0.55.0, 2025-11-27, maintenance release, update not required
 
 - Via an issue [#293](https://github.com/rojopolis/spellcheck-github-actions/issues/293) from @shoverbj, an update to the core component **PySpelling** from version 2.12.0 to version `2.12.1` was made, this allows for use of large dictionaries with Aspell
