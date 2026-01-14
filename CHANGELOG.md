@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.58.0, 2026-01-15, security release, update not required
+
+- A minor security issue in the dependency: pymdown-extensions, which is used by the core component PySpelling
+  - https://github.com/advisories/GHSA-r6h4-mm7h-8pmq
+  - Original issue: https://github.com/facelessuser/pymdown-extensions/issues/2716
+
 ## 0.57.0, 2026-01-14, maintenance release, update not required
 
 - Docker based image updated to Python 3.14.2 slim trixie via PR [#310](https://github.com/rojopolis/spellcheck-github-actions/pull/310) from Dependabot. The version is the same, the image has had updates.
