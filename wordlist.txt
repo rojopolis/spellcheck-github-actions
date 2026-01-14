@@ -11,6 +11,7 @@ Dockerfile
 Docusaurus
 EscapeAll
 Flaxman
+GHSA
 GHSL
 GitHub
 Hobert
@@ -96,6 +97,7 @@ metaodi
 mflaxman
 nlhomme
 pavelskipenes
+pmq
 pre
 proffalken
 pymdown
