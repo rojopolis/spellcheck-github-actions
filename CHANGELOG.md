@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.57.0, 2026-01-14, maintenance release, update not required
+
+- Docker based image updated to Python 3.14.2 slim trixie via PR [#310](https://github.com/rojopolis/spellcheck-github-actions/pull/310) from Dependabot. The version is the same, the image has had updates.
+
 ## 0.56.0, 2025-12-27, feature and maintenance release, update not required
 
 - Support for Portuguese (Portugal and Brazil) for both Hunspell and Aspell, requested by: @mdiazgoncalves via issue [#298](https://github.com/rojopolis/spellcheck-github-actions/issues/298)
