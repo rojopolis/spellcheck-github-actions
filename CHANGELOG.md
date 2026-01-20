@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## 0.58.0, 2026-01-15, security release, update not required
+## 0.58.0, 2026-01-20, security release, update not required
 
 - A minor security issue in the dependency: pymdown-extensions, which is used by the core component PySpelling
   - https://github.com/advisories/GHSA-r6h4-mm7h-8pmq
