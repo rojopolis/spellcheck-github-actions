@@ -32,6 +32,7 @@ echo "----------------------------------------------------------------"
 SINGLE="'"
 DOUBLE='"'
 SPLIT=false
+SOURCES_LIST=()
 
 if [ -n "$INPUT_SOURCE_FILES" ]; then
 
@@ -82,7 +83,7 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
                 continue
             fi
 
-            SOURCES_LIST="$SOURCES_LIST --source $FILE"
+            SOURCES_LIST+=("--source" "$FILE")
             echo "Checking quoted file >$FILE<"
 
         done
@@ -102,12 +103,12 @@ if [ -n "$INPUT_SOURCE_FILES" ]; then
                 echo "Skipping file >$FILE<"
                 continue
             fi
-            SOURCES_LIST="$SOURCES_LIST --source $FILE"
+            SOURCES_LIST+=("--source" "$FILE")
             echo "Checking file >$FILE<"
         done
     fi
 
-    echo "Checking files specification in sources_list as: >$SOURCES_LIST<"
+    echo "Checking files specification in sources_list as: >${SOURCES_LIST[*]}<"
 
 else
     echo "Checking files matching specification outlined in: >$SPELLCHECK_CONFIG_FILE<"
@@ -153,14 +154,14 @@ EXITCODE=0
 # pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" --name $TASK_NAME --source $SOURCES_LIST
 # source and name are included in the parameters used
 
-if [ -n "$INPUT_OUTPUT_FILE" ] && [ -n "$SOURCES_LIST" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST | tee "$INPUT_OUTPUT_FILE"
+if [ -n "$INPUT_OUTPUT_FILE" ] && [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
     $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
-elif [ -n "$SOURCES_LIST" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME $SOURCES_LIST
+elif [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME "${SOURCES_LIST[@]}"
     EXITCODE=$?
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
     $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" $TASK_NAME
