@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## 0.59.0, 2026-03-01, feature release, update recommended
+
+- Improvements have been added to the docker entrypoint, based on a PR from @akohout-hai which fixes an issue with handling of spaces in files names and directories, see PR [#322](https://github.com/rojopolis/spellcheck-github-actions/pull/322) for details. This is his first contribution to the project and I want to thank him for his contribution, which is highly appreciated.
+
+- Docker based image updated to Python 3.14.3 slim trixie via PR [#320](https://github.com/rojopolis/spellcheck-github-actions/pull/320) from Dependabot.
+
 ## 0.58.0, 2026-01-20, security release, update not required
 
 - A minor security issue in the dependency: pymdown-extensions, which is used by the core component PySpelling
