@@ -143,13 +143,12 @@ if [ -n "$INPUT_SKIP_DICT_COMPILE" ]; then
     fi
 fi
 
-COMMAND="pyspelling --verbose"
+COMMAND=("pyspelling" "--verbose")
 if [ "$SKIP_DICT_COMPILE" = "false" ]; then
-    COMMAND="$COMMAND --skip-dict-compile"
+    COMMAND+=("--skip-dict-compile")
 fi
-
 if [ -n "$TASK_NAME" ]; then
-    COMMAND="$COMMAND --name \"$TASK_NAME\""
+    COMMAND+=("--name" "$TASK_NAME")
 fi
 
 EXITCODE=0
@@ -159,16 +158,16 @@ EXITCODE=0
 # source and name are included in the parameters used
 
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$INPUT_OUTPUT_FILE"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}"
     EXITCODE=$?
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER"
     EXITCODE=$?
 else
     echo "No files to check, exiting"
