@@ -1,3 +1,4 @@
+Andreas
 Arithmatex
 BetterEm
 Brømsø
@@ -18,6 +19,7 @@ Hobert
 InlineHilite
 Isengo
 José
+Kohout
 Lasica
 Lhomme
 Macdonald
@@ -59,6 +61,7 @@ XSS
 YAML
 aSemy
 aicore
+akohout
 albertvolkman
 backrefs
 beautifulsoup
@@ -76,12 +79,14 @@ dev
 edumco
 electrocucaracha
 endoflife
+entrypoint
 facelessuser
 faq
 funkill
 gcattan
 github
 gmail
+hai
 hamilton
 html
 https
