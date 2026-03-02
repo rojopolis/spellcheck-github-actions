@@ -115,7 +115,8 @@ else
 fi
 
 if [ -n "$INPUT_TASK_NAME" ]; then
-    TASK_NAME="--name $INPUT_TASK_NAME"
+    echo "INPUT_TASK_NAME set to: >$INPUT_TASK_NAME<, using this as task name for pyspelling via --name parameter"
+    TASK_NAME="$INPUT_TASK_NAME"
 fi
 
 SPELL_CHECKER='aspell'
@@ -147,6 +148,10 @@ if [ "$SKIP_DICT_COMPILE" = "false" ]; then
     COMMAND="$COMMAND --skip-dict-compile"
 fi
 
+if [ -n "$TASK_NAME" ]; then
+    COMMAND="$COMMAND --name \"$TASK_NAME\""
+fi
+
 EXITCODE=0
 
 # Command line template
@@ -154,16 +159,16 @@ EXITCODE=0
 # source and name are included in the parameters used
 
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "$TASK_NAME" "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "$TASK_NAME" | tee "$INPUT_OUTPUT_FILE"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "$TASK_NAME" "${SOURCES_LIST[@]}"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}"
     EXITCODE=$?
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
-    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "$TASK_NAME"
+    $COMMAND --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER"
     EXITCODE=$?
 else
     echo "No files to check, exiting"
