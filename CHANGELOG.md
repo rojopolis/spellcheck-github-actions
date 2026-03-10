@@ -4,6 +4,8 @@
 
 - Docker based image updated for Python 3.14.3 slim trixie via PR [#325](https://github.com/rojopolis/spellcheck-github-actions/pull/325) from Dependabot.
 
+- Cleaned up the error messaging, to address issue [#328](https://github.com/rojopolis/spellcheck-github-actions/issues/328) from @akohout-hai, the error message is now more correct, but not improved in general
+
 ## 0.59.0, 2026-03-02, feature release, update recommended
 
 - Improvements have been added to the docker entrypoint, based on a PR from @akohout-hai which fixes an issue with handling of spaces in files names and directories, see PR [#322](https://github.com/rojopolis/spellcheck-github-actions/pull/322) for details. This is his first contribution to the project and I want to thank him for his contribution, which is highly appreciated.
