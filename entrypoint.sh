@@ -177,13 +177,9 @@ fi
 echo "----------------------------------------------------------------"
 
 if [ -n "$GITHUB_ACTIONS" ]; then
-    test "$EXITCODE" -gt 1 && echo "::error title=Spelling check::Spelling check action failed, please check diagnostics";
-
-    test "$EXITCODE" -eq 1 && echo "::error title=Spelling errors::Files in repository contain spelling errors";
+    test "$EXITCODE" -gt 0 && echo "::error title=Error::Files in repository contain spelling errors or or spelling check action failed, please check diagnostics";
 else
-    test "$EXITCODE" -gt 1 && echo "Spelling check action failed, please check diagnostics";
-
-    test "$EXITCODE" -eq 1 && echo "Files in repository contain spelling errors";
+    test "$EXITCODE" -gt 0 && echo "Files in repository contain spelling errors or spelling check action failed, please check diagnostics";
 fi
 
 exit "$EXITCODE"
