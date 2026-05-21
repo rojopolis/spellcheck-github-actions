@@ -1,7 +1,7 @@
 matrix:
 - name: Markdown
   sources:
-  - '!venv/**/*.md|**/*.md'
+  - '!venv/**/*.md|**/*.md|!CLAUDE.md|!.claude/**/*.md'
   default_encoding: utf-8
   aspell:
     lang: en
