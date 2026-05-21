@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport sys, json, os, subprocess\ninp = json.loads(os.environ.get('CLAUDE_TOOL_INPUT', '{}'))\nf = inp.get('file_path', '')\nif f.endswith('entrypoint.sh'):\n    result = subprocess.run(['shellcheck', f])\n    sys.exit(result.returncode)\n\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport json, os\ninp = json.loads(os.environ.get('CLAUDE_TOOL_INPUT', '{}'))\nf = inp.get('file_path', '')\nif 'wordlist.txt' in f:\n    print('REMINDER: wordlist.txt must stay sorted. Add new words in alphabetical order.')\n\""
+          }
+        ]
+      }
+    ]
+  }
+}
