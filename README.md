@@ -654,14 +654,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout repository
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-      with:
-        persist-credentials: false
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
-    - uses: rojopolis/spellcheck-github-actions@0.61.0
-      name: Spellcheck
-      with:
+      - uses: rojopolis/spellcheck-github-actions@0.61.0
+        name: Spellcheck
+        with:
         config_path: .github/spellcheck.yml # <--- put path to configuration file here
 ```
 
