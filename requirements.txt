@@ -3,7 +3,7 @@ beautifulsoup4==4.12.3
 bracex==2.5.post1
 html5lib==1.1
 lxml==5.4.0
-Markdown==3.7
+Markdown==3.8.1
 pymdown-extensions==10.21.3
 pyspelling==2.12.1
 PyYAML==6.0.2
