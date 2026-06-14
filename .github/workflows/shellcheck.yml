@@ -1,5 +1,11 @@
 name: Shellcheck Action
-on: push
+
+on:
+  push:
+    paths:
+      - '**/*.sh'
+      - '.shellcheckrc'
+      - '.github/workflows/shellcheck.yml'
 
 permissions:
   contents: read
@@ -14,5 +20,5 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # v2.0.0
-        name: Shellcheck
+      - name: Shellcheck
+        uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # v2.0.0
