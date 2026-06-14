@@ -1,6 +1,6 @@
 ---
 name: release-prep
-description: Prepare a new release - bump action.yml image version, verify CHANGELOG entry, stage changes, and create a git tag
+description: Prepare a new release - bump action.yml image version, verify CHANGELOG entry and stage changes
 disable-model-invocation: true
 ---
 
@@ -16,17 +16,13 @@ Steps:
 
 3. Check `CHANGELOG.md` for an entry matching `$VERSION`. If none exists, warn and stop — ask the user to add a changelog entry before continuing.
 
-4. Show `git diff action.yml` for review.
+4. Create a PR for the changes to `action.yml`, `README.md`, and the new changelog entry in `CHANGELOG.md`. Wait for the PR to be merged before proceeding.
 
-5. Show `git diff README.md` for review.
-
-6. Ask the user to confirm before proceeding.
-
-7. On confirmation:
+5. On merge:
    ```bash
    run perl scripts/build.pl $VERSION
    ```
 
-8. Check the return value of the build script. If it fails, show the error and stop. The build script does the tagging and pushing to GitHub and Docker Hub.
+6. Check the return value of the build script. If it fails, show the error and stop. The build script does the tagging and pushing to GitHub and Docker Hub.
 
-9. Confirm the tag was pushed and remind the user that the Docker image CI workflow will trigger on the new tag.
+7. Confirm the tag was pushed

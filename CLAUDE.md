@@ -81,7 +81,7 @@ Hooks enforce: trailing whitespace, end-of-file newlines, YAML/JSON validity, so
 
 ## Key Files
 
-- `spellcheck.yaml` — this repo's own PySpelling config (checks `**/*.md`, excludes `venv/`)
+- `spellcheck.yaml` — this repo's own PySpelling config (checks `**/*.md`, excludes `venv/`, `CLAUDE.md`, and `.claude/**/*.md`)
 - `wordlist.txt` — custom dictionary for this repo's spellcheck (must stay sorted; pre-commit enforces this)
 - `constraint.txt` — pip version constraints for reproducible builds
 - `requirements.txt` — pinned Python dependencies installed in the Docker image
