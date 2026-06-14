@@ -20,7 +20,7 @@ Steps:
 
 5. On merge:
    ```bash
-   run perl scripts/build.pl $VERSION
+   perl scripts/build.pl $VERSION
    ```
 
 6. Check the return value of the build script. If it fails, show the error and stop. The build script does the tagging and pushing to GitHub and Docker Hub.
