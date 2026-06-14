@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## 0.61, 2026-06-14, minor feature release, update not required
+## 0.61.0, 2026-06-14, minor feature release, update not required
 
 - Docker based image updated for Python 3.14.5 slim trixie via PR [#344](https://github.com/rojopolis/spellcheck-github-actions/pull/344) from Dependabot.
 
