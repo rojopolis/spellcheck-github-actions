@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
   push:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
@@ -13,16 +16,19 @@ jobs:
     steps:
 
       # The checkout step
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # ratchet:actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
-      - uses: rojopolis/spellcheck-github-actions@e3cd8e9aec4587ec73bc0e60745aafd45c37aa2e # ratchet:rojopolis/spellcheck-github-actions@v0
+      - uses: rojopolis/spellcheck-github-actions@ca94733232ec8328061aea8018dfcb4959857eea # v0.61.0
         name: Spellcheck
         with:
           source_files: README.md CHANGELOG.md
           task_name: Markdown
           output_file: spellcheck-output.txt
 
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # ratchet:actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: '!cancelled()'
         name: Archive spellcheck output
         with:
