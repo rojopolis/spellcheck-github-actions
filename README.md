@@ -373,8 +373,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: rojopolis/spellcheck-github-actions@0.61.0
-        name: Spellcheck
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.61.0
         with:
         config_path: config/.spellcheck.yml # put path to configuration file here
         source_files: source/scanning.md source/triggers.md
@@ -504,8 +504,8 @@ See the documentation for [PySpelling](https://facelessuser.github.io/pyspelling
 The action can be specified to use `hunspell` instead of `aspell` by setting the `spellchecker` parameter to `hunspell`.
 
 ```yaml
-    - uses: rojopolis/spellcheck-github-actions@0.61.0
-      name: Spellcheck
+    - name: Spellcheck
+      uses: rojopolis/spellcheck-github-actions@0.61.0
       with:
         task_name: Markdown
         spell_checker: hunspell
@@ -619,8 +619,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: rojopolis/spellcheck-github-actions@0.61.0
-        name: Spellcheck
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.61.0
         with:
         config_path: .github/spellcheck.yml
         skip_dict_compile: true # <--- set to true to skip custom dictionary compilation
@@ -659,8 +659,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: rojopolis/spellcheck-github-actions@0.61.0
-        name: Spellcheck
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.61.0
         with:
         config_path: .github/spellcheck.yml # <--- put path to configuration file here
 ```
@@ -886,7 +886,7 @@ Indicates: `spellcheck.yaml` so this file should exist in the repository.
 
 If the file is available in the repository, please check that your workflow is configured correctly, with the following line, which enables [the action: checkout][actioncheckout].
 
-`uses: actions/checkout@v3`
+`uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3`
 
 In full context:
 
@@ -908,8 +908,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: rojopolis/spellcheck-github-actions@0.61.0
-        name: Spellcheck
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.61.0
 ```
 
 This step adds an action, which checkout out the repository for inspection by linters and other actions like this one.
