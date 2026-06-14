@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '**/*.sh'
+      - '.shellcheckrc'
+      - '.github/workflows/shellcheck.yml'
 
 permissions:
   contents: read
