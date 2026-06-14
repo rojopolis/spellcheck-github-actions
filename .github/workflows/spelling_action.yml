@@ -8,6 +8,7 @@ on:
     paths:
       - '**/*.md'
       - 'spellcheck.yaml'
+      - 'wordlist.txt'
       - '.github/workflows/spelling_action.yml'
 
 permissions:
