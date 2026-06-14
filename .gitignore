@@ -4,3 +4,4 @@ dictionary.dic
 prototypes/
 spellcheck-github-actions.code-workspace
 .DS_Store
+.nvmrc
