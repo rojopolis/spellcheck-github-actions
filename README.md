@@ -103,15 +103,22 @@ Example:
 name: Spellcheck Action
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    # The checkout step
-    - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.61.0
-      name: Spellcheck
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: Spellcheck
+      uses: rojopolis/spellcheck-github-actions@0.61.0
 ```
 
 This configuration file must be created in a the `.github/workflows/` directory.
@@ -126,15 +133,22 @@ In the above example, the configuration is pointing to the exact version of `0.5
 name: Spellcheck Action
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    # The checkout step
-    - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@v0
-      name: Spellcheck
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: Spellcheck
+      uses: rojopolis/spellcheck-github-actions@0.61.0
 ```
 
 ## Specifying Sources Files To Check
@@ -201,15 +215,22 @@ Example:
 name: Spellcheck Action
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    # The checkout step
-    - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.61.0
-      name: Spellcheck
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: Spellcheck
+      uses: rojopolis/spellcheck-github-actions@0.61.0
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
         task_name: Markdown
@@ -229,20 +250,29 @@ Example:
 name: Spellcheck Action
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    # The checkout step
-    - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.61.0
-      name: Spellcheck
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: Spellcheck
+      uses: rojopolis/spellcheck-github-actions@0.61.0
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
         task_name: Markdown
         output_file: spellcheck-output.txt
-    - uses: actions/upload-artifact@v3
+
+    - name: Archive spellcheck output
+      uses: actions/upload-artifact@v3
       if: '!cancelled()' # Do not upload artifact if job was cancelled
       with:
         name: Spellcheck Output
@@ -328,12 +358,21 @@ Example:
 ```yaml
 name: Spellcheck Action
 on: push
+
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
     - uses: rojopolis/spellcheck-github-actions@0.61.0
       name: Spellcheck
       with:
@@ -565,12 +604,21 @@ If you want to skip the compilation of the custom dictionary, you can set the `s
 ```yaml
 name: Spellcheck Action
 on: push
+
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
     - uses: rojopolis/spellcheck-github-actions@0.61.0
       name: Spellcheck
       with:
@@ -596,12 +644,21 @@ Moving both files to `.github` could look at follows:
 ```yaml
 name: Spellcheck Action
 on: push
+
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
     - uses: rojopolis/spellcheck-github-actions@0.61.0
       name: Spellcheck
       with:
@@ -837,12 +894,20 @@ In full context:
 name: Spellcheck Action
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout repository
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+
     - uses: rojopolis/spellcheck-github-actions@0.61.0
       name: Spellcheck
 ```
