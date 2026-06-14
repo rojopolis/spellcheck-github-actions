@@ -224,16 +224,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout repository
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-      with:
-        persist-credentials: false
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
-    - name: Spellcheck
-      uses: rojopolis/spellcheck-github-actions@0.61.0
-      with:
-        source_files: README.md CHANGELOG.md notes/Notes.md
-        task_name: Markdown
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.61.0
+        with:
+          source_files: README.md CHANGELOG.md notes/Notes.md
+          task_name: Markdown
 ```
 
 ## Specify a PySpelling Output Artifact
