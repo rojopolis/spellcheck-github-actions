@@ -1,6 +1,6 @@
 # REF: https://hub.docker.com/_/python
 # Python 3.14.2-slim-trixie
-FROM python:3.14.5-slim-trixie@sha256:7a500125bc50693f2214e842a621440a1b1b9cbb2188f74ab045d29ed2ea5856
+FROM python:3.15.0b2-slim-trixie@sha256:4c6413e9d36127c1322ef2e602b0a680dd726be10f9c2c3265b6928807810841
 
 LABEL "com.github.actions.name"="Spellcheck Action"
 LABEL "com.github.actions.description"="Check spelling of files in repository"
