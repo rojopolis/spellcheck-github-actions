@@ -376,9 +376,9 @@ jobs:
       - name: Spellcheck
         uses: rojopolis/spellcheck-github-actions@0.62.0
         with:
-        config_path: config/.spellcheck.yml # put path to configuration file here
-        source_files: source/scanning.md source/triggers.md
-        task_name: Markdown
+          config_path: config/.spellcheck.yml # put path to configuration file here
+          source_files: source/scanning.md source/triggers.md
+          task_name: Markdown
 ```
 
 ### Predefined Name
@@ -622,8 +622,8 @@ jobs:
       - name: Spellcheck
         uses: rojopolis/spellcheck-github-actions@0.62.0
         with:
-        config_path: .github/spellcheck.yml
-        skip_dict_compile: true # <--- set to true to skip custom dictionary compilation
+          config_path: .github/spellcheck.yml
+          skip_dict_compile: true # <--- set to true to skip custom dictionary compilation
 ```
 
 This can be useful if you have a large custom dictionary that does not change often, as it can save time during the action run.
@@ -662,7 +662,7 @@ jobs:
       - name: Spellcheck
         uses: rojopolis/spellcheck-github-actions@0.62.0
         with:
-        config_path: .github/spellcheck.yml # <--- put path to configuration file here
+          config_path: .github/spellcheck.yml # <--- put path to configuration file here
 ```
 
 ```yaml
