@@ -91,3 +91,17 @@ Hooks enforce: trailing whitespace, end-of-file newlines, YAML/JSON validity, so
 ## Releasing
 
 The Docker image is published via the `docker-build.yml` workflow on push to `master` or on any tag. Tags trigger semver-tagged image builds. The `action.yml` points to a pinned image version (`docker://jonasbn/github-action-spellcheck:0.x.x`) and must be updated manually when releasing a new version.
+
+**Always use the release-prep skill** (`.claude/skills/release-prep/SKILL.md`) when preparing a release. Key points:
+- Update `action.yml` image tag and all `uses: rojopolis/spellcheck-github-actions@X.Y.Z` references in `README.md`.
+- Verify a `CHANGELOG.md` entry exists for the version before proceeding.
+- Open a **PR** for these changes — do not commit directly to `master`.
+- After the PR merges, run `perl scripts/build.pl $VERSION` to tag and push to GitHub and DockerHub.
+
+## Dependabot Gotchas
+
+- Dependabot may propose Python pre-release images (e.g. `3.15.0b2` — `b` = beta). Close these by commenting `@dependabot ignore this minor version` on the PR.
+
+## README YAML Examples
+
+- Inputs under `with:` in workflow YAML examples must be indented 2 spaces relative to `with:`. This has been a recurring source of invalid examples.
