@@ -1,5 +1,17 @@
 # Change Log for spellcheck-github-actions
 
+## 0.62.0, 2026-06-19, security release, update recommended
+
+- Bumped `lxml` from 5.3.0 to 5.4.0 to address known CVEs via PR [#357](https://github.com/rojopolis/spellcheck-github-actions/pull/357).
+
+- Bumped `pymdown-extensions` to patched version 10.21.3 via PR [#358](https://github.com/rojopolis/spellcheck-github-actions/pull/358).
+
+- Bumped `Markdown` from 3.7 to 3.8.1 to patched version via PR [#359](https://github.com/rojopolis/spellcheck-github-actions/pull/359).
+
+- Cleaned up GitHub Actions workflows using `zizmor` and removed ratchet annotations via PR [#355](https://github.com/rojopolis/spellcheck-github-actions/pull/355) and PR [#356](https://github.com/rojopolis/spellcheck-github-actions/pull/356).
+
+- Clarified examples in README.
+
 ## 0.61.0, 2026-06-14, minor feature release, update not required
 
 - Docker based image updated for Python 3.14.5 slim trixie via PR [#344](https://github.com/rojopolis/spellcheck-github-actions/pull/344) from Dependabot.
