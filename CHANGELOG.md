@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## 0.63.0, 2026-07-01, maintenance release, update not required
+
+- Docker based image updated for Python 3.14.6 slim trixie via PR [#364](https://github.com/rojopolis/spellcheck-github-actions/pull/364) from Dependabot.
+
 ## 0.62.0, 2026-06-19, security release, update recommended
 
 - Bumped `lxml` from 5.3.0 to 5.4.0 to address known CVEs via PR [#357](https://github.com/rojopolis/spellcheck-github-actions/pull/357).

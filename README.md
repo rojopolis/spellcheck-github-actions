@@ -118,7 +118,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
 ```
 
 This configuration file must be created in a the `.github/workflows/` directory.
@@ -230,7 +230,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
         with:
           source_files: README.md CHANGELOG.md notes/Notes.md
           task_name: Markdown
@@ -265,7 +265,7 @@ jobs:
         persist-credentials: false
 
     - name: Spellcheck
-      uses: rojopolis/spellcheck-github-actions@0.62.0
+      uses: rojopolis/spellcheck-github-actions@0.63.0
       with:
         source_files: README.md CHANGELOG.md notes/Notes.md
         task_name: Markdown
@@ -374,7 +374,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
         with:
           config_path: config/.spellcheck.yml # put path to configuration file here
           source_files: source/scanning.md source/triggers.md
@@ -505,7 +505,7 @@ The action can be specified to use `hunspell` instead of `aspell` by setting the
 
 ```yaml
     - name: Spellcheck
-      uses: rojopolis/spellcheck-github-actions@0.62.0
+      uses: rojopolis/spellcheck-github-actions@0.63.0
       with:
         task_name: Markdown
         spell_checker: hunspell
@@ -620,7 +620,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
         with:
           config_path: .github/spellcheck.yml
           skip_dict_compile: true # <--- set to true to skip custom dictionary compilation
@@ -660,7 +660,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
         with:
           config_path: .github/spellcheck.yml # <--- put path to configuration file here
 ```
@@ -909,7 +909,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.62.0
+        uses: rojopolis/spellcheck-github-actions@0.63.0
 ```
 
 This step adds an action, which checkout out the repository for inspection by linters and other actions like this one.
