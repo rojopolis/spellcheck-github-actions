@@ -52,6 +52,8 @@ Tests use [Bats](https://github.com/bats-core/bats-core) and require the Docker 
 bats test/test.bats
 ```
 
+> **Note:** All Bats tests use `-it` (interactive TTY). When run non-interactively (e.g. from a script or CI without a terminal), tests 1–5 fail with "cannot attach stdin to a TTY-enabled container" — this is a pre-existing limitation, not a regression. Use `docker run -v $PWD:/tmp jonasbn/github-action-spellcheck:local` as the reliable non-interactive smoke test.
+
 Run a single test:
 
 ```bash
@@ -90,10 +92,16 @@ Hooks enforce: trailing whitespace, end-of-file newlines, YAML/JSON validity, so
 
 ## Releasing
 
+### Credentials
+
+- GHCR (CI): uses `GITHUB_TOKEN` — no PAT required, never expires.
+- DockerHub (local): uses your local `docker login` session. Verify it is valid before running `build.pl` (`docker login`).
+
 The Docker image is published via the `docker-build.yml` workflow on push to `master` or on any tag. Tags trigger semver-tagged image builds. The `action.yml` points to a pinned image version (`docker://jonasbn/github-action-spellcheck:0.x.x`) and must be updated manually when releasing a new version.
 
-**Always use the release-prep skill** (`.claude/skills/release-prep/SKILL.md`) when preparing a release. Key points:
+**Always use the release-prep skill** (`.claude/skills/release-prep/SKILL.md`) when preparing a release. The skill has `disable-model-invocation: true` — it cannot be called via the Skill tool; follow its steps manually. Key points:
 - Update `action.yml` image tag and all `uses: rojopolis/spellcheck-github-actions@X.Y.Z` references in `README.md`.
+- Do **not** update `@v0` references in `README.md` — these are floating major-version tags and intentionally unpinned.
 - Verify a `CHANGELOG.md` entry exists for the version before proceeding.
 - Open a **PR** for these changes — do not commit directly to `master`.
 - After the PR merges, run `perl scripts/build.pl $VERSION` to tag and push to GitHub and DockerHub.
