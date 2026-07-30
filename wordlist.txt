@@ -64,6 +64,7 @@ aSemy
 aicore
 akohout
 albertvolkman
+arkq
 backrefs
 beautifulsoup
 bracex
