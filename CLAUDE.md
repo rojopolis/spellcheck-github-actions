@@ -40,8 +40,20 @@ docker build -t jonasbn/github-action-spellcheck:local .
 # Using Docker
 docker run -it -v $PWD:/tmp jonasbn/github-action-spellcheck:local
 
+# Against a config at a non-default path (skips discovery order)
+docker run -it -v $PWD:/tmp -e INPUT_CONFIG_PATH="path/to/config.yaml" jonasbn/github-action-spellcheck:local
+
 # Using pyspelling directly (requires local install)
 pyspelling -c spellcheck.yaml
+```
+
+### Inspect what's actually installed in a published image
+
+The published image can lag `requirements.txt` (Docker layer caching, manual DockerHub releases via `scripts/build.pl`). To check the real installed versions rather than trusting the file:
+
+```bash
+docker pull jonasbn/github-action-spellcheck:0.x.x   # tag from action.yml
+docker run --rm --entrypoint pip3 jonasbn/github-action-spellcheck:0.x.x list
 ```
 
 ### Run tests
