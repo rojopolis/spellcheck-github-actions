@@ -81,12 +81,29 @@ pre-commit run --all-files
 
 Hooks enforce: trailing whitespace, end-of-file newlines, YAML/JSON validity, sorted `wordlist.txt`, and markdownlint.
 
+### Update Python dependencies
+
+`requirements.txt` is generated from `requirements.in` via [pip-tools](https://github.com/jazzband/pip-tools) — do not hand-edit `requirements.txt` directly, since manual edits to individual transitive pins (e.g. bumping `bracex` without checking what `wcmatch` actually requires) is what caused issue #378.
+
+```bash
+pip install pip-tools
+
+# Bump everything to the latest mutually compatible versions
+pip-compile requirements.in --output-file=requirements.txt --strip-extras --upgrade
+
+# Bump only specific packages, leaving all other pins untouched
+pip-compile requirements.in --output-file=requirements.txt --strip-extras --upgrade-package <name>
+```
+
+Run this with the same Python minor version as the Dockerfile's base image (check `FROM python:3.14.x-slim-trixie`) so resolved versions match what actually installs in the container. After regenerating, rebuild the local image and rerun the smoke test to confirm.
+
 ## Key Files
 
 - `spellcheck.yaml` — this repo's own PySpelling config (checks `**/*.md`, excludes `venv/`, `CLAUDE.md`, and `.claude/**/*.md`)
 - `wordlist.txt` — custom dictionary for this repo's spellcheck (must stay sorted; pre-commit enforces this)
 - `constraint.txt` — pip version constraints for reproducible builds
-- `requirements.txt` — pinned Python dependencies installed in the Docker image
+- `requirements.in` — direct Python dependencies (`pyspelling`, `pymdown-extensions`); source of truth for `requirements.txt`
+- `requirements.txt` — fully pinned dependency set (direct + transitive) installed in the Docker image, generated from `requirements.in` via `pip-compile` — do not hand-edit
 - `dictionary.dic` — aspell dictionary file (binary format, used during image build)
 - `examples/` — example PySpelling configurations for Markdown, Python, and plain text
 
@@ -109,6 +126,7 @@ The Docker image is published via the `docker-build.yml` workflow on push to `ma
 ## Dependabot Gotchas
 
 - Dependabot may propose Python pre-release images (e.g. `3.15.0b2` — `b` = beta). Close these by commenting `@dependabot ignore this minor version` on the PR.
+- The pip ecosystem entry in `.github/dependabot.yml` uses `versioning-strategy: lockfile-only`, which expects a `requirements.in` (manifest) + `pip-compile`-generated `requirements.txt` (lockfile) pair. Dependabot will bump transitive pins in `requirements.txt` on schedule but won't touch the exact versions pinned in `requirements.in` — bump those manually when a direct dependency (`pyspelling`, `pymdown-extensions`) needs a deliberate update.
 
 ## README YAML Examples
 
