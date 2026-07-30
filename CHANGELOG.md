@@ -8,6 +8,10 @@
 
   - `.github/dependabot.yml`'s pip ecosystem entry already set `versioning-strategy: lockfile-only`, which expects exactly this `requirements.in`/`requirements.txt` split; this change makes that existing setting apply as intended.
 
+## 0.63.1, 2026-07-30, bug fix release, update recommended
+
+- Fixed `sources` glob patterns that combine brace expansion with the `SPLIT`/`GLOBSTAR` flags (e.g. `**/*.{c,h}|!build/**`) silently matching zero files and causing the action to fail with `RuntimeError: None of the source targets from the configuration match any files`. The pinned `bracex` dependency (`2.5.post1`) predated the version `wcmatch` requires for correct parsing of such patterns; bumped to `3.0.1` via PR [#379](https://github.com/rojopolis/spellcheck-github-actions/pull/379). Addresses issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378), reported by @arkq.
+
 ## 0.63.0, 2026-07-01, maintenance release, update not required
 
 - Docker based image updated for Python 3.14.6 slim trixie via PR [#364](https://github.com/rojopolis/spellcheck-github-actions/pull/364) from Dependabot.
