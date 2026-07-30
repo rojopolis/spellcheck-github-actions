@@ -1,5 +1,13 @@
 # Change Log for spellcheck-github-actions
 
+## 0.64.0, 2026-07-30, maintenance release, update not required
+
+- Adopted `pip-compile` (pip-tools) for Python dependency management via PR [#380](https://github.com/rojopolis/spellcheck-github-actions/pull/380). `requirements.in` is now the source of truth for direct dependencies (`pyspelling`, `pymdown-extensions`); `requirements.txt` is generated from it rather than hand-maintained, so transitive pins can no longer silently fall out of sync the way `bracex` did in issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378).
+
+  - `backrefs` and `zipp` are dropped from `requirements.txt`. Neither is part of the resolved dependency graph for `pyspelling` + `pymdown-extensions` on the Python version this image ships (verified against each package's own declared metadata and the installed package list in the built image) — they were stale manual pins, not active dependencies. In particular, `zipp` was originally pinned in PR [#204](https://github.com/rojopolis/spellcheck-github-actions/pull/204) to patch [CVE-2024-5569](https://github.com/advisories/GHSA-jfmj-5v4g-7637); that dependency chain (`pyspelling` → `importlib-metadata` → `zipp`) no longer exists, so removing the pin does not reintroduce the vulnerability — the package simply isn't installed, pinned or not.
+
+  - `.github/dependabot.yml`'s pip ecosystem entry already set `versioning-strategy: lockfile-only`, which expects exactly this `requirements.in`/`requirements.txt` split; this change makes that existing setting apply as intended.
+
 ## 0.63.1, 2026-07-30, bug fix release, update recommended
 
 - Fixed `sources` glob patterns that combine brace expansion with the `SPLIT`/`GLOBSTAR` flags (e.g. `**/*.{c,h}|!build/**`) silently matching zero files and causing the action to fail with `RuntimeError: None of the source targets from the configuration match any files`. The pinned `bracex` dependency (`2.5.post1`) predated the version `wcmatch` requires for correct parsing of such patterns; bumped to `3.0.1` via PR [#379](https://github.com/rojopolis/spellcheck-github-actions/pull/379). Addresses issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378), reported by @arkq.
