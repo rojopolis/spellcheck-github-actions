@@ -259,24 +259,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout repository
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-      with:
-        persist-credentials: false
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
-    - name: Spellcheck
-      uses: rojopolis/spellcheck-github-actions@0.64.0
-      with:
-        source_files: README.md CHANGELOG.md notes/Notes.md
-        task_name: Markdown
-        output_file: spellcheck-output.txt
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.64.0
+        with:
+          source_files: README.md CHANGELOG.md notes/Notes.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
 
-    - name: Archive spellcheck output
-      uses: actions/upload-artifact@v3
-      if: '!cancelled()' # Do not upload artifact if job was cancelled
-      with:
-        name: Spellcheck Output
-        path: spellcheck-output.txt
+      - name: Archive spellcheck output
+        uses: actions/upload-artifact@v3
+        if: '!cancelled()' # Do not upload artifact if job was cancelled
+        with:
+          name: Spellcheck Output
+          path: spellcheck-output.txt
 ```
 
 The artifact can be downloaded via the GitHub UI or via the GitHub API. The artifact is named: `Spellcheck Outout`, based on the name specified in the above example and the file is named: `spellcheck-output.txt`, based on the name specified in the above example, it comes zipped.
