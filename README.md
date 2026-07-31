@@ -1058,6 +1058,7 @@ Here follows a list of contributors in alphabetical order:
 - @aSemy
 - Albert Volkman, @albertvolkman
 - Andreas Kohout, @akohout-hai
+- Arkadiusz Bokowy, @arkq
 - Byron Miller, @supernovae
 - Isaac Muse, @facelessuser
 - Jonas Brømsø, @jonasbn

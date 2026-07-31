@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## 0.64.0, 2026-07-30, maintenance release, update not required
+## 0.64.0, 2026-07-31, maintenance release, update not required
 
 - Adopted `pip-compile` (pip-tools) for Python dependency management via PR [#380](https://github.com/rojopolis/spellcheck-github-actions/pull/380). `requirements.in` is now the source of truth for direct dependencies (`pyspelling`, `pymdown-extensions`); `requirements.txt` is generated from it rather than hand-maintained, so transitive pins can no longer silently fall out of sync the way `bracex` did in issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378).
 
