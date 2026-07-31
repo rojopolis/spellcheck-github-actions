@@ -134,6 +134,17 @@ The Docker image is published via the `docker-build.yml` workflow on push to `ma
 - Verify a `CHANGELOG.md` entry exists for the version before proceeding.
 - Open a **PR** for these changes — do not commit directly to `master`.
 - After the PR merges, run `perl scripts/build.pl $VERSION` to tag and push to GitHub and DockerHub.
+- Once the release is actually tagged and published (check `gh release list --repo rojopolis/spellcheck-github-actions`), update the wiki's Sunset Schedule Gantt chart (see below).
+
+### Wiki
+
+The wiki (https://github.com/rojopolis/spellcheck-github-actions/wiki) is a plain git repo — clone/push via `git@github.com:rojopolis/spellcheck-github-actions.wiki.git` (SSH; anonymous HTTPS clone is read-only).
+
+- `Home.md` has a Mermaid `gantt` chart ("Sunset Schedule for Spellcheck GitHub Action") with one bar per release, dated from `CHANGELOG.md`. Per release, once it's actually published (not just merged):
+  - Add `Release X.Y.Z  :X.Y.Z, YYYY-MM-DD, 365d` using the release date.
+  - Move the `latest (unstable)` line's start/end dates to that same release date.
+  - Extend the `Release v0` bar's end date to `release date + 365d` — `v0` floats to the newest release, so its bar must always reach at least as far as the newest release's own sunset date.
+- `Releasing.md` has a separate Mermaid flowchart of `scripts/build.pl`'s control flow — only needs updating if that script's logic actually changes, not on every release.
 
 ## Dependabot Gotchas
 
