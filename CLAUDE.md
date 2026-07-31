@@ -143,3 +143,8 @@ The Docker image is published via the `docker-build.yml` workflow on push to `ma
 ## README YAML Examples
 
 - Inputs under `with:` in workflow YAML examples must be indented 2 spaces relative to `with:`. This has been a recurring source of invalid examples.
+- Don't trust a reviewer's (e.g. Copilot's) "this is invalid YAML" claim at face value — verify with `python3 -c "import yaml; yaml.safe_load(open('README.md').read())"` on the extracted block. Same-indentation block sequences (list items aligned with their parent key) are valid YAML even though they look wrong; the real issue is usually inconsistency with this file's convention, not invalidity.
+
+## Working on Open Branches
+
+- Branches behind open PRs may receive direct pushes from the user (e.g. resolving a merge conflict via the GitHub UI) while a session is in progress. A local `git push` can be rejected as a result — `git fetch` and merge (don't force-push) before retrying.
