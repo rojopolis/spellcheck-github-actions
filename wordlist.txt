@@ -40,6 +40,7 @@ PyPi
 PySpelling
 PyYAML
 README
+ReDoS
 Riccardo
 SNYK
 SVG
@@ -68,6 +69,7 @@ albertvolkman
 arkq
 backrefs
 beautifulsoup
+betterem
 bracex
 brooke
 chrispat
@@ -99,6 +101,7 @@ libxml
 libxslt
 linters
 lxml
+magiclink
 mdiazgoncalves
 metaode
 metaodi
