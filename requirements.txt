@@ -10,7 +10,7 @@ bracex==3.0.1
     # via wcmatch
 html5lib==1.1
     # via pyspelling
-lxml==5.4.0
+lxml==6.1.1
     # via pyspelling
 markdown==3.8.1
     # via
