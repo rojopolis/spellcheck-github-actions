@@ -59,6 +59,7 @@ Vitepress
 Volkman
 Wordlist
 XSS
+XXE
 YAML
 aSemy
 aicore

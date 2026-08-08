@@ -4,6 +4,10 @@
 
 - Bumped `lxml` from `5.4.0` to `6.1.1` to address [CVE-2026-41066](https://nvd.nist.gov/vuln/detail/CVE-2026-41066) (XXE via `iterparse()`/`ETCompatXMLParser` defaulting `resolve_entities=True`) and libxslt vulnerabilities [CVE-2025-7424](https://nvd.nist.gov/vuln/detail/CVE-2025-7424) and [CVE-2025-11731](https://nvd.nist.gov/vuln/detail/CVE-2025-11731), via PR [#388](https://github.com/rojopolis/spellcheck-github-actions/pull/388) from Dependabot.
 
+- Bumped `pymdown-extensions` from `10.21.3` to `11.0.1` to address [CVE-2026-67422](https://nvd.nist.gov/vuln/detail/CVE-2026-67422) (ReDoS in the caret, tilde, betterem, and magiclink inline processors) and [CVE-2026-61632](https://nvd.nist.gov/vuln/detail/CVE-2026-61632) (path traversal in the `b64` extension).
+
+- Bumped `soupsieve` from `2.6` to `2.9.2` to address [CVE-2026-49476](https://nvd.nist.gov/vuln/detail/CVE-2026-49476) (memory exhaustion via large comma-separated selector lists) and [CVE-2026-49477](https://nvd.nist.gov/vuln/detail/CVE-2026-49477) (ReDoS via the selector parser).
+
 ## 0.64.0, 2026-07-31, maintenance release, update not required
 
 - Adopted `pip-compile` (pip-tools) for Python dependency management via PR [#380](https://github.com/rojopolis/spellcheck-github-actions/pull/380). `requirements.in` is now the source of truth for direct dependencies (`pyspelling`, `pymdown-extensions`); `requirements.txt` is generated from it rather than hand-maintained, so transitive pins can no longer silently fall out of sync the way `bracex` did in issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378).
