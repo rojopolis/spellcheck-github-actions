@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## `0.65.0`, 2026-08-08, security release, update recommended
+
+- Bumped `lxml` from `5.4.0` to `6.1.1` to address [CVE-2026-41066](https://nvd.nist.gov/vuln/detail/CVE-2026-41066) (XXE via `iterparse()`/`ETCompatXMLParser` defaulting `resolve_entities=True`) and libxslt vulnerabilities [CVE-2025-7424](https://nvd.nist.gov/vuln/detail/CVE-2025-7424) and [CVE-2025-11731](https://nvd.nist.gov/vuln/detail/CVE-2025-11731), via PR [#388](https://github.com/rojopolis/spellcheck-github-actions/pull/388) from Dependabot.
+
 ## 0.64.0, 2026-07-31, maintenance release, update not required
 
 - Adopted `pip-compile` (pip-tools) for Python dependency management via PR [#380](https://github.com/rojopolis/spellcheck-github-actions/pull/380). `requirements.in` is now the source of truth for direct dependencies (`pyspelling`, `pymdown-extensions`); `requirements.txt` is generated from it rather than hand-maintained, so transitive pins can no longer silently fall out of sync the way `bracex` did in issue [#378](https://github.com/rojopolis/spellcheck-github-actions/issues/378).
