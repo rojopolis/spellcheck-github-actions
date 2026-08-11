@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## `0.66.0`, 2026-08-11, maintenance release, update not required
+
+- Docker based image updated for Python 3.14.7 slim trixie via PR [#391](https://github.com/rojopolis/spellcheck-github-actions/pull/391) from Dependabot.
+
 ## `0.65.0`, 2026-08-08, security release, update recommended
 
 - Bumped `lxml` from `5.4.0` to `6.1.1` to address [CVE-2026-41066](https://nvd.nist.gov/vuln/detail/CVE-2026-41066) (XXE via `iterparse()`/`ETCompatXMLParser` defaulting `resolve_entities=True`) and libxslt vulnerabilities [CVE-2025-7424](https://nvd.nist.gov/vuln/detail/CVE-2025-7424) and [CVE-2025-11731](https://nvd.nist.gov/vuln/detail/CVE-2025-11731), via PR [#388](https://github.com/rojopolis/spellcheck-github-actions/pull/388) from Dependabot.
