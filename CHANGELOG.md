@@ -2,7 +2,7 @@
 
 ## `0.66.0`, 2026-08-11, maintenance release, update not required
 
-- Docker based image updated for Python 3.14.7 slim trixie via PR [#391](https://github.com/rojopolis/spellcheck-github-actions/pull/391) from Dependabot.
+- Docker image updated to Python 3.14.7-slim-trixie via PR [#391](https://github.com/rojopolis/spellcheck-github-actions/pull/391) from Dependabot.
 
 ## `0.65.0`, 2026-08-08, security release, update recommended
 
