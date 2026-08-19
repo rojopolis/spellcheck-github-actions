@@ -1,5 +1,5 @@
 # REF: https://hub.docker.com/_/python
-# Python 3.14.2-slim-trixie
+# Python 3.14.7-slim-trixie
 FROM python:3.14.7-slim-trixie@sha256:ce40764625a4ff50df3548277632e7f96c4e77fe75fa848aae9885476e7df5a4
 
 LABEL "com.github.actions.name"="Spellcheck Action"
