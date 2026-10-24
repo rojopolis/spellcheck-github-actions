@@ -18,7 +18,7 @@ markdown==3.8.1
     #   pyspelling
 pymdown-extensions==11.0.1
     # via -r requirements.in
-pyspelling==2.12.1
+pyspelling==2.13
     # via -r requirements.in
 pyyaml==6.0.2
     # via
@@ -26,7 +26,7 @@ pyyaml==6.0.2
     #   pyspelling
 six==1.16.0
     # via html5lib
-soupsieve==2.9.2
+soupsieve==3.0.4
     # via
     #   beautifulsoup4
     #   pyspelling
