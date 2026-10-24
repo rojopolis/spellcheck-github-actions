@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## `0.68.0`, 2026-10-24, maintenance release, update not required
+
+- Refreshed transitive Python dependency pins via PR [#410](https://github.com/rojopolis/spellcheck-github-actions/pull/410): `beautifulsoup4` `4.12.3` to `4.15.0`, `Markdown` `3.8.1` to `3.11.2`, `lxml` `6.1.1` to `6.1.3`, `bracex` `3.0.1` to `3.2`, `wcmatch` `11.0` to `11.2`, `PyYAML` `6.0.2` to `6.0.3`, `six` `1.16.0` to `1.17.0`, and `webencodings` `0.5.1` to `0.6.1`. Also pulls in a new transitive dependency, `typing-extensions` `4.16.0`, now required by the newer `beautifulsoup4`. None of these are pinned in `requirements.in`, so this is the same refresh Dependabot would otherwise have produced piecemeal under its `lockfile-only` strategy.
+
+- Bumped `pymdown-extensions` from `11.0.1` to `12.3` via PR [#411](https://github.com/rojopolis/spellcheck-github-actions/pull/411). This is a major version bump with a documented `BREAK` in `pymdown-extensions` `12.0`: `BetterEm`, `Tilde`, `Caret`, and `Mark` were rewritten with different nesting/escaping semantics. This repository's own pipeline configuration (`spellcheck.yaml`, `examples/markdown.yml`) only enables `pymdownx.superfences`, which is unaffected by that break and only gained new features across this range (a `reset` hook in `12.1`, `title_mode` in `12.2`/`12.3`). `pyspelling` itself does not depend on `pymdown-extensions`.
+
 ## `0.67.0`, 2026-10-24, maintenance release, update not required
 
 - Docker image updated to Python 3.14.8-slim-trixie via PR [#406](https://github.com/rojopolis/spellcheck-github-actions/pull/406) from Dependabot.
