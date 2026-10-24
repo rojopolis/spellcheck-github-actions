@@ -4,15 +4,15 @@
 #
 #    pip-compile --output-file=requirements.txt --strip-extras requirements.in
 #
-beautifulsoup4==4.12.3
+beautifulsoup4==4.15.0
     # via pyspelling
-bracex==3.0.1
+bracex==3.2
     # via wcmatch
 html5lib==1.1
     # via pyspelling
-lxml==6.1.1
+lxml==6.1.3
     # via pyspelling
-markdown==3.8.1
+markdown==3.11.2
     # via
     #   pymdown-extensions
     #   pyspelling
@@ -20,17 +20,19 @@ pymdown-extensions==11.0.1
     # via -r requirements.in
 pyspelling==2.13
     # via -r requirements.in
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via
     #   pymdown-extensions
     #   pyspelling
-six==1.16.0
+six==1.17.0
     # via html5lib
 soupsieve==3.0.4
     # via
     #   beautifulsoup4
     #   pyspelling
-wcmatch==11.0
+typing-extensions==4.16.0
+    # via beautifulsoup4
+wcmatch==11.2
     # via pyspelling
-webencodings==0.5.1
+webencodings==0.6.1
     # via html5lib
