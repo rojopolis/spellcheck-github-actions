@@ -4,7 +4,7 @@
 
 - Docker image updated to Python 3.14.8-slim-trixie via PR [#406](https://github.com/rojopolis/spellcheck-github-actions/pull/406) from Dependabot.
 
-- Bumped the core component **PySpelling** from `2.12.1` to `2.13` via PR [#407](https://github.com/rojopolis/spellcheck-github-actions/pull/407). This release of PySpelling adds support for Python 3.15, drops support for Python 3.9 and 3.10, and introduces a new `css_nostrict` option for the XML/HTML filter to allow more relaxed CSS rules given `soupsieve`'s new stricter defaults. This repo's own `pyspelling.filters.html` configuration (type selectors only) is unaffected, so the new option was not adopted. Pulls in `soupsieve` bumped from `2.9.2` to `3.0.4` transitively. See the [release notes for PySpelling 2.13](https://github.com/facelessuser/pyspelling/releases/tag/2.13).
+- Bumped the core component **PySpelling** from `2.12.1` to `2.13` via PR [#407](https://github.com/rojopolis/spellcheck-github-actions/pull/407). This release of PySpelling adds support for Python 3.15, drops support for Python 3.9 and 3.10, and introduces a new `css_nostrict` option for the XML/HTML filter to allow more relaxed CSS rules given `soupsieve`'s new stricter defaults. This repository's own `pyspelling.filters.html` configuration (type selectors only) is unaffected, so the new option was not adopted. Pulls in `soupsieve` bumped from `2.9.2` to `3.0.4` transitively. See the [release notes for PySpelling 2.13](https://github.com/facelessuser/pyspelling/releases/tag/2.13).
 
 ## `0.66.0`, 2026-08-11, maintenance release, update not required
 
