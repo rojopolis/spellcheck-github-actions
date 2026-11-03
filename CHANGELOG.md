@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## `0.69.0`, 2026-11-03, maintenance release, update recommended
+
+- Docker image updated to Python 3.14.9-slim-trixie via PR [#417](https://github.com/rojopolis/spellcheck-github-actions/pull/417) from Dependabot. Python 3.14.9 is an expedited security release that upgrades the bundled `pip` to `26.2.2` (including `certifi` `2026.10.19`) in response to the eMudhra / emSign CA certificate incident, see the [Python 3.14.9 release notes](https://www.python.org/downloads/release/python-3149/). Users of the prebuilt action are not affected in ordinary spellchecking; users who rebuild the image from the `Dockerfile` or run `pip` inside it are recommended to update.
+
+- Bumped `docker/login-action` from `4.6.0` to `4.7.0` in the Docker build workflow via PR [#416](https://github.com/rojopolis/spellcheck-github-actions/pull/416) from Dependabot.
+
 ## `0.68.0`, 2026-10-24, maintenance release, update not required
 
 - Refreshed transitive Python dependency pins via PR [#410](https://github.com/rojopolis/spellcheck-github-actions/pull/410): `beautifulsoup4` `4.12.3` to `4.15.0`, `Markdown` `3.8.1` to `3.11.2`, `lxml` `6.1.1` to `6.1.3`, `bracex` `3.0.1` to `3.2`, `wcmatch` `11.0` to `11.2`, `PyYAML` `6.0.2` to `6.0.3`, `six` `1.16.0` to `1.17.0`, and `webencodings` `0.5.1` to `0.6.1`. Also pulls in a new transitive dependency, `typing-extensions` `4.16.0`, now required by the newer `beautifulsoup4`. None of these are pinned in `requirements.in`, so this is the same refresh Dependabot would otherwise have produced piecemeal under its `lockfile-only` strategy.
