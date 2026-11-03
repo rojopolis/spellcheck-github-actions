@@ -1,8 +1,8 @@
 # Change Log for spellcheck-github-actions
 
-## `0.69.0`, 2026-11-03, maintenance release, update not required
+## `0.69.0`, 2026-11-03, maintenance release, update recommended
 
-- Docker image updated to Python 3.14.9-slim-trixie via PR [#417](https://github.com/rojopolis/spellcheck-github-actions/pull/417) from Dependabot.
+- Docker image updated to Python 3.14.9-slim-trixie via PR [#417](https://github.com/rojopolis/spellcheck-github-actions/pull/417) from Dependabot. Python 3.14.9 is an expedited security release that upgrades the bundled `pip` to `26.2.2` (including `certifi` `2026.10.19`) in response to the eMudhra / emSign CA certificate incident, see the [Python 3.14.9 release notes](https://www.python.org/downloads/release/python-3149/). Users of the prebuilt action are not affected in ordinary spellchecking; users who rebuild the image from the `Dockerfile` or run `pip` inside it are recommended to update.
 
 - Bumped `docker/login-action` from `4.6.0` to `4.7.0` in the Docker build workflow via PR [#416](https://github.com/rojopolis/spellcheck-github-actions/pull/416) from Dependabot.
 

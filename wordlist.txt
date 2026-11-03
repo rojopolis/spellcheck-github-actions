@@ -81,8 +81,10 @@ debian
 declutter
 dependabot
 dev
+eMudhra
 edumco
 electrocucaracha
+emSign
 endoflife
 entrypoint
 facelessuser
@@ -110,6 +112,7 @@ nlhomme
 pavelskipenes
 pmq
 pre
+prebuilt
 proffalken
 pymdown
 pyspelling
