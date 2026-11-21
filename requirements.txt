@@ -18,7 +18,7 @@ markdown==3.11.2
     #   pyspelling
 pymdown-extensions==12.3
     # via -r requirements.in
-pyspelling==2.13
+pyspelling==2.14
     # via -r requirements.in
 pyyaml==6.0.3
     # via
