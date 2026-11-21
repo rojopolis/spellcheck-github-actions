@@ -1,8 +1,14 @@
 # Change Log for spellcheck-github-actions
 
-## `0.70.0`, 2026-11-21, maintenance release, update not required
+## `0.70.0`, 2026-11-21, security release, update recommended
 
-- Bumped the core component **PySpelling** from `2.13` to `2.14`. This release of PySpelling adds a new `--progress` command line option, which shows per file progress when `stderr` is a terminal, and a new `progress` callback for `spellcheck()` when PySpelling is used as a library. There are no breaking changes, no dropped Python versions and no changed dependency requirements, so no other pins in `requirements.txt` change. The action does not pass `--progress`, so its behavior is unchanged. See the [release notes for PySpelling 2.14](https://github.com/facelessuser/pyspelling/releases/tag/2.14).
+- Bumped `soupsieve` from `3.0.4` to `4.1` to address [CVE-2026-126190](https://nvd.nist.gov/vuln/detail/CVE-2026-126190) (polynomial-time denial of service via the descendant combinator), via PR [#422](https://github.com/rojopolis/spellcheck-github-actions/pull/422) from Dependabot. This is a major version bump; the one documented `BREAK` in soupsieve `4.0` stops selectors from descending into `<template>` tags, which does not affect this repository, since the Markdown this action renders to HTML never produces `<template>` elements. Verified by building the image with `soupsieve` `4.1` and running this repository's own `spellcheck.yaml` pipeline (the `pyspelling.filters.html` `ignores` option, which depends on selector matching done by soupsieve) plus the Bats suite, with no new failures.
+
+- Bumped the core component **PySpelling** from `2.13` to `2.14`. This release of PySpelling adds a new `--progress` command line option, which shows per file progress when `stderr` is a terminal, and a new `progress` callback for `spellcheck()` when PySpelling is used as a library. There are no breaking changes and no dropped Python versions. The action does not pass `--progress`, so its behavior is unchanged. See the [release notes for PySpelling 2.14](https://github.com/facelessuser/pyspelling/releases/tag/2.14).
+
+- Docker image updated to Python 3.14.10-slim-trixie via PR [#423](https://github.com/rojopolis/spellcheck-github-actions/pull/423) from Dependabot, with the corresponding Dockerfile comment update in PR [#424](https://github.com/rojopolis/spellcheck-github-actions/pull/424).
+
+- Bumped `docker/login-action` from `4.7.0` to `4.8.0` in the Docker build workflow via PR [#421](https://github.com/rojopolis/spellcheck-github-actions/pull/421) from Dependabot.
 
 ## `0.69.0`, 2026-11-03, maintenance release, update recommended
 
