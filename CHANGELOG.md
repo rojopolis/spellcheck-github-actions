@@ -1,5 +1,9 @@
 # Change Log for spellcheck-github-actions
 
+## `0.70.0`, 2026-11-21, maintenance release, update not required
+
+- Bumped the core component **PySpelling** from `2.13` to `2.14`. This release of PySpelling adds a new `--progress` command line option, which shows per file progress when `stderr` is a terminal, and a new `progress` callback for `spellcheck()` when PySpelling is used as a library. There are no breaking changes, no dropped Python versions and no changed dependency requirements, so no other pins in `requirements.txt` change. The action does not pass `--progress`, so its behavior is unchanged. See the [release notes for PySpelling 2.14](https://github.com/facelessuser/pyspelling/releases/tag/2.14).
+
 ## `0.69.0`, 2026-11-03, maintenance release, update recommended
 
 - Docker image updated to Python 3.14.9-slim-trixie via PR [#417](https://github.com/rojopolis/spellcheck-github-actions/pull/417) from Dependabot. Python 3.14.9 is an expedited security release that upgrades the bundled `pip` to `26.2.2` (including `certifi` `2026.10.19`) in response to the eMudhra / emSign CA certificate incident, see the [Python 3.14.9 release notes](https://www.python.org/downloads/release/python-3149/). Users of the prebuilt action are not affected in ordinary spellchecking; users who rebuild the image from the `Dockerfile` or run `pip` inside it are recommended to update.
