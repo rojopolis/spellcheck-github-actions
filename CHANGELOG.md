@@ -1,6 +1,6 @@
 # Change Log for spellcheck-github-actions
 
-## `0.70.0`, 2026-11-21, security release, update recommended
+## `0.70.0`, 2026-11-22, security release, update recommended
 
 - Bumped `soupsieve` from `3.0.4` to `4.1` to address [CVE-2026-126190](https://nvd.nist.gov/vuln/detail/CVE-2026-126190) (polynomial-time denial of service via the descendant combinator), via PR [#422](https://github.com/rojopolis/spellcheck-github-actions/pull/422) from Dependabot. This is a major version bump; the one documented `BREAK` in soupsieve `4.0` stops selectors from descending into `<template>` tags, which does not affect this repository, since the Markdown this action renders to HTML never produces `<template>` elements. Verified by building the image with `soupsieve` `4.1` and running this repository's own `spellcheck.yaml` pipeline (the `pyspelling.filters.html` `ignores` option, which depends on selector matching done by soupsieve) plus the Bats suite, with no new failures.
 
