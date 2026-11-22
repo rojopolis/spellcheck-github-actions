@@ -158,27 +158,33 @@ if [ -n "$TASK_NAME" ]; then
 fi
 
 EXITCODE=0
+CAPTURE_FILE=$(mktemp)
 
 # Command line template
 # pyspelling --verbose --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" --name "$TASK_NAME" --source "FILE 1" --source "FILE 2" --source "FILE N"
 # source and name are included in the parameters used
 
 if [ -n "$INPUT_OUTPUT_FILE" ] && [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$INPUT_OUTPUT_FILE"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$CAPTURE_FILE" "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ -n "$INPUT_OUTPUT_FILE" ]; then
-    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$INPUT_OUTPUT_FILE"
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$CAPTURE_FILE" "$INPUT_OUTPUT_FILE"
     EXITCODE=${PIPESTATUS[0]}
 elif [ "${#SOURCES_LIST[@]}" -gt 0 ]; then
-    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}"
-    EXITCODE=$?
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" "${SOURCES_LIST[@]}" | tee "$CAPTURE_FILE"
+    EXITCODE=${PIPESTATUS[0]}
 elif [ -z "$INPUT_SOURCE_FILES" ]; then
-    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER"
-    EXITCODE=$?
+    "${COMMAND[@]}" --config "$SPELLCHECK_CONFIG_FILE" --spellchecker "$SPELL_CHECKER" | tee "$CAPTURE_FILE"
+    EXITCODE=${PIPESTATUS[0]}
 else
     echo "No files to check, exiting"
     EXITCODE=0
 fi
+
+if [ -n "$GITHUB_STEP_SUMMARY" ] && [ -s "$CAPTURE_FILE" ]; then
+    python3 /summarize.py "$CAPTURE_FILE" >> "$GITHUB_STEP_SUMMARY"
+fi
+rm -f "$CAPTURE_FILE"
 
 echo "----------------------------------------------------------------"
 

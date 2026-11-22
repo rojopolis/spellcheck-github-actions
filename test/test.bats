@@ -47,3 +47,34 @@
 	[ "$status" -ne 0 ]
 	[[ "$output" == *"You have declared the wordlist file '.wordlist.txt'"* ]]
 }
+
+@test "writes a GitHub Actions job summary table when spelling issues are found" {
+	echo "# Fixture
+
+This fixture deliberately contains a typofied wrod." > TMP_SUMMARY_FIXTURE.md
+
+	run docker run -e GITHUB_STEP_SUMMARY=/summary/summary.md \
+           -e INPUT_SOURCE_FILES=TMP_SUMMARY_FIXTURE.md \
+           -e INPUT_TASK_NAME=Markdown \
+           -v $PWD:/tmp -v "$BATS_TEST_TMPDIR":/summary \
+           jonasbn/github-action-spellcheck:local
+
+	rm -f TMP_SUMMARY_FIXTURE.md
+
+	[ "$status" -ne 0 ]
+
+	summary="$(cat "$BATS_TEST_TMPDIR/summary.md")"
+	[[ "$summary" == *"| TMP_SUMMARY_FIXTURE.md |"* ]]
+	[[ "$summary" == *"typofied"* ]]
+}
+
+@test "writes a passing GitHub Actions job summary when there are no spelling issues" {
+	run docker run -e GITHUB_STEP_SUMMARY=/summary/summary.md \
+           -v $PWD:/tmp -v "$BATS_TEST_TMPDIR":/summary \
+           jonasbn/github-action-spellcheck:local
+
+	[ "$status" -eq 0 ]
+
+	summary="$(cat "$BATS_TEST_TMPDIR/summary.md")"
+	[[ "$summary" == *"No spelling issues found."* ]]
+}
