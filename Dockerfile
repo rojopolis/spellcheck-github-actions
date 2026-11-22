@@ -16,6 +16,7 @@ COPY requirements.txt /requirements.txt
 COPY constraint.txt /constraint.txt
 COPY spellcheck.yaml /spellcheck.yaml
 COPY pwc.py /pwc.py
+COPY check_wordlists.py /check_wordlists.py
 
 # REF: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
 RUN apt-get update && apt-get install -y \

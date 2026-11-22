@@ -39,3 +39,11 @@
            -e INPUT_TASK_NAME=Markdown -it -v $PWD:/tmp \
            jonasbn/github-action-spellcheck:local
 }
+
+@test "fails with a clear message when a declared wordlist file is missing" {
+	run docker run -e INPUT_CONFIG_PATH=examples/markdown.yml \
+           -e INPUT_TASK_NAME=Markdown -v $PWD:/tmp \
+           jonasbn/github-action-spellcheck:local
+	[ "$status" -ne 0 ]
+	[[ "$output" == *"You have declared the wordlist file '.wordlist.txt'"* ]]
+}
