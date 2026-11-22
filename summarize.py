@@ -18,8 +18,29 @@ def split_file_and_detail(context):
     return context, ''
 
 
-def escape_cell(text):
-    return text.replace('|', '\\|').replace('\n', ' ')
+def code_span(text):
+    """Wrap text as a markdown code span that can't be broken out of.
+
+    File paths, context strings and misspelled words all come from files
+    in the repository being checked, so they're untrusted: without this,
+    a crafted value could inject markdown/HTML (e.g. an image pulling a
+    tracking URL) into the rendered job summary. A code span suppresses
+    all other inline markdown parsing of its content (CommonMark spec),
+    so wrapping every value in one neutralizes that -- as long as the
+    backtick fence is longer than any backtick run already in the text.
+    """
+    text = text.replace('\n', ' ').replace('\r', ' ')
+    longest_run = 0
+    current = 0
+    for char in text:
+        if char == '`':
+            current += 1
+            longest_run = max(longest_run, current)
+        else:
+            current = 0
+    fence = '`' * (longest_run + 1)
+    pad = ' ' if text == '' or text.startswith('`') or text.endswith('`') else ''
+    return f'{fence}{pad}{text}{pad}{fence}'
 
 
 def parse(lines):
@@ -87,10 +108,10 @@ def render(rows, passed):
     for row in rows:
         file_part, detail_part = split_file_and_detail(row['context'])
         if row['type'] == 'error':
-            issue = f"Error: {escape_cell(row['detail'])}"
+            issue = f"Error: {code_span(row['detail'])}"
         else:
-            issue = ', '.join(f'`{escape_cell(word)}`' for word in row['words'])
-        out.append(f'| {escape_cell(file_part)} | {escape_cell(detail_part)} | {issue} |')
+            issue = ', '.join(code_span(word) for word in row['words'])
+        out.append(f'| {code_span(file_part)} | {code_span(detail_part)} | {issue} |')
 
     out.append('')
     if passed is False:
