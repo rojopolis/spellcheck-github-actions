@@ -28,8 +28,14 @@ def code_span(text):
     all other inline markdown parsing of its content (CommonMark spec),
     so wrapping every value in one neutralizes that -- as long as the
     backtick fence is longer than any backtick run already in the text.
+
+    GFM table cells are also special: an unescaped '|' splits the cell
+    even inside a code span, since GitHub's table extension cuts cells
+    on raw '|' before full inline parsing, and specifically unescapes a
+    backslash before a pipe back to a literal pipe for display. So '|'
+    is escaped too.
     """
-    text = text.replace('\n', ' ').replace('\r', ' ')
+    text = text.replace('\n', ' ').replace('\r', ' ').replace('|', '\\|')
     longest_run = 0
     current = 0
     for char in text:
