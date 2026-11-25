@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false
 
       - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@46744bf125ab863939a56ecfe2c12cce6f9f7388 # v0.70.0
+        uses: rojopolis/spellcheck-github-actions@b7633f9dbd9aac05cfbebb5c5f06f66cfdafe01c # v0.71.0
         with:
           source_files: README.md CHANGELOG.md
           task_name: Markdown
