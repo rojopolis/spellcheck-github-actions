@@ -61,6 +61,19 @@ sub run_or_die {
     return 1;
 }
 
+sub git_tag_exists_locally {
+    my ($tag) = @_;
+    my $out = qx{git tag --list $tag};
+    return $out =~ /\S/ ? 1 : 0;
+}
+
+sub git_tag_exists_remotely {
+    my ($tag, $remote) = @_;
+    $remote //= 'origin';
+    my $out = qx{git ls-remote --tags $remote $tag 2>/dev/null};
+    return $out =~ /\S/ ? 1 : 0;
+}
+
 sub targets_for {
     my ($version, @all_tags) = @_;
     my @targets = ($version, floating_tag_name($version));
@@ -122,18 +135,21 @@ sub main {
         $counter++;
     }
 
-    # Updating the v0 tag
-    say 'Deleting existing tag v0 locally';
-    say 'git tag --delete v0';
-    run_or_die 'git tag --delete v0';
+    # Updating the floating major-version tag (v0, v1, ...)
+    my $floating_tag = floating_tag_name($version);
 
-    say 'Deleting existing tag v0 remotely';
-    say 'git push --delete origin v0';
-    run_or_die 'git push --delete origin v0';
+    if (git_tag_exists_locally($floating_tag)) {
+        say "Deleting existing tag $floating_tag locally";
+        run_or_die("git tag --delete $floating_tag");
+    }
 
-    say 'Tagging also as v0';
-    say 'git tag --annotate v0 --message "Tagging v0"';
-    run_or_die 'git tag --annotate v0 --message "Tagging v0"';
+    if (git_tag_exists_remotely($floating_tag)) {
+        say "Deleting existing tag $floating_tag remotely";
+        run_or_die("git push --delete origin $floating_tag");
+    }
+
+    say "Tagging also as $floating_tag";
+    run_or_die(qq{git tag --annotate $floating_tag --message "Tagging $floating_tag"});
 
     # Pushing tags
     say 'Pushing tags';

@@ -1,6 +1,8 @@
 use strict;
 use warnings;
 use Test::More;
+use File::Temp qw(tempdir);
+use Cwd qw(getcwd);
 
 require './scripts/build.pl';
 
@@ -61,5 +63,30 @@ like($@, qr/exit code 1/, 'run_or_die dies on a plain failing command');
 
 eval { run_or_die('kill -TERM $$') };
 like($@, qr/signal/, 'run_or_die reports death by signal distinctly from a nonzero exit');
+
+# git_tag_exists_locally / git_tag_exists_remotely
+{
+    my $orig_cwd = getcwd();
+    my $remote_dir = tempdir(CLEANUP => 1);
+    my $work_dir   = tempdir(CLEANUP => 1);
+
+    system("git init --quiet --bare $remote_dir");
+    system("git -C $work_dir init --quiet");
+    system("git -C $work_dir config user.email test\@example.com");
+    system("git -C $work_dir config user.name Test");
+    system("git -C $work_dir commit --quiet --allow-empty -m init");
+    system("git -C $work_dir remote add origin $remote_dir");
+    system("git -C $work_dir tag v0");
+    system("git -C $work_dir push --quiet origin v0");
+
+    chdir $work_dir or die $!;
+
+    ok(git_tag_exists_locally('v0'), 'v0 exists locally after tagging');
+    ok(!git_tag_exists_locally('v9'), 'v9 does not exist locally');
+    ok(git_tag_exists_remotely('v0', 'origin'), 'v0 exists on the fake origin after pushing');
+    ok(!git_tag_exists_remotely('v9', 'origin'), 'v9 does not exist on the fake origin');
+
+    chdir $orig_cwd or die $!;
+}
 
 done_testing();
