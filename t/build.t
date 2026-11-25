@@ -50,4 +50,16 @@ is_deeply(
     'a 0.x backport after 1.0.0 targets itself and v0 only, never latest'
 );
 
+# run_or_die
+is(run_or_die('true'), 1, 'run_or_die returns true on success');
+
+eval { run_or_die('sh -c "exit 42"') };
+like($@, qr/exit code 42/, 'run_or_die reports the exact nonzero exit code');
+
+eval { run_or_die('false') };
+like($@, qr/exit code 1/, 'run_or_die dies on a plain failing command');
+
+eval { run_or_die('kill -TERM $$') };
+like($@, qr/signal/, 'run_or_die reports death by signal distinctly from a nonzero exit');
+
 done_testing();

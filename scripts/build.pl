@@ -41,6 +41,26 @@ sub is_new_latest {
     return $candidate_v == $max_v;
 }
 
+sub run_or_die {
+    my ($cmd) = @_;
+    say $cmd;
+    # autodie's :all wraps the system() builtin and throws its own verbose,
+    # stack-traced exception on a nonzero exit; CORE::system bypasses that
+    # override so this sub's own exit/signal handling below actually runs
+    # and produces the clear, single-line message callers test against.
+    CORE::system($cmd);
+    if ($? == -1) {
+        die "Failed to execute '$cmd': $!\n";
+    }
+    elsif ($? & 127) {
+        die sprintf("Command '%s' died with signal %d\n", $cmd, $? & 127);
+    }
+    elsif ($? >> 8 != 0) {
+        die sprintf("Command '%s' failed with exit code %d\n", $cmd, $? >> 8);
+    }
+    return 1;
+}
+
 sub targets_for {
     my ($version, @all_tags) = @_;
     my @targets = ($version, floating_tag_name($version));
@@ -89,7 +109,7 @@ sub main {
 
     foreach my $target (@targets) {
         say "Building $target ($counter/$total)";
-        system "docker build --platform linux/amd64 --tag jonasbn/github-action-spellcheck:$target .";
+        run_or_die "docker build --platform linux/amd64 --tag jonasbn/github-action-spellcheck:$target .";
         $counter++;
     }
 
@@ -98,32 +118,32 @@ sub main {
     say "Pushing Docker images to DockerHub";
     foreach my $target (@targets) {
         say "Pushing $target ($counter/$total)";
-        system "docker push jonasbn/github-action-spellcheck:$target";
+        run_or_die "docker push jonasbn/github-action-spellcheck:$target";
         $counter++;
     }
 
     # Updating the v0 tag
     say 'Deleting existing tag v0 locally';
     say 'git tag --delete v0';
-    system 'git tag --delete v0';
+    run_or_die 'git tag --delete v0';
 
     say 'Deleting existing tag v0 remotely';
     say 'git push --delete origin v0';
-    system 'git push --delete origin v0';
+    run_or_die 'git push --delete origin v0';
 
     say 'Tagging also as v0';
     say 'git tag --annotate v0 --message "Tagging v0"';
-    system 'git tag --annotate v0 --message "Tagging v0"';
+    run_or_die 'git tag --annotate v0 --message "Tagging v0"';
 
     # Pushing tags
     say 'Pushing tags';
     say 'git push --tags';
-    system 'git push --tags';
+    run_or_die 'git push --tags';
 
     # The tagging of the version number is a part of the release process, so not need
     # to create this tag separately
     say 'Creating release on GitHub with auto generated release notes and discussion';
-    system "gh release create $version --discussion-category 'General' --generate-notes";
+    run_or_die "gh release create $version --discussion-category 'General' --generate-notes";
 
     exit 0;
 }
