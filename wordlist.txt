@@ -2,6 +2,7 @@ Andreas
 Arithmatex
 BetterEm
 Brømsø
+Buildx
 CVE
 CVEs
 CWE
@@ -67,6 +68,8 @@ aicore
 akohout
 albertvolkman
 arkq
+backport
+backports
 backrefs
 beautifulsoup
 betterem
@@ -96,6 +99,7 @@ github
 gmail
 hai
 hamilton
+hardcoded
 html
 https
 jonasbn
@@ -115,6 +119,7 @@ pavelskipenes
 pmq
 pre
 prebuilt
+preflight
 proffalken
 pymdown
 pyspelling

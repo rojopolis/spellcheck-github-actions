@@ -25,4 +25,8 @@ Steps:
 
 6. Check the return value of the build script. If it fails, show the error and stop. The build script does the tagging and pushing to GitHub and Docker Hub.
 
+   As of `1.0.0`, the script fails loudly (non-zero exit, clear message) instead of silently continuing: every Docker/git/gh command's exit status is checked, and it preflight-checks that Docker Hub credentials are configured (and Buildx is available) before building, and verifies each pushed tag is actually visible on Docker Hub afterward.
+
+   The floating tag it moves is derived from `$VERSION`'s major (`v0` for `0.x.x`, `v1` for `1.x.x`, …) rather than hardcoded to `v0`, and each major's floating tag moves independently — so releasing a security backport to an older major after a newer major exists only moves that older major's tag. `latest` only moves if `$VERSION` is the highest version released across all majors, so a backport can never regress `latest`.
+
 7. Confirm the tag was pushed
