@@ -1,5 +1,11 @@
 # Change Log for spellcheck-github-actions
 
+## `0.71.0`, 2026-11-25, feature release, update not required
+
+- The action now validates that every wordlist file declared under `dictionary.wordlists` in the spellcheck config actually exists before running `pyspelling`. Previously a missing wordlist file surfaced as a raw Python traceback; it now fails with a clear message naming the missing file and the task. Addresses issue [#16](https://github.com/rojopolis/spellcheck-github-actions/issues/16), via PR [#429](https://github.com/rojopolis/spellcheck-github-actions/pull/429).
+
+- The action now writes the spellcheck results as a markdown table to the GitHub Actions job summary (`GITHUB_STEP_SUMMARY`), similar to what lychee-action does for its own results, with per-file/context/issue rows and a pass/fail indicator. Requested by @royfrancis via issue [#285](https://github.com/rojopolis/spellcheck-github-actions/issues/285), implemented via PR [#430](https://github.com/rojopolis/spellcheck-github-actions/pull/430).
+
 ## `0.70.0`, 2026-11-22, security release, update recommended
 
 - Bumped `soupsieve` from `3.0.4` to `4.1` to address [CVE-2026-126190](https://nvd.nist.gov/vuln/detail/CVE-2026-126190) (polynomial-time denial of service via the descendant combinator), via PR [#422](https://github.com/rojopolis/spellcheck-github-actions/pull/422) from Dependabot. This is a major version bump; the one documented `BREAK` in soupsieve `4.0` stops selectors from descending into `<template>` tags, which does not affect this repository, since the Markdown this action renders to HTML never produces `<template>` elements. Verified by building the image with `soupsieve` `4.1` and running this repository's own `spellcheck.yaml` pipeline (the `pyspelling.filters.html` `ignores` option, which depends on selector matching done by soupsieve) plus the Bats suite, with no new failures.
