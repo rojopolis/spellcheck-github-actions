@@ -29,6 +29,12 @@ aspell --version
 hunspell --version
 echo "----------------------------------------------------------------"
 
+python3 /check_wordlists.py "$SPELLCHECK_CONFIG_FILE"
+WORDLIST_CHECK_EXITCODE=$?
+if [ $WORDLIST_CHECK_EXITCODE -ne 0 ]; then
+    exit $WORDLIST_CHECK_EXITCODE
+fi
+
 SINGLE="'"
 DOUBLE='"'
 SPLIT=false
