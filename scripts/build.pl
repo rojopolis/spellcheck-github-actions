@@ -74,6 +74,17 @@ sub git_tag_exists_remotely {
     return $out =~ /\S/ ? 1 : 0;
 }
 
+sub dockerhub_login_configured {
+    my ($config_path) = @_;
+    return 0 unless -f $config_path;
+    open my $fh, '<', $config_path or return 0;
+    my $json = do { local $/; <$fh> };
+    close $fh;
+    return $json =~ /credsStore|credHelpers/
+        || $json =~ /(?:docker\.io|index\.docker\.io)/
+        ? 1 : 0;
+}
+
 sub targets_for {
     my ($version, @all_tags) = @_;
     my @targets = ($version, floating_tag_name($version));
@@ -114,6 +125,13 @@ sub main {
     my @all_tags = split /\n/, qx{git tag --list};
     my @targets  = targets_for($version, @all_tags);
 
+    run_or_die('docker buildx version >/dev/null');
+
+    my $docker_config = $ENV{DOCKER_CONFIG} ? "$ENV{DOCKER_CONFIG}/config.json" : "$ENV{HOME}/.docker/config.json";
+    unless (dockerhub_login_configured($docker_config)) {
+        die "No Docker Hub credentials found in $docker_config — run 'docker login' before releasing.\n";
+    }
+
     say 'Building Docker images for amd64 architecture';
 
     my $counter = 0;
@@ -132,6 +150,15 @@ sub main {
         say "Pushing $target ($counter/$total)";
         run_or_die "docker push jonasbn/github-action-spellcheck:$target";
         $counter++;
+    }
+
+    # dockerhub_login_configured only confirms a credential helper or stored
+    # token is present above - a stored token can still be expired. The
+    # authoritative enforcement is the exit-code-checked docker push itself
+    # (run_or_die) plus this post-push registry check, not the preflight.
+    say 'Verifying pushed tags are visible on Docker Hub';
+    foreach my $target (@targets) {
+        run_or_die("docker buildx imagetools inspect jonasbn/github-action-spellcheck:$target >/dev/null");
     }
 
     # Updating the floating major-version tag (v0, v1, ...)
