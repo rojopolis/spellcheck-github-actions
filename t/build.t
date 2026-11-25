@@ -64,6 +64,12 @@ like($@, qr/exit code 1/, 'run_or_die dies on a plain failing command');
 eval { run_or_die('kill -TERM $$') };
 like($@, qr/signal/, 'run_or_die reports death by signal distinctly from a nonzero exit');
 
+# capture_or_die
+is(capture_or_die('echo hi'), "hi\n", 'capture_or_die returns captured stdout on success');
+
+eval { capture_or_die('sh -c "exit 7"') };
+like($@, qr/exit code 7/, 'capture_or_die reports the exact nonzero exit code');
+
 # git_tag_exists_locally / git_tag_exists_remotely
 {
     my $orig_cwd = getcwd();
@@ -85,6 +91,32 @@ like($@, qr/signal/, 'run_or_die reports death by signal distinctly from a nonze
     ok(!git_tag_exists_locally('v9'), 'v9 does not exist locally');
     ok(git_tag_exists_remotely('v0', 'origin'), 'v0 exists on the fake origin after pushing');
     ok(!git_tag_exists_remotely('v9', 'origin'), 'v9 does not exist on the fake origin');
+
+    eval { git_tag_exists_remotely('v0', 'nonexistent-remote-name') };
+    like($@, qr/exit code \d+/, 'a real remote failure dies instead of being read as "tag does not exist"');
+
+    chdir $orig_cwd or die $!;
+}
+
+# current_commit
+{
+    my $orig_cwd = getcwd();
+    my $work_dir = tempdir(CLEANUP => 1);
+
+    system("git -C $work_dir init --quiet");
+    system("git -C $work_dir config user.email test\@example.com");
+    system("git -C $work_dir config user.name Test");
+    system("git -C $work_dir commit --quiet --allow-empty -m first");
+    chomp(my $first_sha = qx{git -C $work_dir rev-parse HEAD});
+    system("git -C $work_dir commit --quiet --allow-empty -m second");
+    chomp(my $second_sha = qx{git -C $work_dir rev-parse HEAD});
+
+    chdir $work_dir or die $!;
+
+    is(current_commit(), $second_sha, 'current_commit reports HEAD at the tip');
+
+    system("git checkout --quiet $first_sha");
+    is(current_commit(), $first_sha, 'current_commit reports HEAD after checking out an older commit, not the tip');
 
     chdir $orig_cwd or die $!;
 }

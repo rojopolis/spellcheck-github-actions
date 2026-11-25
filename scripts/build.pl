@@ -61,16 +61,37 @@ sub run_or_die {
     return 1;
 }
 
+sub capture_or_die {
+    my ($cmd) = @_;
+    my $out = qx{$cmd};
+    if ($? == -1) {
+        die "Failed to execute '$cmd': $!\n";
+    }
+    elsif ($? & 127) {
+        die sprintf("Command '%s' died with signal %d\n", $cmd, $? & 127);
+    }
+    elsif ($? >> 8 != 0) {
+        die sprintf("Command '%s' failed with exit code %d\n", $cmd, $? >> 8);
+    }
+    return $out;
+}
+
+sub current_commit {
+    my $sha = capture_or_die('git rev-parse HEAD');
+    chomp $sha;
+    return $sha;
+}
+
 sub git_tag_exists_locally {
     my ($tag) = @_;
-    my $out = qx{git tag --list $tag};
+    my $out = capture_or_die("git tag --list $tag");
     return $out =~ /\S/ ? 1 : 0;
 }
 
 sub git_tag_exists_remotely {
     my ($tag, $remote) = @_;
     $remote //= 'origin';
-    my $out = qx{git ls-remote --tags $remote $tag 2>/dev/null};
+    my $out = capture_or_die("git ls-remote --tags $remote $tag");
     return $out =~ /\S/ ? 1 : 0;
 }
 
@@ -122,7 +143,10 @@ sub main {
 
     say "Building Docker images for version: $version";
 
-    my @all_tags = split /\n/, qx{git tag --list};
+    # Fetch tags first: the latest-vs-backport decision below must see every
+    # release across every major, not just whatever this clone last fetched.
+    run_or_die('git fetch --tags origin');
+    my @all_tags = split /\n/, capture_or_die('git tag --list');
     my @targets  = targets_for($version, @all_tags);
 
     run_or_die('docker buildx version >/dev/null');
@@ -183,9 +207,12 @@ sub main {
     run_or_die 'git push --tags';
 
     # The tagging of the version number is a part of the release process, so not need
-    # to create this tag separately
+    # to create this tag separately. --target pins the release tag to the commit
+    # actually checked out here, not the default branch's tip - required for a
+    # backport release, where HEAD is an older major's commit, not master's.
     say 'Creating release on GitHub with auto generated release notes and discussion';
-    run_or_die "gh release create $version --discussion-category 'General' --generate-notes";
+    my $release_target = current_commit();
+    run_or_die "gh release create $version --target $release_target --discussion-category 'General' --generate-notes";
 
     exit 0;
 }
