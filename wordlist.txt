@@ -104,6 +104,7 @@ libxml
 libxslt
 linters
 lxml
+lychee
 magiclink
 mdiazgoncalves
 metaode
@@ -119,6 +120,7 @@ pymdown
 pyspelling
 riccardoporreca
 rojopolis
+royfrancis
 sbates
 sexualized
 shoverbj
@@ -130,8 +132,10 @@ subdirectory
 sxd
 tj
 toolchain
+traceback
 trixie
 wcmatch
+wordlist
 www
 xsaero
 zipp
