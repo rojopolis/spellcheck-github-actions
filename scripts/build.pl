@@ -111,9 +111,8 @@ sub main {
 
     say "Building Docker images for version: $version";
 
-    my @targets = qw(v0 latest);
-
-    push @targets, $version;
+    my @all_tags = split /\n/, qx{git tag --list};
+    my @targets  = targets_for($version, @all_tags);
 
     say 'Building Docker images for amd64 architecture';
 
