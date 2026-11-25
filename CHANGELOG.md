@@ -1,5 +1,15 @@
 # Change Log for spellcheck-github-actions
 
+## `1.0.0`, 2026-11-25, stability milestone release, update not required
+
+- This release marks the action's inputs and behavior as stable: from `1.0.0` onward this project follows semantic versioning, and a breaking change to the action's inputs or behavior will bump the major version. There is no functional change to the action itself in this release.
+
+- Hardened `scripts/build.pl`, the local script used to publish images to DockerHub (DockerHub publishing stays local/manual, since the maintainer has push-only, not admin, access to this repository and cannot add Actions secrets):
+  - Every `docker`/`git`/`gh` command it runs now has its exit status checked explicitly, so a failure (e.g. a stale `docker login` session or a Docker Hub outage) now stops the release with a clear message instead of silently continuing.
+  - The floating release tag is now derived from the version being released (`v0` for `0.x.x`, `v1` for `1.x.x`, and so on for future majors) instead of being hardcoded to `v0`. Each major's floating tag now moves independently, which is what makes it safe to backport a security fix to an older major after a newer major has already been released.
+  - The `latest` Docker tag now only ever moves to the highest version released across all majors, so a backport to an older major can never regress `latest` to an older release.
+  - Added a preflight check (Docker Hub credentials configured, Buildx available) before building, and a post-push check that each pushed tag is actually visible on Docker Hub, rather than trusting that a push which exited cleanly actually landed.
+
 ## `0.71.0`, 2026-11-25, feature release, update not required
 
 - The action now validates that every wordlist file declared under `dictionary.wordlists` in the spellcheck config actually exists before running `pyspelling`. Previously a missing wordlist file surfaced as a raw Python traceback; it now fails with a clear message naming the missing file and the task. Addresses issue [#16](https://github.com/rojopolis/spellcheck-github-actions/issues/16), via PR [#429](https://github.com/rojopolis/spellcheck-github-actions/pull/429).
